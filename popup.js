@@ -12,6 +12,7 @@
       console.log('OK!');
     }
   };
+  mdc.textField.MDCTextField.attachTo(document.querySelector('.mdc-text-field'));
 
 snackbar.show(dataObj);
 //regular stuff
