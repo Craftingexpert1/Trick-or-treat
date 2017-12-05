@@ -34,28 +34,28 @@ snackbar.show(dataObj);
 			hmc.innerHTML = "How much candy you have:" + candyCount;	
 		}
 		if (candyCount >= 1000){
-			var x = candyCount / 1000;
-			x = Math.floor(x * 100) / 100;
-			x = x.toFixed(2);
-			hmc.innerHTML = "How much candy you have:" + x + "K";
+			var y = candyCount / 1000;
+			y = Math.floor(y * 100) / 100;
+			y = y.toFixed(2);
+			hmc.innerHTML = "How much candy you have:" + y + "K";
 		}
 		if (candyCount >= 1000000){
-			var x = candyCount / 1000000;
-			x = Math.floor(x * 100) / 100;
-			x = x.toFixed(2);
-			hmc.innerHTML = "How much candy you have:" + x + "M";
+			var y = candyCount / 1000000;
+			y = Math.floor(y * 100) / 100;
+			y = y.toFixed(2);
+			hmc.innerHTML = "How much candy you have:" + y + "M";
 		}
 		if (candyCount >= 1000000000){
-			var x = candyCount / 1000000000;
-			x = Math.floor(x * 100) / 100;
-			x = x.toFixed(2);
-			hmc.innerHTML = "How much candy you have:" + x + "B";
+			var y = candyCount / 1000000000;
+			y = Math.floor(y * 100) / 100;
+			y = y.toFixed(2);
+			hmc.innerHTML = "How much candy you have:" + y + "B";
 		}
 		if (candyCount >= 1000000000000){
-			var x = candyCount / 1000000000000;
-			x = Math.floor(x * 100) / 100;
-			x = x.toFixed(2);
-			hmc.innerHTML = "How much candy you have:" + x + "T";
+			var y = candyCount / 1000000000000;
+			y = Math.floor(y * 100) / 100;
+			y = y.toFixed(2);
+			hmc.innerHTML = "How much candy you have:" + y + "T";
 		}
         }
 	var mult_cookie = getCookie("multiplier");
@@ -84,7 +84,7 @@ snackbar.show(dataObj);
             var multiplier_text = document.getElementById("multiplier");
             multiplier_text.innerHTML = "Multiplier:" + multiplier;
 
-document.getElementById("totbutton").addEventListener("click", tot); 
+document.getElementById("totbutton").addEventListener("click", tot()); 
 function tot(){
                 var candy = document.getElementById("candy");
                 candy.innerHTML = "You get: " + candies[Math.floor(Math.random() * 5)];
@@ -95,28 +95,28 @@ function tot(){
 			hmc.innerHTML = "How much candy you have:" + candyCount;	
 		}
 		if (candyCount >= 1000){
-			var x = candyCount / 1000;
-			x = Math.floor(x * 100) / 100;
-			x = x.toFixed(2);
-			hmc.innerHTML = "How much candy you have:" + x + "K";
+			var y = candyCount / 1000;
+			y = Math.floor(y * 100) / 100;
+			y = y.toFixed(2);
+			hmc.innerHTML = "How much candy you have:" + y + "K";
 		}
 		if (candyCount >= 1000000){
-			var x = candyCount / 1000000;
-			x = Math.floor(x * 100) / 100;
-			x = x.toFixed(2);
-			hmc.innerHTML = "How much candy you have:" + x + "M";
+			var y = candyCount / 1000000;
+			y = Math.floor(y * 100) / 100;
+			y = y.toFixed(2);
+			hmc.innerHTML = "How much candy you have:" + y + "M";
 		}
 		if (candyCount >= 1000000000){
-			var x = candyCount / 1000000000;
-			x = Math.floor(x * 100) / 100;
-			x = x.toFixed(2);
-			hmc.innerHTML = "How much candy you have:" + x + "B";
+			var y = candyCount / 1000000000;
+			y = Math.floor(y * 100) / 100;
+			y = y.toFixed(2);
+			hmc.innerHTML = "How much candy you have:" + y + "B";
 		}
 		if (candyCount >= 1000000000000){
-			var x = candyCount / 1000000000000;
-			x = Math.floor(x * 100) / 100;
-			x = x.toFixed(2);
-			hmc.innerHTML = "How much candy you have:" + x + "T";
+			var y = candyCount / 1000000000000;
+			y = Math.floor(y * 100) / 100;
+			y = y.toFixed(2);
+			hmc.innerHTML = "How much candy you have:" + y + "T";
 		}
                 setCookie("cc", candyCount, 30);
             };
@@ -166,28 +166,28 @@ function candyBuy(c, thing){
 			hmc.innerHTML = "How much candy you have:" + candyCount;	
 		}
 		if (candyCount >= 1000){
-			var x = candyCount / 1000;
-			x = Math.floor(x * 100) / 100;
-			x = x.toFixed(2);
-			hmc.innerHTML = "How much candy you have:" + x + "K";
+			var y = candyCount / 1000;
+			y = Math.floor(y * 100) / 100;
+			y = y.toFixed(2);
+			hmc.innerHTML = "How much candy you have:" + y + "K";
 		}
 		if (candyCount >= 1000000){
-			var x = candyCount / 1000000;
-			x = Math.floor(x * 100) / 100;
-			x = x.toFixed(2);
-			hmc.innerHTML = "How much candy you have:" + x + "M";
+			var y = candyCount / 1000000;
+			y = Math.floor(y * 100) / 100;
+			y = y.toFixed(2);
+			hmc.innerHTML = "How much candy you have:" + y + "M";
 		}
 		if (candyCount >= 1000000000){
-			var x = candyCount / 1000000000;
-			x = Math.floor(x * 100) / 100;
-			x = x.toFixed(2);
-			hmc.innerHTML = "How much candy you have:" + x + "B";
+			var y = candyCount / 1000000000;
+			y = Math.floor(y * 100) / 100;
+			y = y.toFixed(2);
+			hmc.innerHTML = "How much candy you have:" + y + "B";
 		}
 		if (candyCount >= 1000000000000){
-			var x = candyCount / 1000000000000;
-			x = Math.floor(x * 100) / 100;
-			x = x.toFixed(2);
-			hmc.innerHTML = "How much candy you have:" + x + "T";
+			var y = candyCount / 1000000000000;
+			y = Math.floor(y * 100) / 100;
+			y = y.toFixed(2);
+			hmc.innerHTML = "How much candy you have:" + y + "T";
 		}
                     document.getElementById('error').innerHTML = "You got a(n) " + thing + ".";
                     setCookie("cc", candyCount, 30);
@@ -256,28 +256,28 @@ function candyBuy(c, thing){
 			hmc.innerHTML = "How much candy you have:" + candyCount;	
 		}
 		if (candyCount >= 1000){
-			var x = candyCount / 1000;
-			x = Math.floor(x * 100) / 100;
-			x = x.toFixed(2);
-			hmc.innerHTML = "How much candy you have:" + x + "K";
+			var y = candyCount / 1000;
+			y = Math.floor(y * 100) / 100;
+			y = y.toFixed(2);
+			hmc.innerHTML = "How much candy you have:" + y + "K";
 		}
 		if (candyCount >= 1000000){
-			var x = candyCount / 1000000;
-			x = Math.floor(x * 100) / 100;
-			x = x.toFixed(2);
-			hmc.innerHTML = "How much candy you have:" + x + "M";
+			var y = candyCount / 1000000;
+			y = Math.floor(y * 100) / 100;
+			y = y.toFixed(2);
+			hmc.innerHTML = "How much candy you have:" + y + "M";
 		}
 		if (candyCount >= 1000000000){
-			var x = candyCount / 1000000000;
-			x = Math.floor(x * 100) / 100;
-			x = x.toFixed(2);
-			hmc.innerHTML = "How much candy you have:" + x + "B";
+			var y = candyCount / 1000000000;
+			y = Math.floor(y * 100) / 100;
+			y = y.toFixed(2);
+			hmc.innerHTML = "How much candy you have:" + y + "B";
 		}
 		if (candyCount >= 1000000000000){
-			var x = candyCount / 1000000000000;
-			x = Math.floor(x * 100) / 100;
-			x = x.toFixed(2);
-			hmc.innerHTML = "How much candy you have:" + x + "T";
+			var y = candyCount / 1000000000000;
+			y = Math.floor(y * 100) / 100;
+			y = y.toFixed(2);
+			hmc.innerHTML = "How much candy you have:" + y + "T";
 		}
                 setCookie("cc", candyCount, 30);
             }
