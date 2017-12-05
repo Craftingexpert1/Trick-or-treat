@@ -33,7 +33,7 @@ snackbar.show(dataObj);
            if (candyCount / 1000 < 1){
 			hmc.innerHTML = "How much candy you have:" + candyCount;	
 		}
-		if (candyCount / 1000 >= 1){
+		if (candyCount / 1000 > 1){
 			var x = candyCount / 1000;
 			x = Math.floor(x * 100) / 100;
 			x = x.toFixed(2);
