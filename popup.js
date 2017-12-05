@@ -245,7 +245,7 @@ function candyBuy(c, thing){
                         setCookie("cc", candyCount, 30);
                         log_content = "";
                     }
-                } 
+                 
                 else{
                     document.getElementById('error').innerHTML = "You do not have enough candy for a(n) " + thing + ". Get some more!";
                 }  
