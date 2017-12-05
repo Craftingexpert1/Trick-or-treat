@@ -30,28 +30,28 @@ snackbar.show(dataObj);
         if (cc != "") {
            var x = Number(cc);
            var hmc = document.getElementById("hmc");
-           if (candyCount / 1000 < 1){
+           	if (candyCount < 1000){
 			hmc.innerHTML = "How much candy you have:" + candyCount;	
 		}
-		if (candyCount / 1000 > 1){
+		if (candyCount >= 1000){
 			var x = candyCount / 1000;
 			x = Math.floor(x * 100) / 100;
 			x = x.toFixed(2);
 			hmc.innerHTML = "How much candy you have:" + x + "K";
 		}
-		if (candyCount / 1000000 >= 1){
+		if (candyCount >= 1000000){
 			var x = candyCount / 1000000;
 			x = Math.floor(x * 100) / 100;
 			x = x.toFixed(2);
 			hmc.innerHTML = "How much candy you have:" + x + "M";
 		}
-		if (candyCount / 1000000000 >= 1){
+		if (candyCount >= 1000000000){
 			var x = candyCount / 1000000000;
 			x = Math.floor(x * 100) / 100;
 			x = x.toFixed(2);
 			hmc.innerHTML = "How much candy you have:" + x + "B";
 		}
-	if (candyCount / 1000000000000 >= 1){
+		if (candyCount >= 1000000000000){
 			var x = candyCount / 1000000000000;
 			x = Math.floor(x * 100) / 100;
 			x = x.toFixed(2);
@@ -91,28 +91,28 @@ function tot(){
                 candyCount = candyCount + 1 * multiplier;
                 multiplier_text.innerHTML = "Multiplier:" + multiplier;
                 var hmc = document.getElementById("hmc");
-		if (candyCount / 1000 < 1){
+		if (candyCount < 1000){
 			hmc.innerHTML = "How much candy you have:" + candyCount;	
 		}
-		if (candyCount / 1000 > 1){
+		if (candyCount >= 1000){
 			var x = candyCount / 1000;
 			x = Math.floor(x * 100) / 100;
 			x = x.toFixed(2);
 			hmc.innerHTML = "How much candy you have:" + x + "K";
 		}
-		if (candyCount / 1000000 >= 1){
+		if (candyCount >= 1000000){
 			var x = candyCount / 1000000;
 			x = Math.floor(x * 100) / 100;
 			x = x.toFixed(2);
 			hmc.innerHTML = "How much candy you have:" + x + "M";
 		}
-		if (candyCount / 1000000000 >= 1){
+		if (candyCount >= 1000000000){
 			var x = candyCount / 1000000000;
 			x = Math.floor(x * 100) / 100;
 			x = x.toFixed(2);
 			hmc.innerHTML = "How much candy you have:" + x + "B";
 		}
-	if (candyCount / 1000000000000 >= 1){
+		if (candyCount >= 1000000000000){
 			var x = candyCount / 1000000000000;
 			x = Math.floor(x * 100) / 100;
 			x = x.toFixed(2);
@@ -162,28 +162,28 @@ function candyBuyUniverse() {
   candyBuy(10000000000000, "universe");
 }
 function candyBuy(c, thing){ 
-                if (candyCount / 1000 < 1){
+                if (candyCount < 1000){
 			hmc.innerHTML = "How much candy you have:" + candyCount;	
 		}
-		if (candyCount / 1000 >= 1){
+		if (candyCount >= 1000){
 			var x = candyCount / 1000;
 			x = Math.floor(x * 100) / 100;
 			x = x.toFixed(2);
 			hmc.innerHTML = "How much candy you have:" + x + "K";
 		}
-		if (candyCount / 1000000 >= 1){
+		if (candyCount >= 1000000){
 			var x = candyCount / 1000000;
 			x = Math.floor(x * 100) / 100;
 			x = x.toFixed(2);
 			hmc.innerHTML = "How much candy you have:" + x + "M";
 		}
-		if (candyCount / 1000000000 >= 1){
+		if (candyCount >= 1000000000){
 			var x = candyCount / 1000000000;
 			x = Math.floor(x * 100) / 100;
 			x = x.toFixed(2);
 			hmc.innerHTML = "How much candy you have:" + x + "B";
 		}
-	if (candyCount / 1000000000000 >= 1){
+		if (candyCount >= 1000000000000){
 			var x = candyCount / 1000000000000;
 			x = Math.floor(x * 100) / 100;
 			x = x.toFixed(2);
@@ -252,28 +252,28 @@ function candyBuy(c, thing){
             };
             
             function job() {
-                if (candyCount / 1000 < 1){
+                if (candyCount < 1000){
 			hmc.innerHTML = "How much candy you have:" + candyCount;	
 		}
-		if (candyCount / 1000 >= 1){
+		if (candyCount >= 1000){
 			var x = candyCount / 1000;
 			x = Math.floor(x * 100) / 100;
 			x = x.toFixed(2);
 			hmc.innerHTML = "How much candy you have:" + x + "K";
 		}
-		if (candyCount / 1000000 >= 1){
+		if (candyCount >= 1000000){
 			var x = candyCount / 1000000;
 			x = Math.floor(x * 100) / 100;
 			x = x.toFixed(2);
 			hmc.innerHTML = "How much candy you have:" + x + "M";
 		}
-		if (candyCount / 1000000000 >= 1){
+		if (candyCount >= 1000000000){
 			var x = candyCount / 1000000000;
 			x = Math.floor(x * 100) / 100;
 			x = x.toFixed(2);
 			hmc.innerHTML = "How much candy you have:" + x + "B";
 		}
-	if (candyCount / 1000000000000 >= 1){
+		if (candyCount >= 1000000000000){
 			var x = candyCount / 1000000000000;
 			x = Math.floor(x * 100) / 100;
 			x = x.toFixed(2);
