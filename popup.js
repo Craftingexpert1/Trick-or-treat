@@ -85,7 +85,7 @@ var hmc = document.querySelector("#hmc");
             var multiplier_text = document.getElementById("multiplier");
             multiplier_text.innerHTML = "Multiplier:" + multiplier;
 
-document.getElementById("totbutton").addEventListener("click", tot()); 
+document.getElementById("totbutton").addEventListener("click", tot); 
 function tot(){
                 var candy = document.getElementById("candy");
                 candy.innerHTML = "You get: " + candies[Math.floor(Math.random() * 5)];
