@@ -253,6 +253,7 @@ function candyBuy(c, thing){
             };
             
             function job() {
+		candyCount = candyCount + 1 * multiplier;
                 if (candyCount < 1000){
 			hmc.innerHTML = "How much candy you have:" + candyCount;	
 		}
