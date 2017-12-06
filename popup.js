@@ -161,6 +161,8 @@ function candyBuyUniverse() {
   candyBuy(10000000000000, "universe");
 }
 function candyBuy(c, thing){ 
+		if (candyCount >= c) {
+		
                 if (candyCount < 1000){
 			hmc.innerHTML = "How much candy you have:" + candyCount;	
 		}
@@ -244,7 +246,7 @@ function candyBuy(c, thing){
                         setCookie("cc", candyCount, 30);
                         log_content = "";
                     }
-                 
+		}
                 else{
                     document.getElementById('error').innerHTML = "You do not have enough candy for a(n) " + thing + ". Get some more!";
                 }  
