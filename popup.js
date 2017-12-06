@@ -26,10 +26,11 @@ snackbar.show(dataObj);
             var lastKeys = [];
             var l = 0;
             var candyCount = 0;
+var hmc = document.querySelector("#hmc");
 	var cc = getCookie("cc");
         if (cc != "") {
            var x = Number(cc);
-           var hmc = document.getElementById("hmc");
+		candyCount = x;
            	if (candyCount < 1000){
 			hmc.innerHTML = "How much candy you have:" + candyCount;	
 		}
@@ -89,8 +90,6 @@ function tot(){
                 var candy = document.getElementById("candy");
                 candy.innerHTML = "You get: " + candies[Math.floor(Math.random() * 5)];
                 candyCount = candyCount + 1 * multiplier;
-                multiplier_text.innerHTML = "Multiplier:" + multiplier;
-                var hmc = document.getElementById("hmc");
 		if (candyCount < 1000){
 			hmc.innerHTML = "How much candy you have:" + candyCount;	
 		}
