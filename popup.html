@@ -95,9 +95,33 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
             .mdc-dialog__footer__button {
               color:#ff5722!important;
             }
+            #splash {
+                z-index: 99;
+                height: 100%;
+                width: 100%;
+                margin: 0;
+                padding: 0; 
+                animation-name: splashanim;
+                animation-duration: 1.8sec;
+            }
+            @keyframes splashanim {
+                0% {
+                    background: black;
+                }
+                25% {
+                    background: url(/2KSplashLogo.png);
+                }
+                85% {
+                    background: url(/2KSplashLogo.png);
+                }
+                100% {
+                    display:none;
+                }
+            }
         </style>
     </head>
     <body>
+        <div id="splash"></div>
 <aside id="my-mdc-dialog"
   class="mdc-dialog">
   <div class="mdc-dialog__surface" style="background:white!important;color:black!important;">
