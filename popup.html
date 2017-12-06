@@ -99,25 +99,33 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
             }
             #splash {
                 z-index: 9;
-                height: 485px!important;
+                height: 100%!important;
                 width: 100%!important;
-                margin: 0;
-                padding: 0; 
                 animation-name: splashanim;
-                animation-duration: 5s;
+                animation-duration: 2s;
+                position:absolute;
+                top:0;
+                left:-100%;
             }
             @keyframes splashanim {
                 0% {
-                    background: black;
+                    left:0;
+                    display:none;
                 }
-                25% {
-                    background: url(/2KSplashLogo.png);
+                50% {
+                    background: url(/2KSplashLogo.png) center;
+                    background-size:cover;
                 }
                 85% {
-                    background: url(/2KSplashLogo.png);
+                    background: url(/2KSplashLogo.png) center;
+                    background-size:cover;
                 }
-                100% {
+                99% {
                     display:none;
+                    left:0;
+                } 
+                100% {
+                    left:-100%;
                 }
             }
         </style>
@@ -208,4 +216,3 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
       <script src="popup.js"></script>
     </body>
 </html>
-
