@@ -162,7 +162,7 @@ function candyBuyUniverse() {
 }
 function candyBuy(c, thing){ 
 		if (candyCount >= c) {
-		
+		 	candyCount = candyCount - c;
                 if (candyCount < 1000){
 			hmc.innerHTML = "How much candy you have:" + candyCount;	
 		}
