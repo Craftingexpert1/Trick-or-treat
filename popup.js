@@ -23,15 +23,6 @@ snackbar.show(dataObj);
             var stages = document.getElementById("stages");
             var log = document.getElementById("log");
 	    var splashScreen = document.querySelector("#splash");
-	    var counter = 0;
-	    var splashInterval = setInterval(splashFunc(), 2000);
-	    function splashFunc() {
-		counter = counter + 1;
-		if (counter === 2) {
-			splashScreen.style.display = "none";
-			clearInterval(splashInterval);
-		}
-	    };
             var log_content = "";
             var multiplier = 1;
             var lastKeys = [];
