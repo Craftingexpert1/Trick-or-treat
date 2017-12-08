@@ -103,39 +103,29 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
                 width: 100%!important;
                 animation-name: splashanim;
                 animation-duration: 2s;
+                animation-timing-function: ease-in;
                 position:absolute;
                 top:0;
                 left:0;
             }
             @keyframes splashanim {
                 0% {
-                    display:block;
                     background-color:black;
                     background-position:center;
-                    left:0!important;
                 }
                 50% {
                     background: url(/2KSplashLogo.png) center no-repeat;
                     background-color:black;
                     background-size:cover;
-                    display:block;
-                    left:0!important;
                 }
                 85% {
                     background: url(/2KSplashLogo.png) center no-repeat;
                     background-color:black;
                     background-size:cover;
-                    display:block;
-                    left:0!important;
-                }
-                99% {
-                    background-position: center;
-                    z-index: 9;
-                    left:0!important;
                 }
                 100% {
                     background-position: center;
-                    display: none!important;
+                    display:none;
                 }
             }
         </style>
