@@ -28,7 +28,7 @@ snackbar.show(dataObj);
 	    function jk() {
 		counter = counter + 1;
 		if (counter === 2) {
-			splashScreen.style.display = none;
+			splashScreen.style.display = "none";
 			clearInterval(splashInterval);
 		}
 	    };
