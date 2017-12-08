@@ -107,7 +107,6 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
                 position:absolute;
                 top:0;
                 left:0;
-                display:none;
             }
             @keyframes splashanim {
                 0% {
@@ -125,9 +124,13 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
                     background-color:black;
                     background-size:cover;
                 }
+                99% {
+                    background-position: center;
+                    display: none!important;
+                }
                 100% {
                     background-position: center;
-                    display:none!important;
+                    display: none!important;
                 }
             }
         </style>
