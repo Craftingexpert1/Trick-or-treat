@@ -22,7 +22,6 @@ snackbar.show(dataObj);
             var hmc = document.getElementById("hmc");
             var stages = document.getElementById("stages");
             var log = document.getElementById("log");
-	    var splashScreen = document.querySelector("#splash");
             var log_content = "";
             var multiplier = 1;
             var lastKeys = [];
