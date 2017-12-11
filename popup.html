@@ -103,29 +103,32 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
                 width: 100%!important;
                 animation-name: splashanim;
                 animation-duration: 2s;
-                animation-timing-function: ease-in;
                 position:absolute;
                 top:0;
-                left:0;
+                left:-100%;
             }
             @keyframes splashanim {
                 0% {
-                    background-color:black;
+                    left:0;
+                    display:none;
                     background-position:center;
                 }
                 50% {
-                    background: url(/2KSplashLogo.png) center no-repeat;
-                    background-color:black;
+                    background: url(/2KSplashLogo.png) center;
                     background-size:cover;
                 }
                 85% {
-                    background: url(/2KSplashLogo.png) center no-repeat;
-                    background-color:black;
+                    background: url(/2KSplashLogo.png) center;
                     background-size:cover;
                 }
-                100% {
-                    background-position: center;
+                99% {
                     display:none;
+                    left:0;
+                    background-position:center;
+                } 
+                100% {
+                    left:-100%;
+                    background-position:center;
                 }
             }
         </style>
@@ -165,12 +168,12 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
       <div id="game">
         <header class="mdc-toolbar mdc-toolbar--waterfall mdc-toolbar--fixed" style="z-index:3">
           <div class="mdc-toolbar__row">
-            <section class="mdc-toolbar__section menu mdc-toolbar__section--align-start">
-              <a href="#" class="material-icons mdc-toolbar__menu-icon"><i class="material-icons">menu</i></a>
+            <section class="mdc-toolbar__section mdc-toolbar__section--align-start">
+              <a href="#" class="material-icons menu mdc-toolbar__menu-icon"><i class="material-icons">menu</i></a>
               <span class="mdc-toolbar__title" id="welcome">Welcome</span>
             </section>
             <section class="mdc-toolbar__section mdc-toolbar__section--align-end">
-              <button class="mdc-button" id="totbutton" data-mdc-auto-init="MDCRipple">
+              <button class="mdc-button mdc-button--unelevated mdc-ripple-surface--primary" style="background:linear-gradient(45deg, #ff5722, #ffc107);" id="totbutton" data-mdc-auto-init="MDCRipple">
                  Trick or treat! Click Me!
               </button>
             </section>
@@ -205,7 +208,7 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
             <h3 class="mdc-typography--subheading2">Inventory</h2>
             <p class="mdc-typograghy" id="log"></h3>
             <p id="name-side"></p>
-            <p>Trick or Treat: Go trick or treating! Made by #2Kinc. We are awesome.<br>Copyright &copy; 2017 By 2K inc. No reproduction of this code in any means without giving 100% credit is illegal.</p>
+            <p>Trick or Treat: Go trick or treating! Made by #2Kinc. We are awesome.<br>Copyright &copy; 2017 By 2K inc. Reproduction of this code in any means is illegal.</p>
           </nav>
        </nav>
      </aside>
