@@ -27,8 +27,57 @@ snackbar.show(dataObj);
             var lastKeys = [];
             var l = 0;
             var candyCount = 0;
+		var buyUnlocked = [];
 var hmc = document.querySelector("#hmc");
 	var cc = getCookie("cc");
+	var uB = getCookie("multiplier");
+	function displayBlock(what) {
+		document.querySelector(what).style.display = "block";
+	}
+	if (uB != "") {
+           if (ub.length === 1) {
+	   	displayBlock("#computer-button");
+	   }
+	if (ub.length === 2) {
+	   	displayBlock("#computer-button");
+		displayBlock("#car-button");
+	   }
+	if (ub.length === 3) {
+	   	displayBlock("#computer-button");
+		displayBlock("#car-button");
+		displayBlock("#house-button");
+	   }
+		if (ub.length === 4) {
+	   	displayBlock("#computer-button");
+		displayBlock("#car-button");
+		displayBlock("#house-button");
+		displayBlock("#mansion-button");
+	   }
+	if (ub.length === 5) {
+	   	displayBlock("#computer-button");
+		displayBlock("#car-button");
+		displayBlock("#house-button");
+		displayBlock("#mansion-button");
+		displayBlock("#earth-button");
+	   }
+		if (ub.length === 6) {
+	   	displayBlock("#computer-button");
+		displayBlock("#car-button");
+		displayBlock("#house-button");
+		displayBlock("#mansion-button");
+		displayBlock("#earth-button");
+		displayBlock("#galaxy-button");
+	   }
+		if (ub.length === 7) {
+	   	displayBlock("#computer-button");
+		displayBlock("#car-button");
+		displayBlock("#house-button");
+		displayBlock("#mansion-button");
+		displayBlock("#earth-button");
+		displayBlock("#galaxy-button");
+		displayBlock("#universe-button");
+	   }
+        }
         if (cc != "") {
            var x = Number(cc);
 		candyCount = x;
@@ -209,36 +258,43 @@ function candyBuy(c, thing){
                         log.innerHTML = log.innerHTML + thing + ", ";
                         log_content = log_content + thing + ", ";
                         setCookie("log", log_content, 30);
+			uh[0] = 0;
                     }
                     if (thing === 'computer') {
                         document.getElementById("car_button").style.display = "block";
                         log.innerHTML = log.innerHTML + thing + ", ";
                         log_content = log_content + thing + ",";
+			uh[1] = 0;
                     }
                     if (thing === 'car') {
                         document.getElementById("house_button").style.display = "block";
                         log.innerHTML = log.innerHTML + thing + ", ";
                         log_content = log_content + thing + ",";
+			uh[2] = 0;
                     }
                     if (thing === 'house') {
                         document.getElementById("mansion_button").style.display = "block";
                         log.innerHTML = log.innerHTML + thing + ", ";
                         log_content = log_content + thing + ",";
+    			uh[3] = 0;
                     }
                     if (thing === 'mansion') {
                         document.getElementById("earth_button").style.display = "block";
                         log.innerHTML = log.innerHTML + thing + ", ";
                         log_content = log_content + thing + ",";
+			uh[4] = 0;
                     }
                     if (thing === 'earth') {
                         document.getElementById("galaxy_button").style.display = "block";
                         log.innerHTML = log.innerHTML + thing + ", ";
                         log_content = log_content + thing + ",";
+			uh[5] = 0;
                     }
                     if (thing === 'galaxy') {
                         document.getElementById("universe_button").style.display = "block";
                         log.innerHTML = log.innerHTML + thing + ", ";
                         log_content = log_content + thing + ",";
+			uh[6] = 0;
                     }
                     if (thing === 'universe') {
                         document.querySelector("#game").style.display = "none";
@@ -364,4 +420,5 @@ window.onclose = function() {
   setCookie("job", l, 30);
   setCookie("multiplier", multiplier, 30);
   setCookie("log", log_content, 30);
+	setCookie("buyUnlocked", buyUnlocked, 30);
 }
