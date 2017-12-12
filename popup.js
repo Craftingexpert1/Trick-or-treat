@@ -33,46 +33,46 @@ var hmc = document.querySelector("#hmc");
 	var ub = getCookie("multiplier");
 	if (ub != "") {
            if (ub.length === 1) {
-	   	document.querySelector("#computer-button").style.display = "block";
+	   	document.querySelector("#computer_button").style.display = "block";
 	   }
 	if (ub.length === 2) {
-	   	document.querySelector("#computer-button").style.display = "block";
-		document.querySelector("#car-button").style.display = "block";
+	   	document.querySelector("#computer_button").style.display = "block";
+		document.querySelector("#car_button").style.display = "block";
 	   }
 	if (ub.length === 3) {
-	   	document.querySelector("#computer-button").style.display = "block";
-		document.querySelector("#car-button").style.display = "block";
-		document.querySelector("#house-button").style.display = "block";
+	   	document.querySelector("#computer_button").style.display = "block";
+		document.querySelector("#car_button").style.display = "block";
+		document.querySelector("#house_button").style.display = "block";
 	   }
 		if (ub.length === 4) {
-	   	document.querySelector("#computer-button").style.display = "block";
-		document.querySelector("#car-button").style.display = "block";
-		document.querySelector("#house-button").style.display = "block";
-		document.querySelector("#mansion-button").style.display = "block";
+	   	document.querySelector("#computer_button").style.display = "block";
+		document.querySelector("#car_button").style.display = "block";
+		document.querySelector("#house_button").style.display = "block";
+		document.querySelector("#mansion_button").style.display = "block";
 	   }
 	if (ub.length === 5) {
-	   	document.querySelector("#computer-button").style.display = "block";
-		document.querySelector("#car-button").style.display = "block";
-		document.querySelector("#house-button").style.display = "block";
-		document.querySelector("#mansion-button").style.display = "block";
-		document.querySelector("#earth-button").style.display = "block";
+	   	document.querySelector("#computer_button").style.display = "block";
+		document.querySelector("#car_button").style.display = "block";
+		document.querySelector("#house_button").style.display = "block";
+		document.querySelector("#mansion_button").style.display = "block";
+		document.querySelector("#earth_button").style.display = "block";
 	   }
 		if (ub.length === 6) {
-	   	document.querySelector("#computer-button").style.display = "block";
-		document.querySelector("#car-button").style.display = "block";
-		document.querySelector("#house-button").style.display = "block";
-		document.querySelector("#mansion-button").style.display = "block";
-		document.querySelector("#earth-button").style.display = "block";
-		document.querySelector("#galaxy-button").style.display = "block";
+	   	document.querySelector("#computer_button").style.display = "block";
+		document.querySelector("#car_button").style.display = "block";
+		document.querySelector("#house_button").style.display = "block";
+		document.querySelector("#mansion_button").style.display = "block";
+		document.querySelector("#earth_button").style.display = "block";
+		document.querySelector("#galaxy_button").style.display = "block";
 	   }
 		if (ub.length === 7) {
-	   	document.querySelector("#computer-button").style.display = "block";
-		document.querySelector("#car-button").style.display = "block";
-		document.querySelector("#house-button").style.display = "block";
-		document.querySelector("#mansion-button").style.display = "block";
-		document.querySelector("#earth-button").style.display = "block";
-		document.querySelector("#galaxy-button").style.display = "block";
-		document.querySelector("#universe-button").style.display = "block";
+	   	document.querySelector("#computer_button").style.display = "block";
+		document.querySelector("#car_button").style.display = "block";
+		document.querySelector("#house_button").style.display = "block";
+		document.querySelector("#mansion_button").style.display = "block";
+		document.querySelector("#earth_button").style.display = "block";
+		document.querySelector("#galaxy_button").style.display = "block";
+		document.querySelector("#universe_button").style.display = "block";
 	   }
         }
         if (cc != "") {
