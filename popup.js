@@ -31,51 +31,48 @@ snackbar.show(dataObj);
 var hmc = document.querySelector("#hmc");
 	var cc = getCookie("cc");
 	var ub = getCookie("multiplier");
-	function displayBlock(what) {
-		document.querySelector(what).style.display = "block";
-	}
 	if (ub != "") {
            if (ub.length === 1) {
-	   	displayBlock("#computer-button");
+	   	document.querySelector("#computer-button").style.display = "block";
 	   }
 	if (ub.length === 2) {
-	   	displayBlock("#computer-button");
-		displayBlock("#car-button");
+	   	document.querySelector("#computer-button").style.display = "block";
+		document.querySelector("#car-button").style.display = "block";
 	   }
 	if (ub.length === 3) {
-	   	displayBlock("#computer-button");
-		displayBlock("#car-button");
-		displayBlock("#house-button");
+	   	document.querySelector("#computer-button").style.display = "block";
+		document.querySelector("#car-button").style.display = "block";
+		document.querySelector("#house-button").style.display = "block";
 	   }
 		if (ub.length === 4) {
-	   	displayBlock("#computer-button");
-		displayBlock("#car-button");
-		displayBlock("#house-button");
-		displayBlock("#mansion-button");
+	   	document.querySelector("#computer-button").style.display = "block";
+		document.querySelector("#car-button").style.display = "block";
+		document.querySelector("#house-button").style.display = "block";
+		document.querySelector("#mansion-button").style.display = "block";
 	   }
 	if (ub.length === 5) {
-	   	displayBlock("#computer-button");
-		displayBlock("#car-button");
-		displayBlock("#house-button");
-		displayBlock("#mansion-button");
-		displayBlock("#earth-button");
+	   	document.querySelector("#computer-button").style.display = "block";
+		document.querySelector("#car-button").style.display = "block";
+		document.querySelector("#house-button").style.display = "block";
+		document.querySelector("#mansion-button").style.display = "block";
+		document.querySelector("#earth-button").style.display = "block";
 	   }
 		if (ub.length === 6) {
-	   	displayBlock("#computer-button");
-		displayBlock("#car-button");
-		displayBlock("#house-button");
-		displayBlock("#mansion-button");
-		displayBlock("#earth-button");
-		displayBlock("#galaxy-button");
+	   	document.querySelector("#computer-button").style.display = "block";
+		document.querySelector("#car-button").style.display = "block";
+		document.querySelector("#house-button").style.display = "block";
+		document.querySelector("#mansion-button").style.display = "block";
+		document.querySelector("#earth-button").style.display = "block";
+		document.querySelector("#galaxy-button").style.display = "block";
 	   }
 		if (ub.length === 7) {
-	   	displayBlock("#computer-button");
-		displayBlock("#car-button");
-		displayBlock("#house-button");
-		displayBlock("#mansion-button");
-		displayBlock("#earth-button");
-		displayBlock("#galaxy-button");
-		displayBlock("#universe-button");
+	   	document.querySelector("#computer-button").style.display = "block";
+		document.querySelector("#car-button").style.display = "block";
+		document.querySelector("#house-button").style.display = "block";
+		document.querySelector("#mansion-button").style.display = "block";
+		document.querySelector("#earth-button").style.display = "block";
+		document.querySelector("#galaxy-button").style.display = "block";
+		document.querySelector("#universe-button").style.display = "block";
 	   }
         }
         if (cc != "") {
