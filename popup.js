@@ -30,11 +30,11 @@ snackbar.show(dataObj);
 		var buyUnlocked = [];
 var hmc = document.querySelector("#hmc");
 	var cc = getCookie("cc");
-	var uB = getCookie("multiplier");
+	var ub = getCookie("multiplier");
 	function displayBlock(what) {
 		document.querySelector(what).style.display = "block";
 	}
-	if (uB != "") {
+	if (ub != "") {
            if (ub.length === 1) {
 	   	displayBlock("#computer-button");
 	   }
