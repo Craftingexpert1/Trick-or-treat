@@ -7,9 +7,10 @@
   const snackbar = new mdc.snackbar.MDCSnackbar(document.querySelector('.mdc-snackbar'));
   const dataObj = {
     message: "This extension uses cookies to save your progress!",
-    actionText: 'OK',
+    actionText: 'Got it',
+    timeout: 5000;
     actionHandler: function () {
-      console.log('OK!');
+      console.log('Got it!');
     }
   };
   mdc.textField.MDCTextField.attachTo(document.querySelector('.mdc-text-field'));
