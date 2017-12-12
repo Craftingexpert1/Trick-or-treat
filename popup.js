@@ -8,7 +8,7 @@
   const dataObj = {
     message: "This extension uses cookies to save your progress!",
     actionText: 'Got it',
-    timeout: 5000;
+    timeout: 5000,
     actionHandler: function () {
       console.log('Got it!');
     }
