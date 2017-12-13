@@ -300,6 +300,14 @@ function candyBuy(c, thing){
                         candyCount = 0;
                         setCookie("cc", candyCount, 30);
                         log_content = "";
+			document.querySelector("#computer_button").style.display = "none";
+			document.querySelector("#car_button").style.display = "none";
+			document.querySelector("#house_button").style.display = "none";
+			document.querySelector("#mansion_button").style.display = "none";
+			document.querySelector("#earth_button").style.display = "none";
+			document.querySelector("#galaxy_button").style.display = "none";
+			document.querySelector("#universe_button").style.display = "none";
+			setCookie("buyUnlocked", buyUnlocked, 30);
                     }
 		}
                 else{
