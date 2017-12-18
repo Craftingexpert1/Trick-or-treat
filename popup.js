@@ -34,7 +34,7 @@ var hmc = document.querySelector("#hmc");
 var cc = getCookie("cc");
 var bu = getCookie("buyUnlocked");
 if (bu && bu.length) {
-    bu = bu.split(";");
+    bu = bu.split(" ");
 }
 else {
     bu = [];
@@ -394,7 +394,7 @@ function checkCookie() {
 }
 
 var cls = function () {
-    setCookie("buyUnlocked", ub.join(";"), 30);
+    setCookie("buyUnlocked", ub.join(" "), 30);
     setCookie("cc", candyCount, 30);
     setCookie("job", l, 30);
     setCookie("multiplier", multiplier, 30);
