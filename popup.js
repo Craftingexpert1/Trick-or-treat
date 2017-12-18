@@ -393,10 +393,12 @@ function checkCookie() {
     }
 }
 
-window.onclose = function () {
+var cls = function () {
     setCookie("buyUnlocked", ub.join(";"), 30);
     setCookie("cc", candyCount, 30);
     setCookie("job", l, 30);
     setCookie("multiplier", multiplier, 30);
     setCookie("log", log_content, 30);
-}
+};
+
+window.onclose = cls;
