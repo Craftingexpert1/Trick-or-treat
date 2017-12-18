@@ -296,7 +296,7 @@ function job() {
         var y = candyCount / 1000;
         y = Math.floor(y * 100) / 100;
         y = y.toFixed(2);
-        hmc.innerHTML = "How much candy you have:" + y + "K";
+        hmc.innerHTML = "How much candy you have: " + y + "K";
     }
     if (candyCount >= 1000000) {
         var y = candyCount / 1000000;
