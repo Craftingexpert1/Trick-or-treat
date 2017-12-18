@@ -426,5 +426,5 @@ window.onclose = function() {
   setCookie("job", l, 30);
   setCookie("multiplier", multiplier, 30);
   setCookie("log", log_content, 30);
-	setCookie("buyUnlocked", buyUnlocked, 30);
+	setCookie("buyUnlocked", ub, 30);
 }
