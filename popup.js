@@ -18,7 +18,7 @@ mdc.ripple.MDCRipple.attachTo(document.querySelector('#totbutton'));
 
 snackbar.show(dataObj);
 //regular stuff
-//my comment here
+//my comment here, and another new comment
 var candy = document.getElementById("candy");
 var candies = ["Snickers(stop that, will you?)", "Reese's", "Milky Way(the chocolate, not  the galaxy)", "Three Musketeers(the candy though)", "Kit Kat"];
 var hmc = document.getElementById("hmc");
