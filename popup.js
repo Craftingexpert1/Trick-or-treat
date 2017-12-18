@@ -28,37 +28,37 @@ snackbar.show(dataObj);
             var lastKeys = [];
             var l = 0;
             var candyCount = 0;
-		var buyUnlocked = [];
+		var ub = [];
 var hmc = document.querySelector("#hmc");
 	var cc = getCookie("cc");
-	var ub = getCookie("multiplier");
-	if (ub != "") {
+	var bu = getCookie("buyUnlocked");
+	if (bu != "") {
            if (ub.length === 1) {
 	   	document.querySelector("#computer_button").style.display = "block";
 	   }
-	if (ub.length === 2) {
+	if (bu.length === 2) {
 	   	document.querySelector("#computer_button").style.display = "block";
 		document.querySelector("#car_button").style.display = "block";
 	   }
-	if (ub.length === 3) {
+	if (bu.length === 3) {
 	   	document.querySelector("#computer_button").style.display = "block";
 		document.querySelector("#car_button").style.display = "block";
 		document.querySelector("#house_button").style.display = "block";
 	   }
-		if (ub.length === 4) {
+		if (bu.length === 4) {
 	   	document.querySelector("#computer_button").style.display = "block";
 		document.querySelector("#car_button").style.display = "block";
 		document.querySelector("#house_button").style.display = "block";
 		document.querySelector("#mansion_button").style.display = "block";
 	   }
-	if (ub.length === 5) {
+	if (bu.length === 5) {
 	   	document.querySelector("#computer_button").style.display = "block";
 		document.querySelector("#car_button").style.display = "block";
 		document.querySelector("#house_button").style.display = "block";
 		document.querySelector("#mansion_button").style.display = "block";
 		document.querySelector("#earth_button").style.display = "block";
 	   }
-		if (ub.length === 6) {
+		if (bu.length === 6) {
 	   	document.querySelector("#computer_button").style.display = "block";
 		document.querySelector("#car_button").style.display = "block";
 		document.querySelector("#house_button").style.display = "block";
@@ -66,7 +66,7 @@ var hmc = document.querySelector("#hmc");
 		document.querySelector("#earth_button").style.display = "block";
 		document.querySelector("#galaxy_button").style.display = "block";
 	   }
-		if (ub.length === 7) {
+		if (bu.length === 7) {
 	   	document.querySelector("#computer_button").style.display = "block";
 		document.querySelector("#car_button").style.display = "block";
 		document.querySelector("#house_button").style.display = "block";
