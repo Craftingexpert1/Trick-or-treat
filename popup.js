@@ -23,7 +23,7 @@ snackbar.show(dataObj);
             var hmc = document.getElementById("hmc");
             var stages = document.getElementById("stages");
             var log = document.getElementById("log");
-            var log_content = "";
+            var log_content;
             var multiplier = 1;
             var lastKeys = [];
             var l = 0;
@@ -256,49 +256,50 @@ function candyBuy(c, thing){
                         log.innerHTML = log.innerHTML + thing + ", ";
                         log_content = log_content + thing + ", ";
                         setCookie("log", log_content, 30);
-			uh[0] = 0;
+			ub[0] = 0;
                     }
                     if (thing === 'computer') {
                         document.getElementById("car_button").style.display = "block";
                         log.innerHTML = log.innerHTML + thing + ", ";
                         log_content = log_content + thing + ",";
-			uh[1] = 0;
+			ub[1] = 0;
                     }
                     if (thing === 'car') {
                         document.getElementById("house_button").style.display = "block";
                         log.innerHTML = log.innerHTML + thing + ", ";
                         log_content = log_content + thing + ",";
-			uh[2] = 0;
+			ub[2] = 0;
                     }
                     if (thing === 'house') {
                         document.getElementById("mansion_button").style.display = "block";
                         log.innerHTML = log.innerHTML + thing + ", ";
                         log_content = log_content + thing + ",";
-    			uh[3] = 0;
+    			ub[3] = 0;
                     }
                     if (thing === 'mansion') {
                         document.getElementById("earth_button").style.display = "block";
                         log.innerHTML = log.innerHTML + thing + ", ";
                         log_content = log_content + thing + ",";
-			uh[4] = 0;
+			ub[4] = 0;
                     }
                     if (thing === 'earth') {
                         document.getElementById("galaxy_button").style.display = "block";
                         log.innerHTML = log.innerHTML + thing + ", ";
                         log_content = log_content + thing + ",";
-			uh[5] = 0;
+			ub[5] = 0;
                     }
                     if (thing === 'galaxy') {
                         document.getElementById("universe_button").style.display = "block";
                         log.innerHTML = log.innerHTML + thing + ", ";
                         log_content = log_content + thing + ",";
-			uh[6] = 0;
+			ub[6] = 0;
                     }
                     if (thing === 'universe') {
                         document.querySelector("#game").style.display = "none";
                         document.querySelector("#beat_game").style.display = "block";
                         candyCount = 0;
-                        setCookie("cc", candyCount, 30);
+			l = 0;
+			multiplier = 1;
                         log_content = "";
 			document.querySelector("#computer_button").style.display = "none";
 			document.querySelector("#car_button").style.display = "none";
@@ -307,7 +308,6 @@ function candyBuy(c, thing){
 			document.querySelector("#earth_button").style.display = "none";
 			document.querySelector("#galaxy_button").style.display = "none";
 			document.querySelector("#universe_button").style.display = "none";
-			setCookie("buyUnlocked", buyUnlocked, 30);
                     }
 		}
                 else{
