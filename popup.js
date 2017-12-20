@@ -29,17 +29,18 @@ var multiplier = 1;
 var lastKeys = [];
 var l = 0;
 var candyCount = 0;
-var ub = [];
+var ub = "";
 var hmc = document.querySelector("#hmc");
+var cpsText = document.querySelector("#cps");
+var cps = multiplier * l;
+cpsText.innerHTML = "Candy Per Second: " + cps;
+String.prototype.r=function(index, replacement) {
+    return this.substr(0, index) + replacement+ this.substr(index + replacement.length);
+}
 var cc = getCookie("cc");
 var bu = getCookie("buyUnlocked");
-if (bu && bu.length) {
-    bu = bu.split(" ");
-}
-else {
-    bu = [];
-}
-if (bu != []) {
+if (bu != "") {
+    ub = bu;
     document.querySelector("#computer_button").style.display = bu.length > 0 ? "block" : "none";
     document.querySelector("#car_button").style.display = bu.length > 1 ? "block" : "none";
     document.querySelector("#house_button").style.display = bu.length > 2 ? "block" : "none";
@@ -86,13 +87,13 @@ if (mult_cookie != "") {
     multiplier.innerHTML = "Multiplier:" + clost;
     multiplier = clost;
 }
-/*var log_cookie = getCookie("log");
+var log_cookie = getCookie("log");
     if (log_cookie != "") {
-      var duck = log_content;
+      var duck = log_cookie.substring(9);
       var log = document.querySelector("#log");
-      log.innerHTML = log_cookie;
-      log_content = duck
-    }*/
+      log.innerHTML = duck;
+      log_content = duck;
+}
 var jobcookie = getCookie("job");
 if (jobcookie != "") {
     var jl = Number(jobcookie);
@@ -104,7 +105,9 @@ if (jobcookie != "") {
 }
 var multiplier_text = document.getElementById("multiplier");
 multiplier_text.innerHTML = "Multiplier:" + multiplier;
-
+var cpsText = document.querySelector("#cps");
+var cps = multiplier * l;
+cpsText.innerHTML = "Candy Per Second: " + cps;
 document.getElementById("totbutton").addEventListener("click", tot);
 function tot() {
     var candy = document.getElementById("candy");
@@ -217,54 +220,65 @@ function candyBuy(c, thing) {
             l = l + 1;
             document.getElementById('jobs').innerHTML = "Jobs: " + l;
             setCookie("job", l, 30);
+            cps = multiplier * l;
+            cpsText.innerHTML = "Candy Per Second: " + cps;
         }
         if (thing === 'costume switch') {
             multiplier = multiplier + 1;
             setCookie("multiplier", multiplier, 30);
             multiplier_text.innerHTML = "Multiplier:" + multiplier;
+            cps = multiplier * l;
+            cpsText.innerHTML = "Candy Per Second: " + cps;
         }
         if (thing === 'iPod') {
             document.getElementById("computer_button").style.display = "block";
             log.innerHTML = log.innerHTML + thing + ", ";
             log_content = log_content + thing + ", ";
             setCookie("log", log_content, 30);
-            ub[0] = "Y";
+            ub = ub.r(0,"Y");
+            setCookie("buyUnlocked", ub, 30);
         }
         if (thing === 'computer') {
             document.getElementById("car_button").style.display = "block";
             log.innerHTML = log.innerHTML + thing + ", ";
             log_content = log_content + thing + ",";
-            ub[1] = "Y";
+            ub = ub.r(1,"Y");
+            setCookie("buyUnlocked", ub, 30);
         }
         if (thing === 'car') {
             document.getElementById("house_button").style.display = "block";
             log.innerHTML = log.innerHTML + thing + ", ";
             log_content = log_content + thing + ",";
-            ub[2] = "Y";
+            ub = ub.r(2,"Y");
+            setCookie("buyUnlocked", ub, 30);
         }
         if (thing === 'house') {
             document.getElementById("mansion_button").style.display = "block";
             log.innerHTML = log.innerHTML + thing + ", ";
             log_content = log_content + thing + ",";
-            ub[3] = "Y";
+            ub = ub.r(3,"Y");
+            setCookie("buyUnlocked", ub, 30);
         }
         if (thing === 'mansion') {
             document.getElementById("earth_button").style.display = "block";
             log.innerHTML = log.innerHTML + thing + ", ";
             log_content = log_content + thing + ",";
-            ub[4] = "Y";
+            ub = ub.r(4,"Y");
+            setCookie("buyUnlocked", ub, 30);
         }
         if (thing === 'earth') {
             document.getElementById("galaxy_button").style.display = "block";
             log.innerHTML = log.innerHTML + thing + ", ";
             log_content = log_content + thing + ",";
-            ub[5] = "Y";
+            ub = ub.r(5,"Y");
+            setCookie("buyUnlocked", ub, 30);
         }
         if (thing === 'galaxy') {
             document.getElementById("universe_button").style.display = "block";
             log.innerHTML = log.innerHTML + thing + ", ";
             log_content = log_content + thing + ",";
-            ub[6] = "Y";
+            ub = ub.r(6,"Y");
+            setCookie("buyUnlocked", ub, 30);
         }
         if (thing === 'universe') {
             document.querySelector("#game").style.display = "none";
@@ -273,13 +287,7 @@ function candyBuy(c, thing) {
             l = 0;
             multiplier = 1;
             log_content = "";
-            document.querySelector("#computer_button").style.display = "none";
-            document.querySelector("#car_button").style.display = "none";
-            document.querySelector("#house_button").style.display = "none";
-            document.querySelector("#mansion_button").style.display = "none";
-            document.querySelector("#earth_button").style.display = "none";
-            document.querySelector("#galaxy_button").style.display = "none";
-            document.querySelector("#universe_button").style.display = "none";
+            ub = "";
         }
     }
     else {
@@ -291,6 +299,7 @@ function job() {
     candyCount = candyCount + 1 * multiplier;
     if (candyCount < 1000) {
         hmc.innerHTML = "How much candy you have: " + candyCount;
+        
     }
     if (candyCount >= 1000) {
         var y = candyCount / 1000;
@@ -394,7 +403,7 @@ function checkCookie() {
 }
 
 var cls = function () {
-    setCookie("buyUnlocked", ub.join(" "), 30);
+    setCookie("buyUnlocked", ub, 30);
     setCookie("cc", candyCount, 30);
     setCookie("job", l, 30);
     setCookie("multiplier", multiplier, 30);
