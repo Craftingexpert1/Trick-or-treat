@@ -378,7 +378,7 @@ if (gcdd != "" && ga != "") {
     }
 } else {
     // Set the date we're counting down to
-    var countDownDate = date + 20000;
+    var countDownDate = date + 3600000 * 3;
     setCookie("giftCDD", countDownDate, 30);
     // Update the count down every 1 second
     var x = setInterval(function () {
@@ -412,22 +412,30 @@ giftTimer.addEventListener("click", function () {
         var selectedGift = null;
         selectedGift = gifts[Math.floor(Math.random() * gifts.length)];
         if (selectedGift == gifts[0]){
-            var given = Math.floor(Math.random() * (candyCount / 1.5));
+            var given = Math.floor(Math.random() * (candyCount / 1.5)) + 20;
             candyCount = candyCount + given;
             document.querySelector("#error").innerHTML = "You got " + given + " candies in your Free Gift!";
         } if (selectedGift == gifts[1]){
-            var given = Math.floor(Math.random() * (l / 1.5));
+            var given = Math.floor(Math.random() * (l / 1.5)) + 20;
             l = l + given;
+            document.getElementById('jobs').innerHTML = "Jobs: " + l;
+            cps = multiplier * l;
+            cpsText.innerHTML = "Candy Per Second: " + cps;
+            setCookie("job", l, 30);
             document.querySelector("#error").innerHTML = "You got " + given + " jobs in your Free Gift!";
         } if (selectedGift == gifts[2]){
-            var given = Math.floor(Math.random() * (multiplier / 1.5));
+            var given = Math.floor(Math.random() * (multiplier / 1.5)) + 20;
             multiplier = multiplier + given;
+            setCookie("multiplier", multiplier, 30);
+            cps = multiplier * l;
+            multiplier_text.innerHTML = "Multiplier:" + multiplier;
+            cpsText.innerHTML = "Candy Per Second: " + cps;
             document.querySelector("#error").innerHTML = "You got +" + given + " multiplier in your Free Gift!";
         }
         setCookie("giftAvailable", giftAvailable, 30);
         date = new Date().getTime();
         // Set the date we're counting down to
-        var countDownDate = date + 20000;
+        var countDownDate = date + 3600000 * 3;
         setCookie("giftCDD", countDownDate, 30);
         // Update the count down every 1 second
         var x = setInterval(function () {
