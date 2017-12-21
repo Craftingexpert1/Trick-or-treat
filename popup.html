@@ -48,6 +48,8 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
       background: url(http://www.freepptbackgrounds.net/wp-content/uploads/2013/12/Xmas-Snows-PPT-Backgrounds-800x600.jpg)
       /*(http://www.pngmart.com/files/3/Halloween-House-Transparent-Background.png)*/
       #ff5722 no-repeat left bottom fixed;
+      padding-right: 16px;
+      padding-top: 64px;
     }
 
     #game {
@@ -67,6 +69,7 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
 
     #totbutton {
       background: transparent!important;
+      color: white!important;
     }
 
     .dialog {
@@ -136,7 +139,9 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
     }
 
     #drawer-background {
-      background:url(http://taochu.trangnhat.net/backgrounds/Christmas/card/christmas_card_19.jpg)/*(http://www.pngmart.com/files/3/Halloween-Bat-PNG-Image.png)*/ no-repeat bottom right; background-size:cover;
+      background: url(http://taochu.trangnhat.net/backgrounds/Christmas/card/christmas_card_19.jpg)/*(http://www.pngmart.com/files/3/Halloween-Bat-PNG-Image.png)*/
+      no-repeat bottom right;
+      background-size: cover;
     }
 
     #gift-timer {
@@ -175,10 +180,10 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
   </div>
   <div id="game">
     <div id="main-game">
-      <header class="mdc-toolbar mdc-toolbar--waterfall mdc-toolbar--fixed" style="color:black!important;z-index:3;background:transparent;">
+      <header class="mdc-toolbar mdc-toolbar--waterfall mdc-toolbar--fixed" style="color:white!important;z-index:3;background:#4CAF50;padding-right:16px!important;">
         <div class="mdc-toolbar__row">
           <section class="mdc-toolbar__section mdc-toolbar__section--align-start">
-            <a href="#" class="material-icons menu mdc-toolbar__menu-icon" style="color:black!important;">
+            <a href="#" class="material-icons menu mdc-toolbar__menu-icon" style="color:white!important;">
               <i class="material-icons">menu</i>
             </a>
             <span class="mdc-toolbar__title" id="welcome">Welcome</span>
@@ -193,8 +198,11 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
           <section class="mdc-toolbar__section mdc-toolbar__section--align-start">
             <span class="mdc-toolbar__title">Resources</span>
           </section>
-          <section class="mdc-toolbar__section mdc-toolbar__section--align-end" id="hmc">
-            <span class="mdc-typography mdc-typography--subtitle">Candy: 0</span>
+          <section class="mdc-toolbar__section mdc-toolbar__section--align-end mdc-toolbar__title" style="z-index:4!important;">
+            <img src="/CandyIcon.png" height="28px" width="28px">
+            <span id="hmc">0</span>
+            <img src="/CandyCaneIcon.png" height="28px" width="28px">
+            <span id="hmcc">0</span>
           </section>
         </div>
       </header>
@@ -204,15 +212,14 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
       <button class="mdc-button" id="costumeswitch_button">Costume switch:100 candies</button>
       <button class="mdc-button" id="job_button">Get a job:100 candies</button>
       <br>
-      <button class="mdc-button" id="ipod_button">Get an iPod:1000 candies</button>
-      <button class="mdc-button" style="display:none;" id="computer_button">Get a computer:10000 candies</button>
-      <button class="mdc-button" style="display:none;" id="car_button">Get a car:50000 candies</button>
-      <button class="mdc-button" style="display:none;" id="house_button">Get a house:100000 candies</button>
-      <button class="mdc-button" style="display:none;" id="mansion_button">Get a mansion:1 million candies</button>
-      <button class="mdc-button" style="display:none;" id="earth_button">Get earth:One billion candies</button>
-      <button class="mdc-button" style="display:none;" id="galaxy_button">Get the Milky Way (
-        <i>now</i> the galaxy):50 billion candies</button>
-      <button class="mdc-button" style="display:none;" id="universe_button">Get the universe:Ten trillion candies</button>
+      <button class="mdc-button" id="ipod_button">Get an iPod: 1000 candies</button>
+      <button class="mdc-button" style="display:none;" id="computer_button">Get a computer: 10K candies</button>
+      <button class="mdc-button" style="display:none;" id="car_button">Get a car: 50K candies</button>
+      <button class="mdc-button" style="display:none;" id="house_button">Get a house: 100K candies</button>
+      <button class="mdc-button" style="display:none;" id="mansion_button">Get a mansion: 1M candies</button>
+      <button class="mdc-button" style="display:none;" id="earth_button">Get earth: 1B candies</button>
+      <button class="mdc-button" style="display:none;" id="galaxy_button">Get the Milky Way: 50B candies</button>
+      <button class="mdc-button" style="display:none;" id="universe_button">Get the universe: 10T candies</button>
     </div>
   </div>
   <aside class="mdc-temporary-drawer mdc-typography">
@@ -241,4 +248,5 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
   <script src="material.js"></script>
   <script src="popup.js"></script>
 </body>
+
 </html>

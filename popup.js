@@ -31,9 +31,16 @@ var l = 0;
 var candyCount = 0;
 var ub = "";
 var hmc = document.querySelector("#hmc");
+var hmcc = document.querySelector("#hmcc");
+var candyCanes = 0;
+var caneCookie = getCookie("candyCanes");
+if (caneCookie != "") {
+    candyCanes = caneCookie;
+    hmcc.innerText = candyCanes;
+}
 var cpsText = document.querySelector("#cps");
 var cps = multiplier * l;
-cpsText.innerHTML = "Candy Per Second: " + cps;
+cpsText.innerText = "Candy Per Second: " + cps;
 String.prototype.r = function (index, replacement) {
     return this.substr(0, index) + replacement + this.substr(index + replacement.length);
 }
@@ -53,91 +60,91 @@ if (cc != "") {
     var x = Number(cc);
     candyCount = x;
     if (candyCount < 1000) {
-        hmc.innerHTML = "Candy: " + candyCount;
+        hmc.innerText = candyCount;
     }
     if (candyCount >= 1000) {
         var y = candyCount / 1000;
         y = Math.floor(y * 100) / 100;
         y = y.toFixed(2);
-        hmc.innerHTML = "Candy: " + y + "K";
+        hmc.innerText = y + "K";
     }
     if (candyCount >= 1000000) {
         var y = candyCount / 1000000;
         y = Math.floor(y * 100) / 100;
         y = y.toFixed(2);
-        hmc.innerHTML = "Candy: " + y + "M";
+        hmc.innerText = y + "M";
     }
     if (candyCount >= 1000000000) {
         var y = candyCount / 1000000000;
         y = Math.floor(y * 100) / 100;
         y = y.toFixed(2);
-        hmc.innerHTML = "Candy: " + y + "B";
+        hmc.innerText = y + "B";
     }
     if (candyCount >= 1000000000000) {
         var y = candyCount / 1000000000000;
         y = Math.floor(y * 100) / 100;
         y = y.toFixed(2);
-        hmc.innerHTML = "Candy: " + y + "T";
+        hmc.innerText = y + "T";
     }
 }
 var mult_cookie = getCookie("multiplier");
 if (mult_cookie != "") {
     var clost = Number(mult_cookie);
     var multiplier_text = document.getElementById("multiplier");
-    multiplier.innerHTML = "Multiplier:" + clost;
+    multiplier.innerText = "Multiplier:" + clost;
     multiplier = clost;
 }
 var log_cookie = getCookie("log");
 if (log_cookie != "") {
     var duck = log_cookie;
     log_content = duck;
-    log.innerHTML = duck.charAt(0).toUpperCase() + duck.slice(1);
+    log.innerText = duck.charAt(0).toUpperCase() + duck.slice(1);
 }
 var jobcookie = getCookie("job");
 if (jobcookie != "") {
     var jl = Number(jobcookie);
-    document.querySelector("#jobs").innerHTML = "Jobs: " + jl;
+    document.querySelector("#jobs").innerText = "Jobs: " + jl;
     l = jl;
     for (i = 0; i < l; i++) {
         clickJob();
     }
 }
 var multiplier_text = document.getElementById("multiplier");
-multiplier_text.innerHTML = "Multiplier:" + multiplier;
+multiplier_text.innerText = "Multiplier:" + multiplier;
 var cpsText = document.querySelector("#cps");
 var cps = multiplier * l;
-cpsText.innerHTML = "Candy Per Second: " + cps;
+cpsText.innerText = "Candy Per Second: " + cps;
 document.getElementById("totbutton").addEventListener("click", tot);
 function tot() {
     var candy = document.getElementById("candy");
-    candy.innerHTML = "You get: " + candies[Math.floor(Math.random() * 5)];
+    candy.innerText = "You get: " + candies[Math.floor(Math.random() * 5)];
     candyCount = candyCount + 1 * multiplier;
     if (candyCount < 1000) {
-        hmc.innerHTML = "Candy: " + candyCount;
+        hmc.innerText = candyCount;
     }
     if (candyCount >= 1000) {
         var y = candyCount / 1000;
         y = Math.floor(y * 100) / 100;
         y = y.toFixed(2);
-        hmc.innerHTML = "Candy: " + y + "K";
+        hmc.innerText = y + "K";
     }
     if (candyCount >= 1000000) {
         var y = candyCount / 1000000;
         y = Math.floor(y * 100) / 100;
         y = y.toFixed(2);
-        hmc.innerHTML = "Candy: " + y + "M";
+        hmc.innerText = y + "M";
     }
     if (candyCount >= 1000000000) {
         var y = candyCount / 1000000000;
         y = Math.floor(y * 100) / 100;
         y = y.toFixed(2);
-        hmc.innerHTML = "Candy: " + y + "B";
+        hmc.innerText = y + "B";
     }
     if (candyCount >= 1000000000000) {
         var y = candyCount / 1000000000000;
         y = Math.floor(y * 100) / 100;
         y = y.toFixed(2);
-        hmc.innerHTML = "Candy: " + y + "T";
+        hmc.innerText = y + "T";
     }
     setCookie("cc", candyCount, 30);
 };
@@ -185,52 +192,52 @@ function candyBuy(c, thing) {
     if (candyCount >= c) {
         candyCount = candyCount - c;
         if (candyCount < 1000) {
-            hmc.innerHTML = "Candy: " + candyCount;
+            hmc.innerText = candyCount;
         }
         if (candyCount >= 1000) {
             var y = candyCount / 1000;
             y = Math.floor(y * 100) / 100;
             y = y.toFixed(2);
-            hmc.innerHTML = "Candy: " + y + "K";
+            hmc.innerText = y + "K";
         }
         if (candyCount >= 1000000) {
             var y = candyCount / 1000000;
             y = Math.floor(y * 100) / 100;
             y = y.toFixed(2);
-            hmc.innerHTML = "Candy: " + y + "M";
+            hmc.innerText = y + "M";
         }
         if (candyCount >= 1000000000) {
             var y = candyCount / 1000000000;
             y = Math.floor(y * 100) / 100;
             y = y.toFixed(2);
-            hmc.innerHTML = "Candy: " + y + "B";
+            hmc.innerText = y + "B";
         }
         if (candyCount >= 1000000000000) {
             var y = candyCount / 1000000000000;
             y = Math.floor(y * 100) / 100;
             y = y.toFixed(2);
-            hmc.innerHTML = "Candy: " + y + "T";
+            hmc.innerText = y + "T";
         }
-        document.getElementById('error').innerHTML = "You got a(n) " + thing + ".";
+        document.getElementById('error').innerText = "You got a(n) " + thing + ".";
         setCookie("cc", candyCount, 30);
         if (thing === 'job') {
             clickJob();
             l = l + 1;
-            document.getElementById('jobs').innerHTML = "Jobs: " + l;
+            document.getElementById('jobs').innerText = "Jobs: " + l;
             setCookie("job", l, 30);
             cps = multiplier * l;
-            cpsText.innerHTML = "Candy Per Second: " + cps;
+            cpsText.innerText = "Candy Per Second: " + cps;
         }
         if (thing === 'costume switch') {
             multiplier = multiplier + 1;
             setCookie("multiplier", multiplier, 30);
-            multiplier_text.innerHTML = "Multiplier:" + multiplier;
+            multiplier_text.innerText = "Multiplier:" + multiplier;
             cps = multiplier * l;
-            cpsText.innerHTML = "Candy Per Second: " + cps;
+            cpsText.innerText = "Candy Per Second: " + cps;
         }
         if (thing === 'iPod') {
             document.getElementById("computer_button").style.display = "block";
-            log.innerHTML = log.innerHTML + thing + ", ";
+            log.innerText = log.innerText + thing + ", ";
             log_content = log_content + thing + ", ";
             setCookie("log", log_content, 30);
             ub = ub.r(0, "Y");
@@ -238,7 +245,7 @@ function candyBuy(c, thing) {
         }
         if (thing === 'computer') {
             document.getElementById("car_button").style.display = "block";
-            log.innerHTML = log.innerHTML + thing + ", ";
+            log.innerText = log.innerText + thing + ", ";
             log_content = log_content + thing + ",";
             setCookie("log", log_content, 30);
             ub = ub.r(1, "Y");
@@ -246,7 +253,7 @@ function candyBuy(c, thing) {
         }
         if (thing === 'car') {
             document.getElementById("house_button").style.display = "block";
-            log.innerHTML = log.innerHTML + thing + ", ";
+            log.innerText = log.innerText + thing + ", ";
             log_content = log_content + thing + ",";
             setCookie("log", log_content, 30);
             ub = ub.r(2, "Y");
@@ -254,7 +261,7 @@ function candyBuy(c, thing) {
         }
         if (thing === 'house') {
             document.getElementById("mansion_button").style.display = "block";
-            log.innerHTML = log.innerHTML + thing + ", ";
+            log.innerText = log.innerText + thing + ", ";
             log_content = log_content + thing + ",";
             setCookie("log", log_content, 30);
             ub = ub.r(3, "Y");
@@ -262,7 +269,7 @@ function candyBuy(c, thing) {
         }
         if (thing === 'mansion') {
             document.getElementById("earth_button").style.display = "block";
-            log.innerHTML = log.innerHTML + thing + ", ";
+            log.innerText = log.innerText + thing + ", ";
             log_content = log_content + thing + ",";
             setCookie("log", log_content, 30);
             ub = ub.r(4, "Y");
@@ -270,7 +277,7 @@ function candyBuy(c, thing) {
         }
         if (thing === 'earth') {
             document.getElementById("galaxy_button").style.display = "block";
-            log.innerHTML = log.innerHTML + thing + ", ";
+            log.innerText = log.innerText + thing + ", ";
             log_content = log_content + thing + ",";
             setCookie("log", log_content, 30);
             ub = ub.r(5, "Y");
@@ -278,7 +285,7 @@ function candyBuy(c, thing) {
         }
         if (thing === 'galaxy') {
             document.getElementById("universe_button").style.display = "block";
-            log.innerHTML = log.innerHTML + thing + ", ";
+            log.innerText = log.innerText + thing + ", ";
             log_content = log_content + thing + ",";
             setCookie("log", log_content, 30);
             ub = ub.r(6, "Y");
@@ -295,39 +302,39 @@ function candyBuy(c, thing) {
         }
     }
     else {
-        document.getElementById('error').innerHTML = "You do not have enough candy for a(n) " + thing + ". Get some more!";
+        document.getElementById('error').innerText = "You do not have enough candy for a(n) " + thing + ". Get some more!";
     }
 };
 
 function job() {
     candyCount = candyCount + 1 * multiplier;
     if (candyCount < 1000) {
-        hmc.innerHTML = "Candy: " + candyCount;
+        hmc.innerText = candyCount;
 
     }
     if (candyCount >= 1000) {
         var y = candyCount / 1000;
         y = Math.floor(y * 100) / 100;
         y = y.toFixed(2);
-        hmc.innerHTML = "Candy: " + y + "K";
+        hmc.innerText = y + "K";
     }
     if (candyCount >= 1000000) {
         var y = candyCount / 1000000;
         y = Math.floor(y * 100) / 100;
         y = y.toFixed(2);
-        hmc.innerHTML = "Candy: " + y + "M";
+        hmc.innerText = y + "M";
     }
     if (candyCount >= 1000000000) {
         var y = candyCount / 1000000000;
         y = Math.floor(y * 100) / 100;
         y = y.toFixed(2);
-        hmc.innerHTML = "Candy: " + y + "B";
+        hmc.innerText = y + "B";
     }
     if (candyCount >= 1000000000000) {
         var y = candyCount / 1000000000000;
         y = Math.floor(y * 100) / 100;
         y = y.toFixed(2);
-        hmc.innerHTML = "Candy: " + y + "T";
+        hmc.innerText = y + "T";
     }
     setCookie("cc", candyCount, 30);
 }
@@ -338,7 +345,7 @@ function clickJob() {
 //free gift!
 var giftTimer = document.getElementById("gift-timer");
 date = new Date().getTime();
-var gifts = ["candy", "jobs", "multiplier"];
+var gifts = ["candy", "jobs", "multiplier","candy canes"];
 var giftAvailable = "no";
 var gcdd = getCookie("giftCDD");
 var ga = getCookie("giftAvailable");
@@ -362,19 +369,19 @@ if (gcdd != "" && ga != "") {
             var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
             // Display the result in the element with id="demo"
-            giftTimer.innerHTML = "Free Gift in " + hours + "h "
+            giftTimer.innerText = "Free Gift in " + hours + "h "
                 + minutes + "m " + seconds + "s ";
 
             // If the count down is finished, write some text
             if (distance < 0) {
                 clearInterval(x);
-                giftTimer.innerHTML = "Click to collect your Free Gift!";
+                giftTimer.innerText = "Click to collect your Free Gift!";
                 giftAvailable = "yes";
                 setCookie("giftAvailable", giftAvailable, 30);
             }
         }, 1000);
     } else {
-        giftTimer.innerHTML = "Click to collect your Free Gift!";
+        giftTimer.innerText = "Click to collect your Free Gift!";
     }
 } else {
     // Set the date we're counting down to
@@ -394,13 +401,13 @@ if (gcdd != "" && ga != "") {
         var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
         // Display the result in the element with id="demo"
-        giftTimer.innerHTML = "Free Gift in " + hours + "h "
+        giftTimer.innerText = "Free Gift in " + hours + "h "
             + minutes + "m " + seconds + "s ";
 
         // If the count down is finished, write some text
         if (distance < 0) {
             clearInterval(x);
-            giftTimer.innerHTML = "Click to collect your Free Gift!";
+            giftTimer.innerText = "Click to collect your Free Gift!";
             giftAvailable = "yes";
             setCookie("giftAvailable", giftAvailable, 30);
         }
@@ -411,7 +418,7 @@ giftTimer.addEventListener("click", function () {
         giftAvailable = "no";
         var selectedGift = null;
         selectedGift = gifts[Math.floor(Math.random() * gifts.length)];
-        var kmbt;
+        var kmbt = null;
         if (selectedGift < 1000) {
             kmbt = selectedGift;
         }
@@ -442,24 +449,28 @@ giftTimer.addEventListener("click", function () {
         if (selectedGift == gifts[0]){
             var given = Math.floor(Math.random() * (candyCount / 1.5)) + 20;
             candyCount = candyCount + given;
-            
-            document.querySelector("#error").innerHTML = "You got " + kmbt + " candies in your Free Gift!";
+            document.querySelector("#error").innerText = "You got " + kmbt + " candies in your Free Gift!";
         } if (selectedGift == gifts[1]){
             var given = Math.floor(Math.random() * (l / 1.5)) + 20;
             l = l + given;
-            document.getElementById('jobs').innerHTML = "Jobs: " + l;
+            document.getElementById('jobs').innerText = "Jobs: " + l;
             cps = multiplier * l;
-            cpsText.innerHTML = "Candy Per Second: " + cps;
+            cpsText.innerText = "Candy Per Second: " + cps;
             setCookie("job", l, 30);
-            document.querySelector("#error").innerHTML = "You got " + kmbt + " jobs in your Free Gift!";
+            document.querySelector("#error").innerText = "You got " + kmbt + " jobs in your Free Gift!";
         } if (selectedGift == gifts[2]){
             var given = Math.floor(Math.random() * (multiplier / 1.5)) + 20;
             multiplier = multiplier + given;
             setCookie("multiplier", multiplier, 30);
             cps = multiplier * l;
-            multiplier_text.innerHTML = "Multiplier:" + multiplier;
-            cpsText.innerHTML = "Candy Per Second: " + cps;
-            document.querySelector("#error").innerHTML = "You got +" + kmbt + " multiplier in your Free Gift!";
+            multiplier_text.innerText = "Multiplier:" + multiplier;
+            cpsText.innerText = "Candy Per Second: " + cps;
+            document.querySelector("#error").innerText = "You got +" + kmbt + " multiplier in your Free Gift!";
+        }
+        if (selectedGift == gifts[3]){
+            var given = Math.floor(Math.random() * (candyCount / 1.5)) + 20;
+            candyCanes = candyCanes + given;
+            document.querySelector("#error").innerText = "You got " + kmbt + " candy canes in your Free Gift!";
         }
         setCookie("giftAvailable", giftAvailable, 30);
         date = new Date().getTime();
@@ -480,14 +491,14 @@ giftTimer.addEventListener("click", function () {
             var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
             // Display the result in the element with id="demo"
-            giftTimer.innerHTML = "Free Gift in " + hours + "h "
+            giftTimer.innerText = "Free Gift in " + hours + "h "
                 + minutes + "m " + seconds + "s ";
 
             // If the count down is finished, write some text
             if (distance < 0) {
                 clearInterval(x);
                 giftAvailable = "yes";
-                giftTimer.innerHTML = "Click to collect your Free Gift!";
+                giftTimer.innerText = "Click to collect your Free Gift!";
                 setCookie("giftAvailable", giftAvailable, 30);
             }
         }, 1000);
@@ -509,7 +520,7 @@ document.addEventListener("keydown", function (event) {
     if (lastKeys.join('') === secret) {
         console.log("secret entered");
         multiplier = multiplier * 10;
-        multiplier_text.innerHTML = "Multiplier:" + multiplier;
+        multiplier_text.innerText = "Multiplier:" + multiplier;
         setCookie("multiplier", multiplier, 30);
     }
 })
@@ -544,8 +555,8 @@ function getCookie(cname) {
 function checkCookie() {
     var user = getCookie("username");
     if (user != "") {
-        document.getElementById("welcome").innerHTML = "Welcome " + user;
-        document.getElementById("name-side").innerHTML = "Name: " + user;
+        document.getElementById("welcome").innerText = "Welcome " + user;
+        document.getElementById("name-side").innerText = "Name: " + user;
     } else {
         dialog.show()
         document.querySelector(".mdc-dialog__footer__button--accept").addEventListener("click", function () {
@@ -553,12 +564,12 @@ function checkCookie() {
             guest = "Guest " + Math.floor((Math.random() * 1197381793814) + 1010);
             if (user != "" && user != null) {
                 setCookie("username", user, 30);
-                document.getElementById("welcome").innerHTML = "Welcome " + user;
-                document.getElementById("name-side").innerHTML = "Name: " + user;
+                document.getElementById("welcome").innerText = "Welcome " + user;
+                document.getElementById("name-side").innerText = "Name: " + user;
             } else {
                 setCookie("username", guest, 30);
-                document.getElementById("welcome").innerHTML = "Welcome " + guest;
-                document.getElementById("name-side").innerHTML = "Name: " + guest;
+                document.getElementById("welcome").innerText = "Welcome " + guest;
+                document.getElementById("name-side").innerText = "Name: " + guest;
             }
         });
     }
@@ -571,7 +582,8 @@ var cls = function () {
     setCookie("multiplier", multiplier, 30);
     setCookie("log", log_content, 30);
     setCookie("giftCDD", countDownDate, 30);
-    setCookie("giftAvailable", giftAvailable, 30)
+    setCookie("giftAvailable", giftAvailable, 30);
+    setCookie("candyCanes", candyCanes, 30);
 };
 
 window.onclose = cls;
