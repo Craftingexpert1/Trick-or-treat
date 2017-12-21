@@ -27,196 +27,213 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
 
 <!doctype html>
 <html>
-    <head>
-        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"><!--k-->
-        <link rel="stylesheet" href="material.css">
-        <title>Trick or Treat! ^_^</title>
-        <meta name="viewport" content="width=device-width,initial-scale=1.0">
-        <meta name="theme-color" content="#E64A19">
-        <style>
-            body {
-                font-family:"Roboto", sans-serif;
-                color:white;
-                width:500px;
-                height:485px;
-                --mdc-theme-primary: #ff5722;
-                --mdc-theme-secondary: #3f51b5; 
-                --mdc-theme-background: #ff5722;
-                background:url(http://www.pngmart.com/files/3/Halloween-House-Transparent-Background.png) #ff5722 no-repeat right bottom fixed;
-            }
-            #game {
-                padding:16px;
-                padding-top:48px;
-            }
-            .totbutton {
-                user-select:none;
-                font-size:100%;
-                width:200px;
-                height:50px;
-                border:none;
-                background:transparent;
-                outline:none;
-                transition:ease-in-out 300ms;
-                border-radius:200px;
-                font-family:"Roboto", sans-serif;
-                color:white;
-            }
-            .totbutton:hover {
-                background:rgba(255,193,7, 0.5);
-            }
-            .totbutton:active {
-                background:rgba(255,193,7, 0.7);
-            }
-            #log {
-                height:210px;
-                overflow:auto;
-                
-            }
-            .dialog {
-              font-family:"Roboto", sans-serif;
-              border:none;
-              background:#ffffff;
-            }
-            .dialog_button {
-              outline:none;
-              background:none;
-              border:none;
-              transition:ease-in-out 300ms;
-              font-size:200%;
-            }
-            .dialog_button:hover {
-              background:rgba(0, 0, 0, 0.3);
-            }
-            .dialog_button:active {
-              background:rgba(0, 0, 0, 0.5);
-            }
-            .mdc-button {
-              color:white!important;
-            }
-            .mdc-dialog__footer__button {
-              color:#ff5722!important;
-            }
-            #splash {
-                z-index: 9;
-                height: 100%!important;
-                width: 100%!important;
-                animation-name: splashanim;
-                animation-duration: 2s;
-                position:absolute;
-                top:0;
-                left:-100%;
-            }
-            @keyframes splashanim {
-                0% {
-                    left:0;
-                    display:none;
-                    background-position:center;
-                }
-                50% {
-                    background: url(/2KSplashLogo.png) center;
-                    background-size:cover;
-                }
-                85% {
-                    background: url(/2KSplashLogo.png) center;
-                    background-size:cover;
-                }
-                99% {
-                    display:none;
-                    left:0;
-                    background-position:center;
-                } 
-                100% {
-                    left:-100%;
-                    background-position:center;
-                }
-            }
-        </style>
-    </head>
-    <body>
-        <div id="splash"></div>
-        <aside id="my-mdc-dialog"
-  class="mdc-dialog">
-  <div class="mdc-dialog__surface" style="background:white!important;color:black!important;">
-    <header class="mdc-dialog__header">
-      <h2 id="my-mdc-dialog-label" class="mdc-dialog__header__title">
-        Your name?
-      </h2>
-    </header>
-    <section id="my-mdc-dialog-description" class="mdc-dialog__body">
-      <div class="mdc-text-field mdc-text-field--upgraded">
-  <label class="mdc-text-field__label" for="name">Name?</label>
-  <input type="text" id="name" class="mdc-text-field__input" data-mdc-auto-init="MDCTextfield">
-  <div class="mdc-text-field__bottom-line"></div>
-</div>
-    </section>
-    <footer class="mdc-dialog__footer">
-      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept">OK</button>
-    </footer>
-  </div>
-  <div class="mdc-dialog__backdrop"></div>
-</aside>
-<div class="mdc-snackbar"
-     aria-live="assertive"
-     aria-atomic="true"
-     aria-hidden="true">
-  <div class="mdc-snackbar__text"></div>
-  <div class="mdc-snackbar__action-wrapper">
-    <button type="button" class="mdc-snackbar__action-button"></button>
-  </div>
-</div>
-      <div id="game">
-        <header class="mdc-toolbar mdc-toolbar--waterfall mdc-toolbar--fixed" style="z-index:3">
-          <div class="mdc-toolbar__row">
-            <section class="mdc-toolbar__section mdc-toolbar__section--align-start">
-              <a href="#" class="material-icons menu mdc-toolbar__menu-icon"><i class="material-icons">menu</i></a>
-              <span class="mdc-toolbar__title" id="welcome">Welcome</span>
-            </section>
-            <section class="mdc-toolbar__section mdc-toolbar__section--align-end">
-              <button class="mdc-button mdc-button--unelevated mdc-ripple-surface--secondary" id="totbutton" data-mdc-auto-init="MDCRipple">
-                 Trick or treat! Click Me!
-              </button>
-            </section>
-           </div>
-        </header>
-        <h2 id="candy"></h2>
-        <h2 id="hmc">You didn't get any candy yet</h2>
-        <h2 id="error"></h2>
-        <button class="mdc-button" id="costumeswitch_button">Costume switch:100 candies</button>
-        <button class="mdc-button" id="job_button">Get a job:100 candies</button><br>
-        <button class="mdc-button" id="ipod_button">Get an iPod:1000 candies</button>
-        <button class="mdc-button" style="display:none;" id="computer_button">Get a computer:10000 candies</button>
-        <button class="mdc-button" style="display:none;" id="car_button">Get a car:50000 candies</button>
-        <button class="mdc-button" style="display:none;" id="house_button">Get a house:100000 candies</button>
-        <button class="mdc-button" style="display:none;" id="mansion_button">Get a mansion:1 million candies</button>
-        <button class="mdc-button" style="display:none;" id="earth_button">Get earth:One billion candies</button>
-        <button class="mdc-button" style="display:none;" id="galaxy_button">Get the Milky Way (<i>now</i> the galaxy):50 billion candies</button>
-        <button class="mdc-button" style="display:none;" id="universe_button">Get the universe:Ten trillion candies</button>
 
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--k-->
+  <link rel="stylesheet" href="material.css">
+  <title>Trick or Treat! ^_^</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="theme-color" content="#E64A19">
+  <style>
+    body {
+      font-family: "Roboto", sans-serif;
+      color: white;
+      width: 500px;
+      height: 485px;
+      --mdc-theme-primary: #ff5722;
+      --mdc-theme-secondary: #3f51b5;
+      --mdc-theme-background: #ff5722;
+      background: url(http://www.freepptbackgrounds.net/wp-content/uploads/2013/12/Xmas-Snows-PPT-Backgrounds-800x600.jpg)
+      /*(http://www.pngmart.com/files/3/Halloween-House-Transparent-Background.png)*/
+      #ff5722 no-repeat left bottom fixed;
+    }
 
-      </div>
-      <aside class="mdc-temporary-drawer mdc-typography">
-        <nav class="mdc-temporary-drawer__drawer">
-          <header class="mdc-temporary-drawer__header">
-            <div class="mdc-temporary-drawer__header-content mdc-typography--display1" style="background:url(http://www.pngmart.com/files/3/Halloween-Bat-PNG-Image.png) no-repeat top; background-size:cover;">
-              Stats
-            </div>
-          </header>
-          <nav id="icon-with-text-demo" style="padding:16px; background:white; color:#616161;" class="mdc-temporary-drawer__content">
-            <p id="jobs">Jobs :0</p>
-            <p id="multiplier">Multiplier: 1</p>
-            <p id="cps"></p>
-            <h3 class="mdc-typography--subheading2">Inventory</h2>
-            <p class="mdc-typograghy" id="log"></h3>
-            <p id="name-side"></p>
-            <p>Trick or Treat: Go trick or treating! Made by #2Kinc. We are awesome.<br>Copyright &copy; 2017 By 2K inc. Reproduction of this code in any means is illegal.</p>
-          </nav>
-       </nav>
-     </aside>
-      <div style="display:none;" id="beat_game">
-        <p>You beat the game</p>
-      </div>
-      <script src="material.js"></script>
-      <script src="popup.js"></script>
-    </body>
+    #game {
+      padding: 16px;
+      padding-top: 48px;
+    }
+
+    #main-game {
+      color: black!important;
+    }
+
+    #log {
+      height: 210px;
+      overflow: auto;
+
+    }
+
+    #totbutton {
+      background: transparent!important;
+    }
+
+    .dialog {
+      font-family: "Roboto", sans-serif;
+      border: none;
+      background: #ffffff;
+    }
+
+    .dialog_button {
+      outline: none;
+      background: none;
+      border: none;
+      transition: ease-in-out 300ms;
+      font-size: 200%;
+    }
+
+    .dialog_button:hover {
+      background: rgba(0, 0, 0, 0.3);
+    }
+
+    .dialog_button:active {
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .mdc-button {
+      color: black!important;
+    }
+
+    .mdc-dialog__footer__button {
+      color: #ff5722!important;
+    }
+
+    #splash {
+      z-index: 9;
+      height: 100%!important;
+      width: 100%!important;
+      animation-name: splashanim;
+      animation-duration: 2s;
+      position: absolute;
+      top: 0;
+      left: -100%;
+    }
+
+    @keyframes splashanim {
+      0% {
+        left: 0;
+        display: none;
+        background-position: center;
+      }
+      50% {
+        background: url(/2KSplashLogo.png) center;
+        background-size: cover;
+      }
+      85% {
+        background: url(/2KSplashLogo.png) center;
+        background-size: cover;
+      }
+      99% {
+        display: none;
+        left: 0;
+        background-position: center;
+      }
+      100% {
+        left: -100%;
+        background-position: center;
+      }
+    }
+
+    #drawer-background {
+      background:url(http://taochu.trangnhat.net/backgrounds/Christmas/card/christmas_card_19.jpg)/*(http://www.pngmart.com/files/3/Halloween-Bat-PNG-Image.png)*/ no-repeat bottom right; background-size:cover;
+    }
+
+    #gift-timer {
+      font-size: 200%;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="splash"></div>
+  <aside id="my-mdc-dialog" class="mdc-dialog">
+    <div class="mdc-dialog__surface" style="background:white!important;color:black!important;">
+      <header class="mdc-dialog__header">
+        <h2 id="my-mdc-dialog-label" class="mdc-dialog__header__title">
+          Your name?
+        </h2>
+      </header>
+      <section id="my-mdc-dialog-description" class="mdc-dialog__body">
+        <div class="mdc-text-field mdc-text-field--upgraded">
+          <label class="mdc-text-field__label" for="name">Name?</label>
+          <input type="text" id="name" class="mdc-text-field__input" data-mdc-auto-init="MDCTextfield">
+          <div class="mdc-text-field__bottom-line"></div>
+        </div>
+      </section>
+      <footer class="mdc-dialog__footer">
+        <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept">OK</button>
+      </footer>
+    </div>
+    <div class="mdc-dialog__backdrop"></div>
+  </aside>
+  <div class="mdc-snackbar" aria-live="assertive" aria-atomic="true" aria-hidden="true">
+    <div class="mdc-snackbar__text"></div>
+    <div class="mdc-snackbar__action-wrapper">
+      <button type="button" class="mdc-snackbar__action-button"></button>
+    </div>
+  </div>
+  <div id="game">
+    <div id="main-game">
+      <header class="mdc-toolbar mdc-toolbar--waterfall mdc-toolbar--fixed" style="color:black!important;z-index:3;background:transparent;">
+        <div class="mdc-toolbar__row">
+          <section class="mdc-toolbar__section mdc-toolbar__section--align-start">
+            <a href="#" class="material-icons menu mdc-toolbar__menu-icon" style="color:black!important;">
+              <i class="material-icons">menu</i>
+            </a>
+            <span class="mdc-toolbar__title" id="welcome">Welcome</span>
+          </section>
+          <section class="mdc-toolbar__section mdc-toolbar__section--align-end">
+            <button class="mdc-button mdc-button--unelevated mdc-ripple-surface--secondary" id="totbutton" data-mdc-auto-init="MDCRipple">
+              Trick or treat! Click Me!
+            </button>
+          </section>
+        </div>
+      </header>
+      </header>
+      <div id="gift-timer"></div>
+      <h2 id="candy"></h2>
+      <h2 id="hmc">You didn't get any candy yet</h2>
+      <h2 id="error"></h2>
+      <button class="mdc-button" id="costumeswitch_button">Costume switch:100 candies</button>
+      <button class="mdc-button" id="job_button">Get a job:100 candies</button>
+      <br>
+      <button class="mdc-button" id="ipod_button">Get an iPod:1000 candies</button>
+      <button class="mdc-button" style="display:none;" id="computer_button">Get a computer:10000 candies</button>
+      <button class="mdc-button" style="display:none;" id="car_button">Get a car:50000 candies</button>
+      <button class="mdc-button" style="display:none;" id="house_button">Get a house:100000 candies</button>
+      <button class="mdc-button" style="display:none;" id="mansion_button">Get a mansion:1 million candies</button>
+      <button class="mdc-button" style="display:none;" id="earth_button">Get earth:One billion candies</button>
+      <button class="mdc-button" style="display:none;" id="galaxy_button">Get the Milky Way (
+        <i>now</i> the galaxy):50 billion candies</button>
+      <button class="mdc-button" style="display:none;" id="universe_button">Get the universe:Ten trillion candies</button>
+    </div>
+  </div>
+  <aside class="mdc-temporary-drawer mdc-typography">
+    <nav class="mdc-temporary-drawer__drawer">
+      <header class="mdc-temporary-drawer__header">
+        <div class="mdc-temporary-drawer__header-content mdc-typography--display1" id="drawer-background">
+          Stats
+        </div>
+      </header>
+      <nav id="icon-with-text-demo" style="padding:16px; background:white; color:#616161;" class="mdc-temporary-drawer__content">
+        <p id="jobs">Jobs :0</p>
+        <p id="multiplier">Multiplier: 1</p>
+        <p id="cps"></p>
+        <h3 class="mdc-typography--subheading2">Inventory</h2>
+          <p class="mdc-typograghy" id="log">
+        </h3>
+        <p id="name-side"></p>
+        <p>Trick or Treat: Go trick or treating! Made by #2Kinc. We are awesome.
+          <br>Copyright &copy; 2017 By 2K inc. Reproduction of this code in any means is illegal.</p>
+      </nav>
+    </nav>
+  </aside>
+  <div style="display:none;" id="beat_game">
+    <p>You beat the game</p>
+  </div>
+  <script src="material.js"></script>
+  <script src="popup.js"></script>
+</body>
+
 </html>

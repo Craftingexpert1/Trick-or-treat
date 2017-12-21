@@ -34,8 +34,8 @@ var hmc = document.querySelector("#hmc");
 var cpsText = document.querySelector("#cps");
 var cps = multiplier * l;
 cpsText.innerHTML = "Candy Per Second: " + cps;
-String.prototype.r=function(index, replacement) {
-    return this.substr(0, index) + replacement+ this.substr(index + replacement.length);
+String.prototype.r = function (index, replacement) {
+    return this.substr(0, index) + replacement + this.substr(index + replacement.length);
 }
 var cc = getCookie("cc");
 var bu = getCookie("buyUnlocked");
@@ -88,11 +88,10 @@ if (mult_cookie != "") {
     multiplier = clost;
 }
 var log_cookie = getCookie("log");
-    if (log_cookie != "") {
-      var duck = log_cookie.substring(9);
-      var log = document.querySelector("#log");
-      log.innerHTML = duck;
-      log_content = duck;
+if (log_cookie != "") {
+    var duck = log_cookie;
+    log_content = duck;
+    log.innerHTML = duck.charAt(0).toUpperCase() + duck.slice(1);
 }
 var jobcookie = getCookie("job");
 if (jobcookie != "") {
@@ -145,7 +144,6 @@ function tot() {
 document.getElementById("ipod_button").addEventListener("click", candyBuyIpod);
 function candyBuyIpod() {
     candyBuy(1000, "iPod");
-
 }
 document.getElementById("job_button").addEventListener("click", candyBuyJob);
 function candyBuyJob() {
@@ -235,49 +233,55 @@ function candyBuy(c, thing) {
             log.innerHTML = log.innerHTML + thing + ", ";
             log_content = log_content + thing + ", ";
             setCookie("log", log_content, 30);
-            ub = ub.r(0,"Y");
+            ub = ub.r(0, "Y");
             setCookie("buyUnlocked", ub, 30);
         }
         if (thing === 'computer') {
             document.getElementById("car_button").style.display = "block";
             log.innerHTML = log.innerHTML + thing + ", ";
             log_content = log_content + thing + ",";
-            ub = ub.r(1,"Y");
+            setCookie("log", log_content, 30);
+            ub = ub.r(1, "Y");
             setCookie("buyUnlocked", ub, 30);
         }
         if (thing === 'car') {
             document.getElementById("house_button").style.display = "block";
             log.innerHTML = log.innerHTML + thing + ", ";
             log_content = log_content + thing + ",";
-            ub = ub.r(2,"Y");
+            setCookie("log", log_content, 30);
+            ub = ub.r(2, "Y");
             setCookie("buyUnlocked", ub, 30);
         }
         if (thing === 'house') {
             document.getElementById("mansion_button").style.display = "block";
             log.innerHTML = log.innerHTML + thing + ", ";
             log_content = log_content + thing + ",";
-            ub = ub.r(3,"Y");
+            setCookie("log", log_content, 30);
+            ub = ub.r(3, "Y");
             setCookie("buyUnlocked", ub, 30);
         }
         if (thing === 'mansion') {
             document.getElementById("earth_button").style.display = "block";
             log.innerHTML = log.innerHTML + thing + ", ";
             log_content = log_content + thing + ",";
-            ub = ub.r(4,"Y");
+            setCookie("log", log_content, 30);
+            ub = ub.r(4, "Y");
             setCookie("buyUnlocked", ub, 30);
         }
         if (thing === 'earth') {
             document.getElementById("galaxy_button").style.display = "block";
             log.innerHTML = log.innerHTML + thing + ", ";
             log_content = log_content + thing + ",";
-            ub = ub.r(5,"Y");
+            setCookie("log", log_content, 30);
+            ub = ub.r(5, "Y");
             setCookie("buyUnlocked", ub, 30);
         }
         if (thing === 'galaxy') {
             document.getElementById("universe_button").style.display = "block";
             log.innerHTML = log.innerHTML + thing + ", ";
             log_content = log_content + thing + ",";
-            ub = ub.r(6,"Y");
+            setCookie("log", log_content, 30);
+            ub = ub.r(6, "Y");
             setCookie("buyUnlocked", ub, 30);
         }
         if (thing === 'universe') {
@@ -299,7 +303,7 @@ function job() {
     candyCount = candyCount + 1 * multiplier;
     if (candyCount < 1000) {
         hmc.innerHTML = "How much candy you have: " + candyCount;
-        
+
     }
     if (candyCount >= 1000) {
         var y = candyCount / 1000;
@@ -331,6 +335,127 @@ function clickJob() {
     setInterval(job, 1000);
 }
 
+//free gift!
+var giftTimer = document.getElementById("gift-timer");
+date = new Date().getTime();
+var gifts = ["candy", "jobs", "multiplier"];
+var giftAvailable = "no";
+var gcdd = getCookie("giftCDD");
+var ga = getCookie("giftAvailable");
+if (gcdd != "" && ga != "") {
+    giftAvailable = ga;
+    if (ga != "yes") {
+        // Set the date we're counting down to
+        var countDownDate = gcdd;
+        setCookie("giftCDD", countDownDate, 30);
+        // Update the count down every 1 second
+        var x = setInterval(function () {
+
+            // Get todays date and time
+            var now = new Date().getTime();
+            // Find the distance between now an the count down date
+            var distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display the result in the element with id="demo"
+            giftTimer.innerHTML = "Free Gift in " + hours + "h "
+                + minutes + "m " + seconds + "s ";
+
+            // If the count down is finished, write some text
+            if (distance < 0) {
+                clearInterval(x);
+                giftTimer.innerHTML = "Click to collect your Free Gift!";
+                giftAvailable = "yes";
+                setCookie("giftAvailable", giftAvailable, 30);
+            }
+        }, 1000);
+    } else {
+        giftTimer.innerHTML = "Click to collect your Free Gift!";
+    }
+} else {
+    // Set the date we're counting down to
+    var countDownDate = date + 20000;
+    setCookie("giftCDD", countDownDate, 30);
+    // Update the count down every 1 second
+    var x = setInterval(function () {
+
+        // Get todays date and time
+        var now = new Date().getTime();
+        // Find the distance between now an the count down date
+        var distance = countDownDate - now;
+
+        // Time calculations for days, hours, minutes and seconds
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Display the result in the element with id="demo"
+        giftTimer.innerHTML = "Free Gift in " + hours + "h "
+            + minutes + "m " + seconds + "s ";
+
+        // If the count down is finished, write some text
+        if (distance < 0) {
+            clearInterval(x);
+            giftTimer.innerHTML = "Click to collect your Free Gift!";
+            giftAvailable = "yes";
+            setCookie("giftAvailable", giftAvailable, 30);
+        }
+    }, 1000);
+}
+giftTimer.addEventListener("click", function () {
+    if (giftAvailable == "yes") {
+        giftAvailable = "no";
+        var selectedGift = null;
+        selectedGift = gifts[Math.floor(Math.random() * gifts.length)];
+        if (selectedGift == gifts[0]){
+            var given = Math.floor(Math.random() * (candyCount / 1.5));
+            candyCount = candyCount + given;
+            document.querySelector("#error").innerHTML = "You got " + given + " candies in your Free Gift!";
+        } if (selectedGift == gifts[1]){
+            var given = Math.floor(Math.random() * (l / 1.5));
+            l = l + given;
+            document.querySelector("#error").innerHTML = "You got " + given + " jobs in your Free Gift!";
+        } if (selectedGift == gifts[2]){
+            var given = Math.floor(Math.random() * (multiplier / 1.5));
+            multiplier = multiplier + given;
+            document.querySelector("#error").innerHTML = "You got +" + given + " multiplier in your Free Gift!";
+        }
+        setCookie("giftAvailable", giftAvailable, 30);
+        date = new Date().getTime();
+        // Set the date we're counting down to
+        var countDownDate = date + 20000;
+        setCookie("giftCDD", countDownDate, 30);
+        // Update the count down every 1 second
+        var x = setInterval(function () {
+
+            // Get todays date and time
+            var now = new Date().getTime();
+            // Find the distance between now an the count down date
+            var distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display the result in the element with id="demo"
+            giftTimer.innerHTML = "Free Gift in " + hours + "h "
+                + minutes + "m " + seconds + "s ";
+
+            // If the count down is finished, write some text
+            if (distance < 0) {
+                clearInterval(x);
+                giftAvailable = "yes";
+                giftTimer.innerHTML = "Click to collect your Free Gift!";
+                setCookie("giftAvailable", giftAvailable, 30);
+            }
+        }, 1000);
+    };
+});
 
 //code for cheat code
 
@@ -408,6 +533,8 @@ var cls = function () {
     setCookie("job", l, 30);
     setCookie("multiplier", multiplier, 30);
     setCookie("log", log_content, 30);
+    setCookie("giftCDD", countDownDate, 30);
+    setCookie("giftAvailable", giftAvailable, 30)
 };
 
 window.onclose = cls;
