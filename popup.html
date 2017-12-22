@@ -145,14 +145,24 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
     }
 
     #gift-timer {
-      font-size: 200%;
+      font-size: 125%;
+      cursor: default;
+      text-transform: none;
+      border: 2px #505050d5 solid;
+      height: 100px;
+      width: 200px;
+    }
+
+    .big-gift-text {
+      font-size: 20px;
+      margin: 5px;
     }
   </style>
 </head>
 
 <body>
   <div id="splash"></div>
-  <aside id="my-mdc-dialog" class="mdc-dialog">
+  <aside id="nameDialog" class="mdc-dialog">
     <div class="mdc-dialog__surface" style="background:white!important;color:black!important;">
       <header class="mdc-dialog__header">
         <h2 id="my-mdc-dialog-label" class="mdc-dialog__header__title">
@@ -178,6 +188,32 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
       <button type="button" class="mdc-snackbar__action-button"></button>
     </div>
   </div>
+  <aside id="my-mdc-dialog" class="mdc-dialog">
+      <div class="mdc-dialog__surface" style="background:white!important;color:black!important;">
+        <header class="mdc-dialog__header">
+          <h2 id="my-mdc-dialog-label" class="mdc-dialog__header__title">
+            Your name?
+          </h2>
+        </header>
+        <section id="my-mdc-dialog-description" class="mdc-dialog__body">
+          <div class="mdc-text-field mdc-text-field--upgraded">
+            <label class="mdc-text-field__label" for="name">Name?</label>
+            <input type="text" id="name" class="mdc-text-field__input" data-mdc-auto-init="MDCTextfield">
+            <div class="mdc-text-field__bottom-line"></div>
+          </div>
+        </section>
+        <footer class="mdc-dialog__footer">
+          <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept">OK</button>
+        </footer>
+      </div>
+      <div class="mdc-dialog__backdrop"></div>
+    </aside>
+    <div class="mdc-snackbar" aria-live="assertive" aria-atomic="true" aria-hidden="true">
+      <div class="mdc-snackbar__text"></div>
+      <div class="mdc-snackbar__action-wrapper">
+        <button type="button" class="mdc-snackbar__action-button"></button>
+      </div>
+    </div>
   <div id="game">
     <div id="main-game">
       <header class="mdc-toolbar mdc-toolbar--waterfall mdc-toolbar--fixed" style="color:white!important;z-index:3;background:#4CAF50;padding-right:16px!important;">
@@ -206,7 +242,7 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
           </section>
         </div>
       </header>
-      <div id="gift-timer"></div>
+      <button class="mdc-button" id="gift-timer"></button>
       <h2 id="candy"></h2>
       <h2 id="error"></h2>
       <button class="mdc-button" id="costumeswitch_button">Costume switch:100 candies</button>
