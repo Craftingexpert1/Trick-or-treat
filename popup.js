@@ -1,5 +1,13 @@
 //mdc stuff
-var dialog = new mdc.dialog.MDCDialog(document.querySelector('nameDialog'));
+var dialog = new mdc.dialog.MDCDialog(document.querySelector('#nameDialog'));
+var updateDialog = new mdc.dialog.MDCDialog(document.querySelector('#updateDialog'));
+var shopDialog = new mdc.dialog.MDCDialog(document.querySelector('#shop'));
+//var shopTabBar = new mdc.tabs.MDCTabBar(document.querySelector('#shopTabBar'));
+//mdc.tabs.MDCTabBar.attachTo(document.querySelector('#shopTabs'));
+var shopButton = document.querySelector("#shopButton");
+shopButton.addEventListener("click", function () {
+    shopDialog.show();
+});
 var toolbar = mdc.toolbar.MDCToolbar.attachTo(document.querySelector('.mdc-toolbar'));
 let drawer = new mdc.drawer.MDCTemporaryDrawer(document.querySelector('.mdc-temporary-drawer'));
 toolbar.fixedAdjustElement = document.querySelector('.mdc-toolbar-fixed-adjust');
@@ -15,7 +23,7 @@ const dataObj = {
 };
 mdc.textField.MDCTextField.attachTo(document.querySelector('.mdc-text-field'));
 mdc.ripple.MDCRipple.attachTo(document.querySelector('#totbutton'));
-
+var log_content = "";
 snackbar.show(dataObj);
 //regular stuff
 //my comment here, and another new comment
@@ -32,7 +40,8 @@ var candyCount = 0;
 var ub = "";
 var hmc = document.querySelector("#hmc");
 var hmcc = document.querySelector("#hmcc");
-var candyCanes = 0;
+var candyCanes = 100;
+hmcc.innerHTML = 100;
 var caneCookie = getCookie("candyCanes");
 if (caneCookie != "") {
     candyCanes = caneCookie;
@@ -48,13 +57,13 @@ var cc = getCookie("cc");
 var bu = getCookie("buyUnlocked");
 if (bu != "") {
     ub = bu;
-    document.querySelector("#computer_button").style.display = bu.length > 0 ? "block" : "none";
-    document.querySelector("#car_button").style.display = bu.length > 1 ? "block" : "none";
-    document.querySelector("#house_button").style.display = bu.length > 2 ? "block" : "none";
-    document.querySelector("#mansion_button").style.display = bu.length > 3 ? "block" : "none";
-    document.querySelector("#earth_button").style.display = bu.length > 4 ? "block" : "none";
-    document.querySelector("#galaxy_button").style.display = bu.length > 5 ? "block" : "none";
-    document.querySelector("#universe_button").style.display = bu.length > 6 ? "block" : "none";
+    document.querySelector("#computer_button").style.display = bu.length > 0 ? "inline-block" : "none";
+    document.querySelector("#car_button").style.display = bu.length > 1 ? "inline-block" : "none";
+    document.querySelector("#house_button").style.display = bu.length > 2 ? "inline-block" : "none";
+    document.querySelector("#mansion_button").style.display = bu.length > 3 ? "inline-block" : "none";
+    document.querySelector("#earth_button").style.display = bu.length > 4 ? "inline-block" : "none";
+    document.querySelector("#galaxy_button").style.display = bu.length > 5 ? "inline-block" : "none";
+    document.querySelector("#universe_button").style.display = bu.length > 6 ? "inline-block" : "none";
 }
 if (cc != "") {
     var x = Number(cc);
@@ -91,14 +100,13 @@ var mult_cookie = getCookie("multiplier");
 if (mult_cookie != "") {
     var clost = Number(mult_cookie);
     var multiplier_text = document.getElementById("multiplier");
-    multiplier.innerHTML = "Multiplier:" + clost;
+    multiplier.innerHTML = "Multiplier: " + clost;
     multiplier = clost;
 }
 var log_cookie = getCookie("log");
 if (log_cookie != "") {
-    var duck = log_cookie;
-    log_content = duck;
-    log.innerHTML = duck.charAt(0).toUpperCase() + duck.slice(1);
+    log_content = log_cookie;
+    log.innerHTML = log_content;
 }
 var jobcookie = getCookie("job");
 if (jobcookie != "") {
@@ -110,7 +118,7 @@ if (jobcookie != "") {
     }
 }
 var multiplier_text = document.getElementById("multiplier");
-multiplier_text.innerHTML = "Multiplier:" + multiplier;
+multiplier_text.innerHTML = "Multiplier: " + multiplier;
 var cpsText = document.querySelector("#cps");
 var cps = multiplier * l;
 cpsText.innerHTML = "Candy Per Second: " + cps;
@@ -231,12 +239,12 @@ function candyBuy(c, thing) {
         if (thing === 'costume switch') {
             multiplier = multiplier + 1;
             setCookie("multiplier", multiplier, 30);
-            multiplier_text.innerHTML = "Multiplier:" + multiplier;
+            multiplier_text.innerHTML = "Multiplier: " + multiplier;
             cps = multiplier * l;
             cpsText.innerHTML = "Candy Per Second: " + cps;
         }
         if (thing === 'iPod') {
-            document.getElementById("computer_button").style.display = "block";
+            document.getElementById("computer_button").style.display = "inline-block";
             log.innerHTML = log.innerHTML + thing + ", ";
             log_content = log_content + thing + ", ";
             setCookie("log", log_content, 30);
@@ -244,56 +252,56 @@ function candyBuy(c, thing) {
             setCookie("buyUnlocked", ub, 30);
         }
         if (thing === 'computer') {
-            document.getElementById("car_button").style.display = "block";
+            document.getElementById("car_button").style.display = "inline-block";
             log.innerHTML = log.innerHTML + thing + ", ";
-            log_content = log_content + thing + ",";
+            log_content = log_content + thing + ", ";
             setCookie("log", log_content, 30);
             ub = ub.r(1, "Y");
             setCookie("buyUnlocked", ub, 30);
         }
         if (thing === 'car') {
-            document.getElementById("house_button").style.display = "block";
+            document.getElementById("house_button").style.display = "inline-block";
             log.innerHTML = log.innerHTML + thing + ", ";
-            log_content = log_content + thing + ",";
+            log_content = log_content + thing + ", ";
             setCookie("log", log_content, 30);
             ub = ub.r(2, "Y");
             setCookie("buyUnlocked", ub, 30);
         }
         if (thing === 'house') {
-            document.getElementById("mansion_button").style.display = "block";
+            document.getElementById("mansion_button").style.display = "inline-block";
             log.innerHTML = log.innerHTML + thing + ", ";
-            log_content = log_content + thing + ",";
+            log_content = log_content + thing + ", ";
             setCookie("log", log_content, 30);
             ub = ub.r(3, "Y");
             setCookie("buyUnlocked", ub, 30);
         }
         if (thing === 'mansion') {
-            document.getElementById("earth_button").style.display = "block";
+            document.getElementById("earth_button").style.display = "inline-block";
             log.innerHTML = log.innerHTML + thing + ", ";
-            log_content = log_content + thing + ",";
+            log_content = log_content + thing + ", ";
             setCookie("log", log_content, 30);
             ub = ub.r(4, "Y");
             setCookie("buyUnlocked", ub, 30);
         }
         if (thing === 'earth') {
-            document.getElementById("galaxy_button").style.display = "block";
+            document.getElementById("galaxy_button").style.display = "inline-block";
             log.innerHTML = log.innerHTML + thing + ", ";
-            log_content = log_content + thing + ",";
+            log_content = log_content + thing + ", ";
             setCookie("log", log_content, 30);
             ub = ub.r(5, "Y");
             setCookie("buyUnlocked", ub, 30);
         }
         if (thing === 'galaxy') {
-            document.getElementById("universe_button").style.display = "block";
+            document.getElementById("universe_button").style.display = "inline-block";
             log.innerHTML = log.innerHTML + thing + ", ";
-            log_content = log_content + thing + ",";
+            log_content = log_content + thing + ", ";
             setCookie("log", log_content, 30);
             ub = ub.r(6, "Y");
             setCookie("buyUnlocked", ub, 30);
         }
         if (thing === 'universe') {
             document.querySelector("#game").style.display = "none";
-            document.querySelector("#beat_game").style.display = "block";
+            document.querySelector("#beat_game").style.display = "inline-block";
             candyCount = 0;
             l = 0;
             multiplier = 1;
@@ -305,7 +313,51 @@ function candyBuy(c, thing) {
         document.getElementById('error').innerHTML = "You do not have enough candy for a(n) " + thing + ". Get some more!";
     }
 };
-
+function candyCaneBuy(cost, item) {
+    if (candyCanes >= cost) {
+        candyCanes = candyCanes - cost;
+        document.getElementById('error').innerHTML = "You got " + item + ".";
+        hmcc.innerHTML = candyCanes;
+        setCookie("candyCanes", candyCanes, 30);
+        candyCount = (item === "1K candies" ? candyCount + 1000 : (item === "1M candies" ? candyCount + 1000000 : (item === "1B candies" ? candyCount + 1000000000 : candyCount)));
+        var kmbt = null;
+        if (candyCount < 1000) {
+            kmbt = candyCount;
+        }
+        if (candyCount >= 1000) {
+            var y = candyCount / 1000;
+            y = Math.floor(y * 100) / 100;
+            y = y.toFixed(2);
+            kmbt = y + "K";
+        }
+        if (candyCount >= 1000000) {
+            var y = candyCount / 1000000;
+            y = Math.floor(y * 100) / 100;
+            y = y.toFixed(2);
+            kmbt = y + "M";
+        }
+        if (candyCount >= 1000000000) {
+            var y = candyCount / 1000000000;
+            y = Math.floor(y * 100) / 100;
+            y = y.toFixed(2);
+            kmbt = y + "B";
+        }
+        if (candyCount >= 1000000000000) {
+            var y = candyCount / 1000000000000;
+            y = Math.floor(y * 100) / 100;
+            y = y.toFixed(2);
+            kmbt = y + "T";
+        }
+        hmc.innerHTML = kmbt;
+        setCookie("cc", candyCount, 30);
+    }
+    else {
+        document.getElementById('error').innerHTML = "You do not have enough Candy Canes for " + item + ". Get some more!";
+    }
+};
+document.querySelector("#onek_button").addEventListener("click", function () { candyCaneBuy(1, "1K candies"); });
+document.querySelector("#onem_button").addEventListener("click", function () { candyCaneBuy(10, "1M candies"); });
+document.querySelector("#oneb_button").addEventListener("click", function () { candyCaneBuy(100, "1B candies"); });
 function job() {
     candyCount = candyCount + 1 * multiplier;
     if (candyCount < 1000) {
@@ -345,11 +397,12 @@ function clickJob() {
 //free gift!
 var giftTimer = document.getElementById("gift-timer");
 var date = new Date().getTime();
-var gifts = ["candy", "jobs", "multiplier", "candy canes"];
+var gifts = [" candies ", " jobs ", " multiplier "];
+var candyCaneGift = [true, false]
 var giftAvailable = "no";
 var gcdd = getCookie("giftCDD");
 var ga = getCookie("giftAvailable");
-if (gcdd != "" && ga != "") {
+if (gcdd != "") {
     giftAvailable = ga;
     if (ga != "yes") {
         // Set the date we're counting down to
@@ -384,11 +437,10 @@ if (gcdd != "" && ga != "") {
     } else {
         giftTimer.innerHTML = "Click to collect your Free Gift!";
         giftTimer.style.cursor = "pointer";
-        giftTimer.classList.add("mdc-button--raised");
     }
 } else {
     // Set the date we're counting down to
-    var countDownDate = date + 3600000 * 3;
+    var countDownDate = date + 3600000;
     setCookie("giftCDD", countDownDate, 30);
     // Update the count down every 1 second
     var x = setInterval(function () {
@@ -422,34 +474,8 @@ giftTimer.addEventListener("click", function () {
         giftAvailable = "no";
         var selectedGift = null;
         selectedGift = gifts[Math.floor(Math.random() * gifts.length)];
-        var kmbt = null;
-        if (selectedGift < 1000) {
-            kmbt = selectedGift;
-        }
-        if (selectedGift >= 1000) {
-            var y = selectedGift / 1000;
-            y = Math.floor(y * 100) / 100;
-            y = y.toFixed(2);
-            kmbt = y + "K";
-        }
-        if (selectedGift >= 1000000) {
-            var y = selectedGift / 1000000;
-            y = Math.floor(y * 100) / 100;
-            y = y.toFixed(2);
-            kmbt = y + "M";
-        }
-        if (selectedGift >= 1000000000) {
-            var y = selectedGift / 1000000000;
-            y = Math.floor(y * 100) / 100;
-            y = y.toFixed(2);
-            kmbt = y + "B";
-        }
-        if (selectedGift >= 1000000000000) {
-            var y = selectedGift / 1000000000000;
-            y = Math.floor(y * 100) / 100;
-            y = y.toFixed(2);
-            kmbt = y + "T";
-        }
+        var candyCaneYesNo = null;
+        candyCaneYesNo = candyCaneGift[Math.floor(Math.random() * candyCaneGift.length)];
         if (selectedGift == gifts[0]) {
             var given = Math.floor(Math.random() * (candyCount / 1.5)) + 20;
             candyCount = candyCount + given;
@@ -467,21 +493,77 @@ giftTimer.addEventListener("click", function () {
             multiplier = multiplier + given;
             setCookie("multiplier", multiplier, 30);
             cps = multiplier * l;
-            multiplier_text.innerHTML = "Multiplier:" + multiplier;
+            multiplier_text.innerHTML = "Multiplier: " + multiplier;
             cpsText.innerHTML = "Candy Per Second: " + cps;
-            document.querySelector("#error").innerHTML = "You got +" + kmbt + " multiplier in your Free Gift!";
+            document.querySelector("#error").innerHTML = "You got " + kmbt + " multiplier in your Free Gift!";
         }
-        if (selectedGift == gifts[3]) {
+        if (candyCaneYesNo === true) {
+            var givenCandyCanes = Math.floor(Math.random() * 3) + 1;
+            document.querySelector("#error").innerHTML = "You got " + givenCandyCanes + " candy canes and " + kmbt + selectedGift + "in your Free Gift!";
+        }
+        var kmbt = null;
+        if (given < 1000) {
+            kmbt = given;
+        }
+        if (given >= 1000) {
+            var y = given / 1000;
+            y = Math.floor(y * 100) / 100;
+            y = y.toFixed(2);
+            kmbt = y + "K";
+        }
+        if (given >= 1000000) {
+            var y = given / 1000000;
+            y = Math.floor(y * 100) / 100;
+            y = y.toFixed(2);
+            kmbt = y + "M";
+        }
+        if (given >= 1000000000) {
+            var y = given / 1000000000;
+            y = Math.floor(y * 100) / 100;
+            y = y.toFixed(2);
+            kmbt = y + "B";
+        }
+        if (given >= 1000000000000) {
+            var y = given / 1000000000000;
+            y = Math.floor(y * 100) / 100;
+            y = y.toFixed(2);
+            kmbt = y + "T";
+        }
+        //wait a minute; 
+        //if (your name is matthew or nathan) {
+        //stop reading this code and mind your own business;
+        //};
+        if (selectedGift == gifts[0]) {
             var given = Math.floor(Math.random() * (candyCount / 1.5)) + 20;
-            candyCanes = candyCanes + given;
-            document.querySelector("#error").innerHTML = "You got " + kmbt + " candy canes in your Free Gift!";
+            candyCount = candyCount + given;
+            document.querySelector("#error").innerHTML = "You got " + kmbt + " candies in your Free Gift!";
+        } if (selectedGift == gifts[1]) {
+            var given = Math.floor(Math.random() * (l / 1.5)) + 20;
+            l = l + given;
+            document.getElementById('jobs').innerHTML = "Jobs: " + l;
+            cps = multiplier * l;
+            cpsText.innerHTML = "Candy Per Second: " + cps;
+            setCookie("job", l, 30);
+            document.querySelector("#error").innerHTML = "You got " + kmbt + " jobs in your Free Gift!";
+        } if (selectedGift == gifts[2]) {
+            var given = Math.floor(Math.random() * (multiplier / 1.5)) + 20;
+            multiplier = multiplier + given;
+            setCookie("multiplier", multiplier, 30);
+            cps = multiplier * l;
+            multiplier_text.innerHTML = "Multiplier: " + multiplier;
+            cpsText.innerHTML = "Candy Per Second: " + cps;
+            document.querySelector("#error").innerHTML = "You got " + kmbt + " multiplier in your Free Gift!";
+        }
+        if (candyCaneYesNo === true) {
+            var givenCandyCanes = Math.floor(Math.random() * 3) + 1;
+            document.querySelector("#error").innerHTML = "You got " + givenCandyCanes + " candy canes and " + kmbt + selectedGift + "in your Free Gift!";
+            candyCanes = candyCanes + givenCandyCanes;
         }
         setCookie("giftAvailable", giftAvailable, 30);
+
         // Set the date we're counting down to
-        if (gcdd === "") {
-            var countDownDate = date + 3600000 * 3;
-            setCookie("giftCDD", countDownDate, 30);
-        }
+
+        var countDownDate = date + 3600000;
         setCookie("giftCDD", countDownDate, 30);
         // Update the count down every 1 second
         var x = setInterval(function () {
@@ -527,7 +609,7 @@ document.addEventListener("keydown", function (event) {
     if (lastKeys.join('') === secret) {
         console.log("secret entered");
         multiplier = multiplier * 10;
-        multiplier_text.innerHTML = "Multiplier:" + multiplier;
+        multiplier_text.innerHTML = "Multiplier: " + multiplier;
         setCookie("multiplier", multiplier, 30);
     }
 })
@@ -580,7 +662,39 @@ function checkCookie() {
             }
         });
     }
+    var update = getCookie("update");
+    if (update != "") {
+        console.log("Yippee! Newest update!");
+    } else {
+        updateDialog.show();
+        document.querySelector(".acceptUpdate").addEventListener("click", function () {
+            console.log("Woo hoo! Got the update");
+            setCookie("update", true, 30);
+        });
+    }
 }
+
+var tabs = new mdc.tabs.MDCTabBar(document.querySelector("#shopTabs"));
+var panels = document.querySelector(".js-panels");
+tabs.preventDefaultOnClick = true;
+function updatePanel(index) {
+    var activePanel = panels.querySelector(".js-panel.is-active");
+    if (activePanel) {
+        activePanel.classList.remove("is-active");
+    }
+    var newActivePanel = panels.querySelector(
+        ".js-panel:nth-child(" + (index + 1) + ")"
+    );
+    if (newActivePanel) {
+        newActivePanel.classList.add("is-active");
+    }
+}
+tabs.listen("MDCTabBar:change", function (t) {
+    var tabs = t.detail;
+    var nthChildIndex = tabs.activeTabIndex;
+    updatePanel(nthChildIndex);
+});
+
 
 var cls = function () {
     setCookie("buyUnlocked", ub, 30);
@@ -591,6 +705,7 @@ var cls = function () {
     setCookie("giftCDD", countDownDate, 30);
     setCookie("giftAvailable", giftAvailable, 30);
     setCookie("candyCanes", candyCanes, 30);
+    setCookie("update", true, 30);
 };
 
 window.onclose = cls;
