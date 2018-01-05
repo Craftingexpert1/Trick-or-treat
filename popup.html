@@ -39,17 +39,17 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
   <style>
     body {
       font-family: "Roboto", sans-serif;
-      color: white;
+      color: white!important;
       width: 500px;
       height: 485px;
       --mdc-theme-primary: #ff5722;
       --mdc-theme-secondary: #3f51b5;
       --mdc-theme-background: #ff5722;
-      background: url(http://www.freepptbackgrounds.net/wp-content/uploads/2013/12/Xmas-Snows-PPT-Backgrounds-800x600.jpg)
-      /*(http://www.pngmart.com/files/3/Halloween-House-Transparent-Background.png)*/
+      background: url(http://www.pngmart.com/files/3/Halloween-House-Transparent-Background.png)/*(http://www.freepptbackgrounds.net/wp-content/uploads/2013/12/Xmas-Snows-PPT-Backgrounds-800x600.jpg)*/
       #ff5722 no-repeat left bottom fixed;
       padding-right: 16px;
       padding-top: 64px;
+      background-size:cover;
     }
 
     #game {
@@ -139,9 +139,9 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
     }
 
     #drawer-background {
-      background: url(http://taochu.trangnhat.net/backgrounds/Christmas/card/christmas_card_19.jpg)/*(http://www.pngmart.com/files/3/Halloween-Bat-PNG-Image.png)*/
+      background: url (http://www.pngmart.com/files/3/Halloween-Bat-PNG-Image.png)/*(http://taochu.trangnhat.net/backgrounds/Christmas/card/christmas_card_19.jpg)*/
       no-repeat bottom right;
-      background-size: cover;
+      /*background-size: cover;*/
     }
 
     #gift-timer {
@@ -232,7 +232,10 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
       </header>
       <section id="my-mdc-dialog-description" class="mdc-dialog__body">
         <div class="mdc-text-field mdc-text-field--upgraded">
-          Chistmas update! Candy Canes have arrived... And there is a new shop! Plus, every hour you get a Free Gift!
+          New : Pumpkins! Spend them in the new shop!
+          New : Gifts! Get them every hour!
+          New : Looks! More Organized...
+          We are trying to make the best we can of trick or treat!
         </div>
       </section>
       <footer class="mdc-dialog__footer">
@@ -247,7 +250,7 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
         <div class="mdc-toolbar__section mdc-toolbar__section--align-start">
           <nav id="shopTabs" class="mdc-tab-bar mdc-tab-bar--indicator-accent  js-tabs" role="tablist">
             <a role="tab" aria-controls="panel-1" class="mdc-tab mdc-tab--active">Spend Candy</a>
-            <a role="tab" aria-controls="panel-2" class="mdc-tab">Spend Candy Canes</a>
+            <a role="tab" aria-controls="panel-2" class="mdc-tab">Spend pumpkins</a>
             <span class="mdc-tab-bar__indicator"></span>
           </nav>
         </div>
@@ -273,17 +276,17 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
               <ul class="mdc-grid-list__tiles" style="justify-content:center;">
                 <li class="mdc-grid-tile">
                   <div class="mdc-grid-tile__primary">
-                    <button class="mdc-button mdc-button--raised" id="onek_button">1K Candies: 1 Candy Cane</button>
+                    <button class="mdc-button mdc-button--raised" id="onek_button">1K Candies: 1 Pumpkin</button>
                   </div>
                 </li>
                 <li class="mdc-grid-tile">
                   <div class="mdc-grid-tile__primary">
-                    <button class="mdc-button mdc-button--raised" id="onem_button">1M Candies: 10 Candy Canes</button>
+                    <button class="mdc-button mdc-button--raised" id="onem_button">1M Candies: 10 Pumpkins</button>
                   </div>
                 </li>
                 <li class="mdc-grid-tile">
                   <div class="mdc-grid-tile__primary">
-                    <button class="mdc-button mdc-button--raised" id="oneb_button">1B Candies: 100 Candy Canes</button>
+                    <button class="mdc-button mdc-button--raised" id="oneb_button">1B Candies: 100 Pumpkins</button>
                   </div>
                 </li>
               </ul>
@@ -305,7 +308,7 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
   </div>
   <div id="game">
     <div id="main-game">
-      <header class="mdc-toolbar mdc-toolbar--waterfall mdc-toolbar--fixed" style="color:white!important;z-index:3;background:#4CAF50;padding-right:16px!important;">
+      <header class="mdc-toolbar mdc-toolbar--waterfall mdc-toolbar--fixed" style="color:white!important;z-index:3;padding-right:16px!important;">
         <div class="mdc-toolbar__row">
           <section class="mdc-toolbar__section mdc-toolbar__section--align-start">
             <a href="#" class="material-icons menu mdc-toolbar__menu-icon" style="color:white!important;">
@@ -331,16 +334,16 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
           <section class="mdc-toolbar__section mdc-toolbar__section--align-end mdc-toolbar__title" style="z-index:4!important;">
             <img src="/CandyIcon.png" height="28px" width="28px">
             <span id="hmc">0</span>
-            <img src="/CandyCaneIcon.png" height="28px" width="28px">
+            <img src="/PumpkinIcon.png" height="28px" width="28px">
             <span id="hmcc">0</span>
           </section>
         </div>
       </header>
-      <button class="mdc-button" id="gift-timer"></button>
-      <h2 id="candy"></h2>
-      <h2 id="error"></h2>
-      <button class="mdc-button" id="costumeswitch_button">Costume switch: 100 candies</button>
-      <button class="mdc-button" id="job_button">Get a job: 100 candies</button>
+      <button class="mdc-button" id="gift-timer" style="color:white!important;"></button>
+      <h2 id="candy" style="color:white!important;"></h2>
+      <h2 id="error" style="color:white!important;"></h2>
+      <button class="mdc-button" id="costumeswitch_button" style="color:white!important;">Costume switch: 100 candies</button>
+      <button class="mdc-button" id="job_button" style="color:white!important;">Get a job: 100 candies</button>
       <br>
     </div>
   </div>
