@@ -2,6 +2,11 @@
 var dialog = new mdc.dialog.MDCDialog(document.querySelector('#nameDialog'));
 var updateDialog = new mdc.dialog.MDCDialog(document.querySelector('#updateDialog'));
 var shopDialog = new mdc.dialog.MDCDialog(document.querySelector('#shop'));
+var areYouSure = new mdc.dialog.MDCDialog(document.querySelector('#doureally'));
+function doYouReally(what) {
+    document.querySelector('#confirmation').innerHTML = "Do you really want to " + what;
+    areYouSure.show();
+}
 //var shopTabBar = new mdc.tabs.MDCTabBar(document.querySelector('#shopTabBar'));
 //mdc.tabs.MDCTabBar.attachTo(document.querySelector('#shopTabs'));
 var shopButton = document.querySelector("#shopButton");
