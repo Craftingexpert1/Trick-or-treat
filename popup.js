@@ -3,7 +3,7 @@ var dialog = new mdc.dialog.MDCDialog(document.querySelector('#nameDialog'));
 var updateDialog = new mdc.dialog.MDCDialog(document.querySelector('#updateDialog'));
 var shopDialog = new mdc.dialog.MDCDialog(document.querySelector('#shop'));
 var areYouSure = new mdc.dialog.MDCDialog(document.querySelector('#doureally'));
-function doYouReally() {
+function doYouReallyWant() {
     areYouSure.show();
     document.querySelector("#yesido").addEventListener("click", clearGame())
 }
