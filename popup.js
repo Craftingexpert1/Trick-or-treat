@@ -5,6 +5,16 @@ var shopDialog = new mdc.dialog.MDCDialog(document.querySelector('#shop'));
 var areYouSure = new mdc.dialog.MDCDialog(document.querySelector('#doureally'));
 function doYouReally() {
     areYouSure.show();
+    document.querySelector("#yesido").addEventListener("click", clearGame())
+}
+function clearGame() {
+    document.cookie.split(";").forEach(function(c) { document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); });
+    var candyCanes = 100;
+    var l = 0;
+    var candyCount = 0;
+    var ub = "";
+    var multiplier = 1;
+    var log_content = "";
 }
 //var shopTabBar = new mdc.tabs.MDCTabBar(document.querySelector('#shopTabBar'));
 //mdc.tabs.MDCTabBar.attachTo(document.querySelector('#shopTabs'));
