@@ -3,8 +3,7 @@ var dialog = new mdc.dialog.MDCDialog(document.querySelector('#nameDialog'));
 var updateDialog = new mdc.dialog.MDCDialog(document.querySelector('#updateDialog'));
 var shopDialog = new mdc.dialog.MDCDialog(document.querySelector('#shop'));
 var areYouSure = new mdc.dialog.MDCDialog(document.querySelector('#doureally'));
-function doYouReally(what) {
-    document.querySelector('#confirmation').innerHTML = "Do you really want to " + what;
+function doYouReally() {
     areYouSure.show();
 }
 //var shopTabBar = new mdc.tabs.MDCTabBar(document.querySelector('#shopTabBar'));
@@ -35,6 +34,7 @@ snackbar.show(dataObj);
 var newGame = document.querySelector("#new-game");
 newGame.addEventListener("click", function(){
     console.log("game cleared");
+    doYouReallyWant()
 });
 var candy = document.getElementById("candy");
 var candies = ["Snickers(stop that, will you?)", "Reese's", "Milky Way(the chocolate, not  the galaxy)", "Three Musketeers(the candy though)", "Kit Kat"];
