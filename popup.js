@@ -15,6 +15,9 @@ function clearGame() {
     ub = "";
     multiplier = 1;
     log_content = "";
+    hmcc.innerHTML = candyCanes;
+    hmc.innerHTML = candyCount;
+    location.reload();
 }
 //var shopTabBar = new mdc.tabs.MDCTabBar(document.querySelector('#shopTabBar'));
 //mdc.tabs.MDCTabBar.attachTo(document.querySelector('#shopTabs'));
