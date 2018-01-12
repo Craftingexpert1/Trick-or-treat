@@ -508,7 +508,7 @@ giftTimer.addEventListener("click", function () {
         }
         if (candyCaneYesNo === true) {
             var givenCandyCanes = Math.floor(Math.random() * 3) + 1;
-            document.querySelector("#error").innerHTML = "You got " + givenCandyCanes + " candy canes and " + kmbt + selectedGift + "in your Free Gift!";
+            document.querySelector("#error").innerHTML = "You got " + givenCandyCanes + " pumpkins and " + kmbt + selectedGift + "in your Free Gift!";
         }
         var kmbt = null;
         if (given < 1000) {
