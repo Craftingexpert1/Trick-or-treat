@@ -3,22 +3,6 @@ var dialog = new mdc.dialog.MDCDialog(document.querySelector('#nameDialog'));
 var updateDialog = new mdc.dialog.MDCDialog(document.querySelector('#updateDialog'));
 var shopDialog = new mdc.dialog.MDCDialog(document.querySelector('#shop'));
 var areYouSure = new mdc.dialog.MDCDialog(document.querySelector('#doureally'));
-function doYouReallyWant() {
-    areYouSure.show();
-    document.querySelector("#yesido").addEventListener("click", clearGame())
-}
-function clearGame() {
-    document.cookie.split(";").forEach(function(c) { document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); });
-    candyCanes = 100;
-    l = 0;
-    candyCount = 0;
-    ub = "";
-    multiplier = 1;
-    log_content = "";
-    hmcc.innerHTML = candyCanes;
-    hmc.innerHTML = candyCount;
-    location.reload();
-}
 //var shopTabBar = new mdc.tabs.MDCTabBar(document.querySelector('#shopTabBar'));
 //mdc.tabs.MDCTabBar.attachTo(document.querySelector('#shopTabs'));
 var shopButton = document.querySelector("#shopButton");
@@ -47,8 +31,22 @@ snackbar.show(dataObj);
 var newGame = document.querySelector("#new-game");
 newGame.addEventListener("click", function(){
     console.log("game cleared");
-    doYouReallyWant()
+    areYouSure.show();
+    document.querySelector("#yesido").addEventListener("click", clearGame())
+    function clearGame() {
+        document.cookie.split(";").forEach(function(c) { document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); });
+        candyCanes = 100;
+        l = 0;
+        candyCount = 0;
+        ub = "";
+        multiplier = 1;
+        log_content = "";
+        hmcc.innerHTML = candyCanes;
+        hmc.innerHTML = candyCount;
+        location.reload();
+    }
 });
+
 var candy = document.getElementById("candy");
 var candies = ["Snickers(stop that, will you?)", "Reese's", "Milky Way(the chocolate, not  the galaxy)", "Three Musketeers(the candy though)", "Kit Kat"];
 var hmc = document.getElementById("hmc");
