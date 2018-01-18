@@ -408,6 +408,12 @@ function job() {
         y = y.toFixed(2);
         hmc.innerHTML = y + "T";
     }
+    if (candyCount >= 1000000000000000) {
+        var y = candyCount / 1000000000000000;
+        y = Math.floor(y * 100) / 100;
+        y = y.toFixed(2);
+        hmc.innerHTML = y + "Q";
+    }
     setCookie("cc", candyCount, 30);
 }
 function clickJob() {
@@ -500,6 +506,7 @@ giftTimer.addEventListener("click", function () {
             var given = Math.floor(Math.random() * (candyCount / 1.5)) + 20;
             candyCount = candyCount + given;
             document.querySelector("#error").innerHTML = "You got " + kmbt + " candies in your Free Gift!";
+            hmc.innerHTML = candyCount;
         } if (selectedGift == gifts[1]) {
             var given = Math.floor(Math.random() * (l / 1.5)) + 20;
             l = l + given;
@@ -520,6 +527,7 @@ giftTimer.addEventListener("click", function () {
         if (candyCaneYesNo === true) {
             var givenCandyCanes = Math.floor(Math.random() * 3) + 1;
             document.querySelector("#error").innerHTML = "You got " + givenCandyCanes + " pumpkins and " + kmbt + selectedGift + "in your Free Gift!";
+            hmcc.innerHTML = candyCanes;
         }
         var kmbt = null;
         if (given < 1000) {
@@ -578,6 +586,7 @@ giftTimer.addEventListener("click", function () {
             var givenCandyCanes = Math.floor(Math.random() * 3) + 1;
             document.querySelector("#error").innerHTML = "You got " + givenCandyCanes + " candy canes and " + kmbt + selectedGift + "in your Free Gift!";
             candyCanes = candyCanes + givenCandyCanes;
+            hmcc.innerHTML = candyCanes;
         }
         setCookie("giftAvailable", giftAvailable, 30);
 
