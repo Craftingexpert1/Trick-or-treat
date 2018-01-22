@@ -524,12 +524,6 @@ giftTimer.addEventListener("click", function () {
             cpsText.innerHTML = "Candy Per Second: " + cps;
             document.querySelector("#error").innerHTML = "You got " + kmbt + " multiplier in your Free Gift!";
         }
-        if (candyCaneYesNo === true) {
-            var givenCandyCanes = Math.floor(Math.random() * 3) + 1;
-            candyCanes = candyCanes + givenCandyCanes;
-            document.querySelector("#error").innerHTML = "You got " + givenCandyCanes + " Pumpkins and " + kmbt + selectedGift + "in your Free Gift!";
-            hmcc.innerHTML = candyCanes;
-        }
         var kmbt = null;
         if (given < 1000) {
             kmbt = given;
@@ -585,7 +579,7 @@ giftTimer.addEventListener("click", function () {
         }
         if (candyCaneYesNo === true) {
             var givenCandyCanes = Math.floor(Math.random() * 3) + 1;
-            document.querySelector("#error").innerHTML = "You got " + givenCandyCanes + " candy canes and " + kmbt + selectedGift + "in your Free Gift!";
+            document.querySelector("#error").innerHTML = "You got " + givenCandyCanes + " pumpkins and " + kmbt + selectedGift + "in your Free Gift!";
             candyCanes = candyCanes + givenCandyCanes;
             hmcc.innerHTML = candyCanes;
         }
@@ -625,8 +619,8 @@ giftTimer.addEventListener("click", function () {
 });
 
 //code for cheat code
-
-var secret = "go1";
+//But this is bad!
+/*var secret = "go1";
 document.addEventListener("keydown", function (event) {
     if (lastKeys.length < 3) {
         lastKeys.push(event.key);
@@ -642,7 +636,7 @@ document.addEventListener("keydown", function (event) {
         multiplier_text.innerHTML = "Multiplier: " + multiplier;
         setCookie("multiplier", multiplier, 30);
     }
-})
+})*/
 
 
 document.body.onload = function () {
