@@ -86,7 +86,7 @@ if (bu != "") {
 }
 var ccd = getCookie("candyCanes");
 if (ccd != "") {
-    var x = Number(cc);
+    var x = Number(ccd);
     candyCanes = x;
     hmcc.innerHTML = candyCanes;
 }
