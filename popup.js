@@ -73,7 +73,6 @@ cpsText.innerHTML = "Candy Per Second: " + cps;
 String.prototype.r = function (index, replacement) {
     return this.substr(0, index) + replacement + this.substr(index + replacement.length);
 }
-var cc = getCookie("cc");
 var bu = getCookie("buyUnlocked");
 if (bu != "") {
     ub = bu;
@@ -85,6 +84,13 @@ if (bu != "") {
     document.querySelector("#galaxy_button").style.display = bu.length > 5 ? "inline-block" : "none";
     document.querySelector("#universe_button").style.display = bu.length > 6 ? "inline-block" : "none";
 }
+var ccd = getCookie("candyCanes");
+if (ccd != "") {
+    var x = Number(cc);
+    candyCanes = x;
+    hmcc.innerHTML = candyCanes;
+}
+var cc = getCookie("cc");
 if (cc != "") {
     var x = Number(cc);
     candyCount = x;
