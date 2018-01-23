@@ -647,7 +647,18 @@ document.addEventListener("keydown", function (event) {
         setCookie("multiplier", multiplier, 30);
     }
 })*/
+//This so nobody will know!
 
+var cheat = {
+    multiplier:function() {
+        multiplier = multiplier * 10;
+        multiplier_text.innerHTML = "Multiplier: " + multiplier;
+        setCookie("multiplier", multiplier, 30);
+    },
+    infinite:function(what) {
+        what = Infinity;
+    }
+}
 
 document.body.onload = function () {
     checkCookie();
