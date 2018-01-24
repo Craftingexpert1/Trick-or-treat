@@ -392,6 +392,7 @@ function candyCaneBuy(cost, item) {
             frm_num = frm_num + 1
             frm.innerHTML = "Farmers:" + frm_num; 
             hmcc.innerHTML = candyCanes;
+            setCookie("farmer", frm_num, 30)
             
         }
         hmc.innerHTML = kmbt;
