@@ -671,12 +671,9 @@ var cheat = {
         multiplier = multiplier * 10;
         multiplier_text.innerHTML = "Multiplier: " + multiplier;
         setCookie("multiplier", multiplier, 30);
-    },
-    infinite:candyCount = {
-        candyCount = Infinity;
-        hmc.innerHTML = candyCount;
     }
 }
+
 
 document.body.onload = function () {
     checkCookie();
