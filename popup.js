@@ -672,7 +672,7 @@ var cheat = {
         multiplier_text.innerHTML = "Multiplier: " + multiplier;
         setCookie("multiplier", multiplier, 30);
     },
-    infinite:var candyCount = {
+    infinite:candyCount = {
         candyCount = Infinity;
         hmc.innerHTML = candyCount;
     }
