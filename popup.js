@@ -387,11 +387,10 @@ function candyCaneBuy(cost, item) {
             y = y.toFixed(2);
             kmbt = y + "T";
         }
-        if (item = "farmer") {
+        if (item === "farmer") {
             clickFarmer();
             frm_num = frm_num + 1
-            frm.innerHTML = "Farmers:" + frm_num; 
-            hmcc.innerHTML = candyCanes;
+            frm.innerHTML = "Farmers:" + frm_num;
             setCookie("farmer", frm_num, 30)
             
         }
@@ -434,12 +433,6 @@ function job() {
         y = Math.floor(y * 100) / 100;
         y = y.toFixed(2);
         hmc.innerHTML = y + "T";
-    }
-    if (candyCount >= 1000000000000000) {
-        var y = candyCount / 1000000000000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "Q";
     }
     setCookie("cc", candyCount, 30);
 }
