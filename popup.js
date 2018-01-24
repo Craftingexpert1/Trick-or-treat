@@ -37,6 +37,7 @@ newGame.addEventListener("click", function(){
         document.cookie.split(";").forEach(function(c) { document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); });
         candyCanes = 100;
         l = 0;
+        frm = 0;
         candyCount = 0;
         ub = "";
         multiplier = 1;
@@ -52,10 +53,12 @@ var candies = ["Snickers(stop that, will you?)", "Reese's", "Milky Way(the choco
 var hmc = document.getElementById("hmc");
 var stages = document.getElementById("stages");
 var log = document.getElementById("log");
+var frm = document.getElementById("farmers");
 var log_content;
 var multiplier = 1;
 var lastKeys = [];
 var l = 0;
+var frm_num = 0;
 var candyCount = 0;
 var ub = "";
 var hmc = document.querySelector("#hmc");
@@ -141,6 +144,15 @@ if (jobcookie != "") {
     l = jl;
     for (i = 0; i < l; i++) {
         clickJob();
+    }
+}
+var frmcookie = getCookie("farmer");
+if (frmcookie != "") {
+    var elite = Number(frmcookie);
+    frm.innerHTML = "Farmers: " + elite;
+    frm_num = elite;
+    for (i = 0; i < frm_num; i++) {
+        clickFarmer();
     }
 }
 var multiplier_text = document.getElementById("multiplier");
@@ -339,6 +351,7 @@ function candyBuy(c, thing) {
         document.getElementById('error').innerHTML = "You do not have enough candy for a(n) " + thing + ". Get some more!";
     }
 };
+document.querySelector("farmer_button").addEventListener("click", candyCaneBuy(5, "farmer"));
 function candyCaneBuy(cost, item) {
     if (candyCanes >= cost) {
         candyCanes = candyCanes - cost;
@@ -374,11 +387,17 @@ function candyCaneBuy(cost, item) {
             y = y.toFixed(2);
             kmbt = y + "T";
         }
+        if (item = "farmer") {
+            clickFarmer();
+            frm_num = frm_num + 1
+            frm.innerHTML = "Farmers:" + frm_num;
+            
+        }
         hmc.innerHTML = kmbt;
         setCookie("cc", candyCount, 30);
     }
     else {
-        document.getElementById('error').innerHTML = "You do not have enough Candy Canes for " + item + ". Get some more!";
+        document.getElementById('error').innerHTML = "You do not have enough pumkins for " + item + ". Get some more!";
     }
 };
 document.querySelector("#onek_button").addEventListener("click", function () { candyCaneBuy(1, "1K candies"); });
@@ -424,6 +443,13 @@ function job() {
 }
 function clickJob() {
     setInterval(job, 1000);
+}
+function farmer() {
+    candyCanes = candyCanes + 1;
+    hmcc.innerHTML = candyCanes;
+}
+function clickFarmer() {
+    setInterval(farmer, 60000)
 }
 
 //free gift!
@@ -751,6 +777,7 @@ var cls = function () {
     setCookie("giftAvailable", giftAvailable, 30);
     setCookie("candyCanes", candyCanes, 30);
     setCookie("update", true, 30);
+    setCookie("farmers", frm_num, 30);
 };
 
 window.onclose = cls;
