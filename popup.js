@@ -64,12 +64,7 @@ var ub = "";
 var hmc = document.querySelector("#hmc");
 var hmcc = document.querySelector("#hmcc");
 var candyCanes = 100;
-hmcc.innerHTML = 100;
-var caneCookie = getCookie("candyCanes");
-if (caneCookie != "") {
-    candyCanes = caneCookie;
-    hmcc.innerHTML = candyCanes;
-}
+hmcc.innerHTML = candyCanes;
 var cpsText = document.querySelector("#cps");
 var cps = multiplier * l;
 cpsText.innerHTML = "Candy Per Second: " + cps;
@@ -351,7 +346,7 @@ function candyBuy(c, thing) {
         document.getElementById('error').innerHTML = "You do not have enough candy for a(n) " + thing + ". Get some more!";
     }
 };
-document.querySelector("#farmer_button").addEventListener("click", candyCaneBuy(5, "farmer"));
+document.querySelector("#farmer_button").addEventListener("click", function () { candyCaneBuy(5, "farmer"); });
 function candyCaneBuy(cost, item) {
     if (candyCanes >= cost) {
         candyCanes = candyCanes - cost;
