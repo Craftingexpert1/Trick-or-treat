@@ -390,7 +390,8 @@ function candyCaneBuy(cost, item) {
         if (item = "farmer") {
             clickFarmer();
             frm_num = frm_num + 1
-            frm.innerHTML = "Farmers:" + frm_num;
+            frm.innerHTML = "Farmers:" + frm_num; 
+            hmcc.innerHTML = candyCanes;
             
         }
         hmc.innerHTML = kmbt;
