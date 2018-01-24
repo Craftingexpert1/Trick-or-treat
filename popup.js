@@ -351,7 +351,7 @@ function candyBuy(c, thing) {
         document.getElementById('error').innerHTML = "You do not have enough candy for a(n) " + thing + ". Get some more!";
     }
 };
-document.querySelector("farmer_button").addEventListener("click", candyCaneBuy(5, "farmer"));
+document.querySelector("#farmer_button").addEventListener("click", candyCaneBuy(5, "farmer"));
 function candyCaneBuy(cost, item) {
     if (candyCanes >= cost) {
         candyCanes = candyCanes - cost;
