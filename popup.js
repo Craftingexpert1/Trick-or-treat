@@ -449,6 +449,7 @@ function clickJob() {
 function farmer() {
     candyCanes = candyCanes + 1;
     hmcc.innerHTML = candyCanes;
+    setCookie("candyCanes", candyCanes, 30);
 }
 function clickFarmer() {
     setInterval(farmer, 60000)
