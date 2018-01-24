@@ -672,8 +672,9 @@ var cheat = {
         multiplier_text.innerHTML = "Multiplier: " + multiplier;
         setCookie("multiplier", multiplier, 30);
     },
-    infinite:function(what) {
-        what = Infinity;
+    infinite:var candyCount = {
+        candyCount = Infinity;
+        hmc.innerHTML = candyCount;
     }
 }
 
@@ -769,6 +770,7 @@ var cls = function () {
     setCookie("candyCanes", candyCanes, 30);
     setCookie("update", true, 30);
     setCookie("farmers", frm_num, 30);
+    var ducks = candyCanes
 };
 
 window.onclose = cls;
