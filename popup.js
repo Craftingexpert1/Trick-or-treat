@@ -164,6 +164,7 @@ function tot() {
     if (candyCaneChance === 15) {
         candyCanes = candyCanes + 1;
         hmcc.innerHTML = candyCanes;
+        setCookie("candyCanes", candyCanes, 30)
     }
     if (candyCount < 1000) {
         hmc.innerHTML = candyCount;
