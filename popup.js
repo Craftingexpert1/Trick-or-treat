@@ -160,7 +160,7 @@ function tot() {
     var candy = document.getElementById("candy");
     candy.innerHTML = "You get: " + candies[Math.floor(Math.random() * 5)];
     candyCount = candyCount + 1 * multiplier;
-    var candyCaneChance = Math.floor(Math.random() * 100)
+    var candyCaneChance = Math.floor(Math.random() * 1000)
     if (candyCaneChance === 15) {
         candyCanes = candyCanes + 1;
         hmcc.innerHTML = candyCanes;
