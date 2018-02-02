@@ -392,7 +392,7 @@ function candyCaneBuy(cost, item) {
         if (item === "farmer") {
             clickFarmer();
             frm_num = frm_num + 1
-            frm.innerHTML = "Farmers:" + frm_num;
+            frm.innerHTML = "Farmers: " + frm_num;
             setCookie("farmer", frm_num, 30)
             
         }
