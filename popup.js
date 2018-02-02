@@ -165,6 +165,7 @@ function tot() {
         candyCanes = candyCanes + 1;
         hmcc.innerHTML = candyCanes;
         setCookie("candyCanes", candyCanes, 30)
+        candy.innerHTML = candy.innerHTML + "AND a LEGENDARY Pumpkin Treat!!"
     }
     if (candyCount < 1000) {
         hmc.innerHTML = candyCount;
