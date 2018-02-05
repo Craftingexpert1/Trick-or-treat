@@ -353,7 +353,7 @@ function candyBuy(c, thing) {
         document.getElementById('error').innerHTML = "You do not have enough candy for a(n) " + thing + ". Get some more!";
     }
 };
-document.querySelector("#farmer_button").addEventListener("click", function () { candyCaneBuy(5, "farmer"); });
+document.querySelector("#farmer_button").addEventListener("click", function () { candyCaneBuy(5, "a farmer"); });
 function candyCaneBuy(cost, item) {
     if (candyCanes >= cost) {
         candyCanes = candyCanes - cost;
@@ -389,12 +389,22 @@ function candyCaneBuy(cost, item) {
             y = y.toFixed(2);
             kmbt = y + "T";
         }
-        if (item === "farmer") {
+        if (item === "a farmer") {
             clickFarmer();
-            frm_num = frm_num + 1
+            frm_num = frm_num + 1;
             frm.innerHTML = "Farmers: " + frm_num;
-            setCookie("farmer", frm_num, 30)
-            
+            setCookie("farmer", frm_num, 30);
+        }
+        if (item === "a Lucky Penny Boost") {
+           multiplier = multiplier * 2;
+           setCookie("multiplier", multiplier, 30)
+        }
+        if (item === "a Promotion") {
+           l = l * 2;
+           setCookie("job", l, 30)
+        }
+        if (item === "an Ultimate Candy Corn Boost") {
+           candyCount = candyCount * 2;
         }
         hmc.innerHTML = kmbt;
         setCookie("cc", candyCount, 30);
@@ -406,6 +416,9 @@ function candyCaneBuy(cost, item) {
 document.querySelector("#onek_button").addEventListener("click", function () { candyCaneBuy(1, "1K candies"); });
 document.querySelector("#onem_button").addEventListener("click", function () { candyCaneBuy(10, "1M candies"); });
 document.querySelector("#oneb_button").addEventListener("click", function () { candyCaneBuy(100, "1B candies"); });
+document.querySelector("#lp_button").addEventListener("click", function () { candyCaneBuy(1250, "a Lucky Penny Boost"); });
+document.querySelector("#prmt_button").addEventListener("click", function () { candyCaneBuy(2500, "a Promotion"); });
+document.querySelector("#uccb_button").addEventListener("click", function () { candyCaneBuy(5000, "an Ultimate Candy Corn Boost"); });
 function job() {
     candyCount = candyCount + 1 * multiplier;
     if (candyCount < 1000) {
