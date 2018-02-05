@@ -396,15 +396,18 @@ function candyCaneBuy(cost, item) {
             setCookie("farmer", frm_num, 30);
         }
         if (item === "a Lucky Penny Boost") {
-           multiplier = multiplier * 2;
-           setCookie("multiplier", multiplier, 30)
+            multiplier = multiplier * 2
+            multiplier_text.innerHTML = multiplier;
+            setCookie("multiplier", multiplier, 30)
         }
         if (item === "a Promotion") {
-           l = l * 2;
-           setCookie("job", l, 30)
+            l = l * 2;
+            document.getElementById("jobs").innerHTML = l;
+            setCookie("job", l, 30)
         }
         if (item === "an Ultimate Candy Corn Boost") {
-           candyCount = candyCount * 2;
+            candyCount = candyCount * 2;
+            hmc.innerHTML = candyCount;
         }
         hmc.innerHTML = kmbt;
         setCookie("cc", candyCount, 30);
@@ -460,7 +463,7 @@ function farmer() {
     setCookie("candyCanes", candyCanes, 30);
 }
 function clickFarmer() {
-    setInterval(farmer, 60000)
+    setInterval(farmer, 90000)
 }
 
 //free gift!
