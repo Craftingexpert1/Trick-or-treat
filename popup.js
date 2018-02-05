@@ -397,12 +397,12 @@ function candyCaneBuy(cost, item) {
         }
         if (item === "a Lucky Penny Boost") {
             multiplier = multiplier * 2
-            multiplier_text.innerHTML = multiplier;
+            multiplier_text.innerHTML = "Multiplier: " + multiplier;
             setCookie("multiplier", multiplier, 30)
         }
         if (item === "a Promotion") {
             l = l * 2;
-            document.getElementById("jobs").innerHTML = l;
+            document.getElementById("jobs").innerHTML = "Jobs: " + l;
             setCookie("job", l, 30)
         }
         if (item === "an Ultimate Candy Corn Boost") {
