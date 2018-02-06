@@ -45,6 +45,7 @@ newGame.addEventListener("click", function(){
         hmcc.innerHTML = candyCanes;
         hmc.innerHTML = candyCount;
         location.reload();
+        frm_num = 0;
     }
 });
 
