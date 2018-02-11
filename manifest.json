@@ -3,7 +3,7 @@
 
   "name": "Trick or treat! ^_^",
   "description": "Go trick or treating!",
-  "version": "1.4",
+  "version": "1.7",
 
   "browser_action": {
     "default_icon": "pumpkin128.png",
