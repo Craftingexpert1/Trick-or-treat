@@ -23,6 +23,7 @@ const dataObj = {
     }
 };
 mdc.textField.MDCTextField.attachTo(document.querySelector('.mdc-text-field'));
+mdc.textField.MDCTextField.attachTo(document.querySelector('.textfield'));
 mdc.ripple.MDCRipple.attachTo(document.querySelector('#totbutton'));
 var log_content = "";
 snackbar.show(dataObj);
@@ -150,6 +151,11 @@ if (frmcookie != "") {
     for (i = 0; i < frm_num; i++) {
         clickFarmer();
     }
+}
+
+var promoCookie = getCookie("disabledPromo");
+if (promoCookie != "") {
+    disabledPromo = promoCookie;
 }
 var multiplier_text = document.getElementById("multiplier");
 multiplier_text.innerHTML = "Multiplier: " + multiplier;
@@ -788,6 +794,23 @@ tabs.listen("MDCTabBar:change", function (t) {
 });
 
 
+var promo_button = document.querySelector('#promo_button');
+var promo_field = document.querySelector('#promocode');
+var results = document.querySelector('#results');
+var disabledPromo = "";
+
+promo_button.addEventListener('click', function (){
+    if (promo_field.value.toUpperCase() === 'DIVEROLL' && disabledPromo === "") {
+        multiplier = multiplier * 2;
+        multiplier_text.innerHTML = "Multiplier: " + multiplier;
+        disabledPromo = "yep";
+        results.innerHTML = "Promo Code DIVEROLL redeemed! Multiplier X2!";
+        cps = l * multiplier;
+        cpsText.innerHTML = "Candy Per Second: " + cps;
+        setCookie("disabledPromo", "yep", 30);
+    }
+});
+
 var cls = function () {
     setCookie("buyUnlocked", ub, 30);
     setCookie("cc", candyCount, 30);
@@ -799,7 +822,7 @@ var cls = function () {
     setCookie("candyCanes", candyCanes, 30);
     setCookie("update", true, 30);
     setCookie("farmers", frm_num, 30);
-    var ducks = candyCanes
+    setCookie("disabledPromo", disabledPromo, 30);
 };
 
 window.onclose = cls;
