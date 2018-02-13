@@ -22,7 +22,7 @@ $$$$$$$$$$$$$$$bu  `  '!!!!!!!!!!~  !!!!!!!!!!!!!~` .uuue$$$$$$$$$$$$$$$
 $$$$$$$$$$$$$$$$$$$$$$e.  ````   .eu.     ```   .e$$$$$$$$$$$$$$$$$$$$$$
 $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
 
-<!-- H A P P Y H A L L O W E E N -->
+<!-- H A P P Y V A L E N T I N E S -->
 
 
 <!doctype html>
@@ -42,10 +42,11 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
       color: white!important;
       width: 500px;
       height: 485px;
-      --mdc-theme-primary: #ff5722;
+      --mdc-theme-primary: #f48fb1;
       --mdc-theme-secondary: #3f51b5;
-      --mdc-theme-background: #ff5722;
-      background: url(http://www.pngmart.com/files/3/Halloween-House-Transparent-Background.png)/*(http://www.freepptbackgrounds.net/wp-content/uploads/2013/12/Xmas-Snows-PPT-Backgrounds-800x600.jpg)*/
+      --mdc-theme-background: #f48fb1;
+      background: /*url(Halloween-House-Transparent-Background.png)*/
+      url(https://image.freepik.com/free-vector/bokeh-valentines-day-background-in-purple-tones_1017-1601.jpg)
       #ff5722 no-repeat left bottom fixed;
       padding-right: 16px;
       padding-top: 64px;
@@ -181,7 +182,7 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
     .mdc-grid-tile__primary>.mdc-button {
       width: 100px;
       height: 150px;
-      font-size: 100%;
+      font-size: 85%;
     }
 
     .mdc-grid-tile__secondary {
@@ -190,6 +191,16 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
 
     #shop {
       justify-content: center;
+    }
+
+    code {
+      font-size: 1rem;
+      background: #d1d1d1;
+      border-radius: 1px;
+    }
+
+    #promocode {
+      text-transform: uppercase;
     }
   </style>
 </head>
@@ -247,12 +258,13 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
         </h2>
       </header>
       <section class="mdc-dialog__body">
-          1.7 is here! Here we go:<br>
-            New: Farmers need a break. They now give you a Pumpkin every 2 minutes<br>
-            New: Boosts. Get tham at the shop!<br>
+          1.7 AKA The Valentine's Mix Update is here! Here we go:<br>
+            NEW: For this week, Pumpkins are Hearts! <br>
+            NEW: Farmers need a break. They now give you a Heart every 100 seconds.<br>
+            NEW: Boosts. Get tham at the shop!<br>
             Fixes: Lots of minor and major bug fixes. Darn those bugs!<br>
-            Tip: If you want to spam your candy, press the trick or treat button and hold enter. (highly recommended).<br>
-            Also: If you want to help trick or treat, you can always contribute at dev.velp@gmail.com (my email).<br>
+            Tip: If you want to continously press a button, press the desired button and hold <code>Enter</code>.<br>
+            If you want to help Trick or Treat, please share it with a friend and/or download some other AWESOME 2K inc. extensions. Thank you!<br>
       </section>
       <footer class="mdc-dialog__footer">
         <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept acceptUpdate">Let's Go!</button>
@@ -266,7 +278,8 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
         <div class="mdc-toolbar__section mdc-toolbar__section--align-start">
           <nav id="shopTabs" class="mdc-tab-bar mdc-tab-bar--indicator-accent  js-tabs" role="tablist">
             <a role="tab" aria-controls="panel-1" class="mdc-tab mdc-tab--active">Spend Candy</a>
-            <a role="tab" aria-controls="panel-2" class="mdc-tab">Spend Pumpkins</a>
+            <a role="tab" aria-controls="panel-2" class="mdc-tab">Spend Hearts</a>
+            <a role="tab" aria-controls="panel-3" class="mdc-tab">Redeem Code</a>
             <span class="mdc-tab-bar__indicator"></span>
           </nav>
         </div>
@@ -292,17 +305,17 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
               <ul class="mdc-grid-list__tiles" style="justify-content:center;">
                 <li class="mdc-grid-tile">
                   <div class="mdc-grid-tile__primary">
-                    <button class="mdc-button mdc-button--raised" id="onek_button">1K Candies: 1 Pumpkin</button>
+                    <button class="mdc-button mdc-button--raised" id="onek_button">1K Candies: 1 Heart</button>
                   </div>
                 </li>
                 <li class="mdc-grid-tile">
                   <div class="mdc-grid-tile__primary">
-                    <button class="mdc-button mdc-button--raised" id="onem_button">1M Candies: 10 Pumpkins</button>
+                    <button class="mdc-button mdc-button--raised" id="onem_button">1M Candies: 10 Hearts</button>
                   </div>
                 </li>
                 <li class="mdc-grid-tile">
                   <div class="mdc-grid-tile__primary">
-                    <button class="mdc-button mdc-button--raised" id="oneb_button">1B Candies: 100 Pumpkins</button>
+                    <button class="mdc-button mdc-button--raised" id="oneb_button">1B Candies: 100 Hearts</button>
                   </div>
                 </li>
               </ul>
@@ -313,21 +326,30 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
                 <div style="width:500px;"></div>
                 <li class="mdc-grid-tile">
                   <div class="mdc-grid-tile__primary">
-                    <button class="mdc-button mdc-button--raised" id="lp_button" style="height:250px;">Lucky Penny (Multiplier x 2): 1250 Pumpkins</button>
+                    <button class="mdc-button mdc-button--raised" id="lp_button" style="height:200px;">Lucky Penny (Multiplier x2): 1250 Hearts</button>
                   </div>
                 </li>
                 <li class="mdc-grid-tile">
                   <div class="mdc-grid-tile__primary">
-                    <button class="mdc-button mdc-button--raised" id="prmt_button" style="height:250px;">Promotion (Jobs x 2): 2500 Pumpkins</button>
+                    <button class="mdc-button mdc-button--raised" id="prmt_button" style="height:200px;">Promotion (Jobs x2): 2500 Hearts</button>
                   </div>
                 </li>
                 <li class="mdc-grid-tile">
                   <div class="mdc-grid-tile__primary">
-                    <button class="mdc-button mdc-button--raised" id="uccb_button" style="height:250px;">Ultimate Candy Corn (Candy x 2): 5000 Pumpkins</button>
+                    <button class="mdc-button mdc-button--raised" id="uccb_button" style="height:200px;">Ultimate Candy Corn (Candy x2): 5000 Hearts</button>
                   </div>
                 </li>
               </ul>
             </div>
+          </div>
+          <div class="js-panel" role="tabpanel" aria-hidden="true" id="redeemCode">
+            <div class="mdc-text-field mdc-text-field--upgraded textfield" style="margin:16px;">
+              <label class="mdc-text-field__label" for="name">PROMOCODE</label>
+              <input type="text" id="promocode" class="mdc-text-field__input" data-mdc-auto-init="MDCTextfield">
+              <div class="mdc-text-field__bottom-line"></div>
+            </div>
+            <button class="mdc-button" id="promo_button">Redeem</button><br>
+            <div id="results" style="color:black;margin:16px;"></div>
           </div>
         </div>
       </section>
@@ -371,7 +393,7 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
           <section class="mdc-toolbar__section mdc-toolbar__section--align-end mdc-toolbar__title" style="z-index:4!important;">
             <img src="/CandyIcon.png" height="28px" width="28px">
             <span id="hmc">0</span>
-            <img src="/PumpkinIcon.png" height="28px" width="28px">
+            <img src="/HeartIcon.png" height="28px" width="28px">
             <span id="hmcc">0</span>
           </section>
         </div>
@@ -381,7 +403,7 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
       <h2 id="error" style="color:white!important;"></h2>
       <button class="mdc-button" id="costumeswitch_button" style="color:white!important;">Costume switch: 100 candies</button>
       <button class="mdc-button" id="job_button" style="color:white!important;">Get a job: 100 candies</button>
-      <button class="mdc-button" id="farmer_button" style="color:white!important;">Farmers: 5 pumpkins</button>
+      <button class="mdc-button" id="farmer_button" style="color:white!important;">Farmers: 5 Hearts</button>
       <br>
     </div>
   </div>
