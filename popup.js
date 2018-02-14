@@ -23,7 +23,6 @@ const dataObj = {
     }
 };
 mdc.textField.MDCTextField.attachTo(document.querySelector('.mdc-text-field'));
-mdc.textField.MDCTextField.attachTo(document.querySelector('.textfield'));
 mdc.ripple.MDCRipple.attachTo(document.querySelector('#totbutton'));
 var log_content = "";
 snackbar.show(dataObj);
