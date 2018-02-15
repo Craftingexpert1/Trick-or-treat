@@ -278,7 +278,6 @@ function candyBuy(c, thing) {
         document.getElementById('error').innerHTML = "You got a(n) " + thing + ".";
         setCookie("cc", candyCount, 30);
         if (thing === 'job') {
-            clickJob();
             l = l + 1;
             document.getElementById('jobs').innerHTML = "Jobs: " + l;
             setCookie("job", l, 30);
@@ -432,7 +431,7 @@ document.querySelector("#lp_button").addEventListener("click", function () { can
 document.querySelector("#prmt_button").addEventListener("click", function () { candyCaneBuy(2500, "a Promotion"); });
 document.querySelector("#uccb_button").addEventListener("click", function () { candyCaneBuy(5000, "an Ultimate Candy Corn Boost"); });
 function job() {
-    candyCount = candyCount + multiplier;
+    candyCount += l * multiplier;
     if (candyCount < 1000) {
         hmc.innerHTML = candyCount;
 
