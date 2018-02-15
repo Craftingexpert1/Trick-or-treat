@@ -138,9 +138,6 @@ if (jobcookie != "") {
     var jl = Number(jobcookie);
     document.querySelector("#jobs").innerHTML = "Jobs: " + jl;
     l = jl;
-    for (i = 0; i < l; i++) {
-        clickJob();
-    }
 }
 var frmcookie = getCookie("farmer");
 if (frmcookie != "") {
