@@ -120,6 +120,18 @@ if (cc != "") {
         y = y.toFixed(2);
         hmc.innerHTML = y + "T";
     }
+    if (candyCount >= 1000000000000000) {
+        var y = candyCount / 1000000000000000;
+        y = Math.floor(y * 100) / 100;
+        y = y.toFixed(2);
+        hmc.innerHTML = y + "q";
+    }
+    if (candyCount >= 1000000000000000000) {
+        var y = candyCount / 1000000000000000000;
+        y = Math.floor(y * 100) / 100;
+        y = y.toFixed(2);
+        hmc.innerHTML = y + "Q";
+    }
 }
 var mult_cookie = getCookie("multiplier");
 if (mult_cookie != "") {
@@ -200,6 +212,18 @@ function tot() {
         y = y.toFixed(2);
         hmc.innerHTML = y + "T";
     }
+    if (candyCount >= 1000000000000000) {
+        var y = candyCount / 1000000000000000;
+        y = Math.floor(y * 100) / 100;
+        y = y.toFixed(2);
+        hmc.innerHTML = y + "q";
+    }
+    if (candyCount >= 1000000000000000000) {
+        var y = candyCount / 1000000000000000000;
+        y = Math.floor(y * 100) / 100;
+        y = y.toFixed(2);
+        hmc.innerHTML = y + "Q";
+    }
     setCookie("cc", candyCount, 30);
 };
 document.getElementById("ipod_button").addEventListener("click", candyBuyIpod);
@@ -272,6 +296,18 @@ function candyBuy(c, thing) {
             y = y.toFixed(2);
             hmc.innerHTML = y + "T";
         }
+        if (candyCount >= 1000000000000000) {
+        var y = candyCount / 1000000000000000;
+        y = Math.floor(y * 100) / 100;
+        y = y.toFixed(2);
+        hmc.innerHTML = y + "q";
+    }
+    if (candyCount >= 1000000000000000000) {
+        var y = candyCount / 1000000000000000000;
+        y = Math.floor(y * 100) / 100;
+        y = y.toFixed(2);
+        hmc.innerHTML = y + "Q";
+    }
         document.getElementById('error').innerHTML = "You got a(n) " + thing + ".";
         setCookie("cc", candyCount, 30);
         if (thing === 'job') {
@@ -394,6 +430,18 @@ function candyCaneBuy(cost, item) {
             y = y.toFixed(2);
             kmbt = y + "T";
         }
+        if (candyCount >= 1000000000000000) {
+        var y = candyCount / 1000000000000000;
+        y = Math.floor(y * 100) / 100;
+        y = y.toFixed(2);
+        hmc.innerHTML = y + "q";
+    }
+    if (candyCount >= 1000000000000000000) {
+        var y = candyCount / 1000000000000000000;
+        y = Math.floor(y * 100) / 100;
+        y = y.toFixed(2);
+        hmc.innerHTML = y + "Q";
+    }
         if (item === "a farmer") {
             clickFarmer();
             frm_num = frm_num + 1;
@@ -431,7 +479,6 @@ function job() {
     candyCount += l * multiplier;
     if (candyCount < 1000) {
         hmc.innerHTML = candyCount;
-
     }
     if (candyCount >= 1000) {
         var y = candyCount / 1000;
@@ -456,6 +503,18 @@ function job() {
         y = Math.floor(y * 100) / 100;
         y = y.toFixed(2);
         hmc.innerHTML = y + "T";
+    }
+    if (candyCount >= 1000000000000000) {
+        var y = candyCount / 1000000000000000;
+        y = Math.floor(y * 100) / 100;
+        y = y.toFixed(2);
+        hmc.innerHTML = y + "q";
+    }
+    if (candyCount >= 1000000000000000000) {
+        var y = candyCount / 1000000000000000000;
+        y = Math.floor(y * 100) / 100;
+        y = y.toFixed(2);
+        hmc.innerHTML = y + "Q";
     }
     setCookie("cc", candyCount, 30);
 }
@@ -603,6 +662,18 @@ giftTimer.addEventListener("click", function () {
             y = y.toFixed(2);
             kmbt = y + "T";
         }
+        if (candyCount >= 1000000000000000) {
+        var y = candyCount / 1000000000000000;
+        y = Math.floor(y * 100) / 100;
+        y = y.toFixed(2);
+        hmc.innerHTML = y + "q";
+    }
+    if (candyCount >= 1000000000000000000) {
+        var y = candyCount / 1000000000000000000;
+        y = Math.floor(y * 100) / 100;
+        y = y.toFixed(2);
+        hmc.innerHTML = y + "Q";
+    }
         //wait a minute; 
         //if (your name is matthew or nathan) {
         //stop reading this code and mind your own business;
