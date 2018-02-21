@@ -272,14 +272,14 @@ function tot() {
         y = y.toFixed(2);
         hmc.innerHTML = y + "O";
     }
-    if (candyCount >= 1000000000000000000000) {
-        var y = candyCount / 1000000000000000000000;
+    if (candyCount >= 1000000000000000000000000000000) {
+        var y = candyCount / 1000000000000000000000000000000;
         y = Math.floor(y * 100) / 100;
         y = y.toFixed(2);
         hmc.innerHTML = y + "N";
     }
-    if (candyCount >= 1000000000000000000000) {
-        var y = candyCount / 1000000000000000000000;
+    if (candyCount >= 1000000000000000000000000000000000) {
+        var y = candyCount / 1000000000000000000000000000000000;
         y = Math.floor(y * 100) / 100;
         y = y.toFixed(2);
         hmc.innerHTML = y + "D";
@@ -330,33 +330,33 @@ function candyBuy(c, thing) {
     if (candyCount >= c) {
         candyCount = candyCount - c;
         if (candyCount < 1000) {
-            hmc.innerHTML = candyCount;
-        }
-        if (candyCount >= 1000) {
-            var y = candyCount / 1000;
-            y = Math.floor(y * 100) / 100;
-            y = y.toFixed(2);
-            hmc.innerHTML = y + "K";
-        }
-        if (candyCount >= 1000000) {
-            var y = candyCount / 1000000;
-            y = Math.floor(y * 100) / 100;
-            y = y.toFixed(2);
-            hmc.innerHTML = y + "M";
-        }
-        if (candyCount >= 1000000000) {
-            var y = candyCount / 1000000000;
-            y = Math.floor(y * 100) / 100;
-            y = y.toFixed(2);
-            hmc.innerHTML = y + "B";
-        }
-        if (candyCount >= 1000000000000) {
-            var y = candyCount / 1000000000000;
-            y = Math.floor(y * 100) / 100;
-            y = y.toFixed(2);
-            hmc.innerHTML = y + "T";
-        }
-        if (candyCount >= 1000000000000000) {
+        hmc.innerHTML = candyCount;
+    }
+    if (candyCount >= 1000) {
+        var y = candyCount / 1000;
+        y = Math.floor(y * 100) / 100;
+        y = y.toFixed(2);
+        hmc.innerHTML = y + "K";
+    }
+    if (candyCount >= 1000000) {
+        var y = candyCount / 1000000;
+        y = Math.floor(y * 100) / 100;
+        y = y.toFixed(2);
+        hmc.innerHTML = y + "M";
+    }
+    if (candyCount >= 1000000000) {
+        var y = candyCount / 1000000000;
+        y = Math.floor(y * 100) / 100;
+        y = y.toFixed(2);
+        hmc.innerHTML = y + "B";
+    }
+    if (candyCount >= 1000000000000) {
+        var y = candyCount / 1000000000000;
+        y = Math.floor(y * 100) / 100;
+        y = y.toFixed(2);
+        hmc.innerHTML = y + "T";
+    }
+    if (candyCount >= 1000000000000000) {
         var y = candyCount / 1000000000000000;
         y = Math.floor(y * 100) / 100;
         y = y.toFixed(2);
@@ -386,14 +386,14 @@ function candyBuy(c, thing) {
         y = y.toFixed(2);
         hmc.innerHTML = y + "O";
     }
-    if (candyCount >= 1000000000000000000000) {
-        var y = candyCount / 1000000000000000000000;
+    if (candyCount >= 1000000000000000000000000000000) {
+        var y = candyCount / 1000000000000000000000000000000;
         y = Math.floor(y * 100) / 100;
         y = y.toFixed(2);
         hmc.innerHTML = y + "N";
     }
-    if (candyCount >= 1000000000000000000000) {
-        var y = candyCount / 1000000000000000000000;
+    if (candyCount >= 1000000000000000000000000000000000) {
+        var y = candyCount / 1000000000000000000000000000000000;
         y = Math.floor(y * 100) / 100;
         y = y.toFixed(2);
         hmc.innerHTML = y + "D";
@@ -494,33 +494,33 @@ function candyCaneBuy(cost, item) {
         candyCount = (item === "1K Candies" ? candyCount + 1000 : (item === "1M Candies" ? candyCount + 1000000 : (item === "1B Candies" ? candyCount + 1000000000 : candyCount)));
         var kmbt = null;
         if (candyCount < 1000) {
-            kmbt = candyCount;
-        }
-        if (candyCount >= 1000) {
-            var y = candyCount / 1000;
-            y = Math.floor(y * 100) / 100;
-            y = y.toFixed(2);
-            kmbt = y + "K";
-        }
-        if (candyCount >= 1000000) {
-            var y = candyCount / 1000000;
-            y = Math.floor(y * 100) / 100;
-            y = y.toFixed(2);
-            kmbt = y + "M";
-        }
-        if (candyCount >= 1000000000) {
-            var y = candyCount / 1000000000;
-            y = Math.floor(y * 100) / 100;
-            y = y.toFixed(2);
-            kmbt = y + "B";
-        }
-        if (candyCount >= 1000000000000) {
-            var y = candyCount / 1000000000000;
-            y = Math.floor(y * 100) / 100;
-            y = y.toFixed(2);
-            kmbt = y + "T";
-        }
-        if (candyCount >= 1000000000000000) {
+        hmc.innerHTML = candyCount;
+    }
+    if (candyCount >= 1000) {
+        var y = candyCount / 1000;
+        y = Math.floor(y * 100) / 100;
+        y = y.toFixed(2);
+        hmc.innerHTML = y + "K";
+    }
+    if (candyCount >= 1000000) {
+        var y = candyCount / 1000000;
+        y = Math.floor(y * 100) / 100;
+        y = y.toFixed(2);
+        hmc.innerHTML = y + "M";
+    }
+    if (candyCount >= 1000000000) {
+        var y = candyCount / 1000000000;
+        y = Math.floor(y * 100) / 100;
+        y = y.toFixed(2);
+        hmc.innerHTML = y + "B";
+    }
+    if (candyCount >= 1000000000000) {
+        var y = candyCount / 1000000000000;
+        y = Math.floor(y * 100) / 100;
+        y = y.toFixed(2);
+        hmc.innerHTML = y + "T";
+    }
+    if (candyCount >= 1000000000000000) {
         var y = candyCount / 1000000000000000;
         y = Math.floor(y * 100) / 100;
         y = y.toFixed(2);
@@ -550,14 +550,14 @@ function candyCaneBuy(cost, item) {
         y = y.toFixed(2);
         hmc.innerHTML = y + "O";
     }
-    if (candyCount >= 1000000000000000000000) {
-        var y = candyCount / 1000000000000000000000;
+    if (candyCount >= 1000000000000000000000000000000) {
+        var y = candyCount / 1000000000000000000000000000000;
         y = Math.floor(y * 100) / 100;
         y = y.toFixed(2);
         hmc.innerHTML = y + "N";
     }
-    if (candyCount >= 1000000000000000000000) {
-        var y = candyCount / 1000000000000000000000;
+    if (candyCount >= 1000000000000000000000000000000000) {
+        var y = candyCount / 1000000000000000000000000000000000;
         y = Math.floor(y * 100) / 100;
         y = y.toFixed(2);
         hmc.innerHTML = y + "D";
@@ -654,14 +654,14 @@ function job() {
         y = y.toFixed(2);
         hmc.innerHTML = y + "O";
     }
-    if (candyCount >= 1000000000000000000000) {
-        var y = candyCount / 1000000000000000000000;
+    if (candyCount >= 1000000000000000000000000000000) {
+        var y = candyCount / 1000000000000000000000000000000;
         y = Math.floor(y * 100) / 100;
         y = y.toFixed(2);
         hmc.innerHTML = y + "N";
     }
-    if (candyCount >= 1000000000000000000000) {
-        var y = candyCount / 1000000000000000000000;
+    if (candyCount >= 1000000000000000000000000000000000) {
+        var y = candyCount / 1000000000000000000000000000000000;
         y = Math.floor(y * 100) / 100;
         y = y.toFixed(2);
         hmc.innerHTML = y + "D";
@@ -818,13 +818,13 @@ giftTimer.addEventListener("click", function () {
         y = y.toFixed(2);
         hmc.innerHTML = y + "q";
     }
-    if (candyCount >= 1000000000000000000) {
-        var y = candyCount / 1000000000000000000;
+    if (given >= 1000000000000000000) {
+        var y = given / 1000000000000000000;
         y = Math.floor(y * 100) / 100;
         y = y.toFixed(2);
         hmc.innerHTML = y + "Q";
     }
-    if (candyCount >= 1000000000000000000000) {
+    if (given >= 1000000000000000000000) {
         var y = candyCount / 1000000000000000000000;
         y = Math.floor(y * 100) / 100;
         y = y.toFixed(2);
