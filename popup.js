@@ -150,13 +150,13 @@ if (cc != "") {
         y = y.toFixed(2);
         hmc.innerHTML = y + "O";
     }
-    if (candyCount >= 10000000000000000000000000000000) {
+    if (candyCount >= 1000000000000000000000000000000) {
         var y = candyCount / 1000000000000000000000000000000;
         y = Math.floor(y * 100) / 100;
         y = y.toFixed(2);
         hmc.innerHTML = y + "N";
     }
-    if (candyCount >= 10000000000000000000000000000000000) {
+    if (candyCount >= 1000000000000000000000000000000000) {
         var y = candyCount / 1000000000000000000000000000000000;
         y = Math.floor(y * 100) / 100;
         y = y.toFixed(2);
