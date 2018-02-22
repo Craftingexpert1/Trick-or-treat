@@ -272,13 +272,13 @@ function tot() {
         y = y.toFixed(2);
         hmc.innerHTML = y + "O";
     }
-    if (candyCount >= 10000000000000000000000000000000) {
+    if (candyCount >= 1000000000000000000000000000000) {
         var y = candyCount / 1000000000000000000000000000000;
         y = Math.floor(y * 100) / 100;
         y = y.toFixed(2);
         hmc.innerHTML = y + "N";
     }
-    if (candyCount >= 10000000000000000000000000000000000) {
+    if (candyCount >= 1000000000000000000000000000000000) {
         var y = candyCount / 1000000000000000000000000000000000;
         y = Math.floor(y * 100) / 100;
         y = y.toFixed(2);
@@ -386,13 +386,13 @@ function candyBuy(c, thing) {
         y = y.toFixed(2);
         hmc.innerHTML = y + "O";
     }
-    if (candyCount >= 10000000000000000000000000000000) {
+    if (candyCount >= 1000000000000000000000000000000) {
         var y = candyCount / 1000000000000000000000000000000;
         y = Math.floor(y * 100) / 100;
         y = y.toFixed(2);
         hmc.innerHTML = y + "N";
     }
-    if (candyCount >= 10000000000000000000000000000000000) {
+    if (candyCount >= 1000000000000000000000000000000000) {
         var y = candyCount / 1000000000000000000000000000000000;
         y = Math.floor(y * 100) / 100;
         y = y.toFixed(2);
@@ -493,7 +493,7 @@ function candyCaneBuy(cost, item) {
         setCookie("candyCanes", candyCanes, 30);
         candyCount = (item === "1K Candies" ? candyCount + 1000 : (item === "1M Candies" ? candyCount + 1000000 : (item === "1B Candies" ? candyCount + 1000000000 : candyCount)));
         var kmbt = null;
-    if (candyCount < 1000) {
+        if (candyCount < 1000) {
         hmc.innerHTML = candyCount;
     }
     if (candyCount >= 1000) {
@@ -550,13 +550,13 @@ function candyCaneBuy(cost, item) {
         y = y.toFixed(2);
         hmc.innerHTML = y + "O";
     }
-    if (candyCount >= 10000000000000000000000000000000) {
+    if (candyCount >= 1000000000000000000000000000000) {
         var y = candyCount / 1000000000000000000000000000000;
         y = Math.floor(y * 100) / 100;
         y = y.toFixed(2);
         hmc.innerHTML = y + "N";
     }
-    if (candyCount >= 10000000000000000000000000000000000) {
+    if (candyCount >= 1000000000000000000000000000000000) {
         var y = candyCount / 1000000000000000000000000000000000;
         y = Math.floor(y * 100) / 100;
         y = y.toFixed(2);
@@ -654,13 +654,13 @@ function job() {
         y = y.toFixed(2);
         hmc.innerHTML = y + "O";
     }
-    if (candyCount >= 10000000000000000000000000000000) {
+    if (candyCount >= 1000000000000000000000000000000) {
         var y = candyCount / 1000000000000000000000000000000;
         y = Math.floor(y * 100) / 100;
         y = y.toFixed(2);
         hmc.innerHTML = y + "N";
     }
-    if (candyCount >= 10000000000000000000000000000000000) {
+    if (candyCount >= 1000000000000000000000000000000000) {
         var y = candyCount / 1000000000000000000000000000000000;
         y = Math.floor(y * 100) / 100;
         y = y.toFixed(2);
@@ -785,35 +785,35 @@ giftTimer.addEventListener("click", function () {
             document.querySelector("#error").innerHTML = "You got " + kmbt + " multiplier in your Free Gift!";
         }
         var kmbt = null;
-        if (given < 1000) {
-            kmbt = given;
-        }
-        if (given >= 1000) {
-            var y = given / 1000;
-            y = Math.floor(y * 100) / 100;
-            y = y.toFixed(2);
-            kmbt = y + "K";
-        }
-        if (given >= 1000000) {
-            var y = given / 1000000;
-            y = Math.floor(y * 100) / 100;
-            y = y.toFixed(2);
-            kmbt = y + "M";
-        }
-        if (given >= 1000000000) {
-            var y = given / 1000000000;
-            y = Math.floor(y * 100) / 100;
-            y = y.toFixed(2);
-            kmbt = y + "B";
-        }
-        if (given >= 1000000000000) {
-            var y = given / 1000000000000;
-            y = Math.floor(y * 100) / 100;
-            y = y.toFixed(2);
-            kmbt = y + "T";
-        }
-        if (candyCount >= 1000000000000000) {
-        var y = candyCount / 1000000000000000;
+            if (candyCount < 1000) {
+        hmc.innerHTML = candyCount;
+    }
+    if (given >= 1000) {
+        var y = given / 1000;
+        y = Math.floor(y * 100) / 100;
+        y = y.toFixed(2);
+        hmc.innerHTML = y + "K";
+    }
+    if (given >= 1000000) {
+        var y = given / 1000000;
+        y = Math.floor(y * 100) / 100;
+        y = y.toFixed(2);
+        hmc.innerHTML = y + "M";
+    }
+    if (given >= 1000000000) {
+        var y = given / 1000000000;
+        y = Math.floor(y * 100) / 100;
+        y = y.toFixed(2);
+        hmc.innerHTML = y + "B";
+    }
+    if (given >= 1000000000000) {
+        var y = given / 1000000000000;
+        y = Math.floor(y * 100) / 100;
+        y = y.toFixed(2);
+        hmc.innerHTML = y + "T";
+    }
+    if (given >= 1000000000000000) {
+        var y = given / 1000000000000000;
         y = Math.floor(y * 100) / 100;
         y = y.toFixed(2);
         hmc.innerHTML = y + "q";
@@ -825,31 +825,31 @@ giftTimer.addEventListener("click", function () {
         hmc.innerHTML = y + "Q";
     }
     if (given >= 1000000000000000000000) {
-        var y = candyCount / 1000000000000000000000;
+        var y = given / 1000000000000000000000;
         y = Math.floor(y * 100) / 100;
         y = y.toFixed(2);
         hmc.innerHTML = y + "s";
     }
-    if (candyCount >= 1000000000000000000000000) {
-        var y = candyCount / 1000000000000000000000000;
+    if (given >= 1000000000000000000000000) {
+        var y = given / 1000000000000000000000000;
         y = Math.floor(y * 100) / 100;
         y = y.toFixed(2);
         hmc.innerHTML = y + "S";
     }
-    if (candyCount >= 1000000000000000000000000000) {
-        var y = candyCount / 1000000000000000000000000000;
+    if (given >= 1000000000000000000000000000) {
+        var y = given / 1000000000000000000000000000;
         y = Math.floor(y * 100) / 100;
         y = y.toFixed(2);
         hmc.innerHTML = y + "O";
     }
-    if (candyCount >= 1000000000000000000000) {
-        var y = candyCount / 1000000000000000000000;
+    if (given >= 1000000000000000000000000000000) {
+        var y = given / 1000000000000000000000000000000;
         y = Math.floor(y * 100) / 100;
         y = y.toFixed(2);
         hmc.innerHTML = y + "N";
     }
-    if (candyCount >= 1000000000000000000000) {
-        var y = candyCount / 1000000000000000000000;
+    if (given >= 1000000000000000000000000000000000) {
+        var y = given / 1000000000000000000000000000000000;
         y = Math.floor(y * 100) / 100;
         y = y.toFixed(2);
         hmc.innerHTML = y + "D";
