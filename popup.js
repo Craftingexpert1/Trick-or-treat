@@ -493,75 +493,7 @@ function candyCaneBuy(cost, item) {
         setCookie("candyCanes", candyCanes, 30);
         candyCount = (item === "1K Candies" ? candyCount + 1000 : (item === "1M Candies" ? candyCount + 1000000 : (item === "1B Candies" ? candyCount + 1000000000 : candyCount)));
         var kmbt = null;
-        if (candyCount < 1000) {
-        hmc.innerHTML = candyCount;
-    }
-    if (candyCount >= 1000) {
-        var y = candyCount / 1000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "K";
-    }
-    if (candyCount >= 1000000) {
-        var y = candyCount / 1000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "M";
-    }
-    if (candyCount >= 1000000000) {
-        var y = candyCount / 1000000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "B";
-    }
-    if (candyCount >= 1000000000000) {
-        var y = candyCount / 1000000000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "T";
-    }
-    if (candyCount >= 1000000000000000) {
-        var y = candyCount / 1000000000000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "q";
-    }
-    if (candyCount >= 1000000000000000000) {
-        var y = candyCount / 1000000000000000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "Q";
-    }
-    if (candyCount >= 1000000000000000000000) {
-        var y = candyCount / 1000000000000000000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "s";
-    }
-    if (candyCount >= 1000000000000000000000000) {
-        var y = candyCount / 1000000000000000000000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "S";
-    }
-    if (candyCount >= 1000000000000000000000000000) {
-        var y = candyCount / 1000000000000000000000000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "O";
-    }
-    if (candyCount >= 1000000000000000000000000000000) {
-        var y = candyCount / 1000000000000000000000000000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "N";
-    }
-    if (candyCount >= 1000000000000000000000000000000000) {
-        var y = candyCount / 1000000000000000000000000000000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "D";
-    }
+        
         if (item === "a farmer") {
             clickFarmer();
             frm_num = frm_num + 1;
