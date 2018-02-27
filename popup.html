@@ -137,7 +137,33 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
         background-position: center;
       }
     }
-
+    #withsplash {
+      background-image:url(spider.png);
+      width:200px;
+      top:18px;
+      left:16px;
+      animation-name: withsplashanim;
+      animation-duration: 2s;
+      position: absolute;
+    }
+    @keyframes withsplashanim {
+      0% {
+        top:0;
+        display:none;
+      }
+      50% {
+        top:50px;
+      }
+      85% {
+        top:75px;
+      }
+      99% {
+        top:85px;
+      }
+      100% {
+        top:-100%;
+      }
+    }
     #drawer-background {
       background: url(http://www.pngmart.com/files/3/Halloween-Bat-PNG-Image.png) center no-repeat;
       background-size:contain;
@@ -202,6 +228,7 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
 
 <body>
   <div id="splash"></div>
+  <div id="withsplash"></div>
   <aside id="nameDialog" class="mdc-dialog">
     <div class="mdc-dialog__surface" style="background:white!important;color:black!important;">
       <header class="mdc-dialog__header">
