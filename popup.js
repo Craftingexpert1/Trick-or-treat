@@ -390,8 +390,7 @@ function clickFarmer() {
 var giftTimer = document.getElementById("gift-timer");
 var date = new Date().getTime();
 var gifts = [" candies ", " jobs ", " multiplier "];
-//bug-semicolin?
-var candyCaneGift = [true, false]
+var candyCaneGift = [true, false];
 var giftAvailable = "no";
 var gcdd = getCookie("giftCDD");
 var ga = getCookie("giftAvailable");
@@ -472,7 +471,7 @@ giftTimer.addEventListener("click", function () {
         if (selectedGift == gifts[0]) {
             var given = Math.floor(Math.random() * (candyCount / 1.5)) + 20;
             candyCount = candyCount + given;
-            document.querySelector("#error").innerHTML = "You got " + kmbt + " Candies in your Free Gift!";
+            document.querySelector("#error").innerHTML = "You got " + beautify(given) + " Candies in your Free Gift!";
             hmc.innerHTML = candyCount;
         } if (selectedGift == gifts[1]) {
             var given = Math.floor(Math.random() * (l / 1.5)) + 20;
@@ -481,7 +480,7 @@ giftTimer.addEventListener("click", function () {
             cps = multiplier * l;
             cpsText.innerHTML = "Candy Per Second: " + cps;
             setCookie("job", l, 30);
-            document.querySelector("#error").innerHTML = "You got " + kmbt + " jobs in your Free Gift!";
+            document.querySelector("#error").innerHTML = "You got " + beautify(given) + " jobs in your Free Gift!";
         } if (selectedGift == gifts[2]) {
             var given = Math.floor(Math.random() * (multiplier / 1.5)) + 20;
             multiplier = multiplier + given;
@@ -489,7 +488,7 @@ giftTimer.addEventListener("click", function () {
             cps = multiplier * l;
             multiplier_text.innerHTML = "Multiplier: " + multiplier;
             cpsText.innerHTML = "Candy Per Second: " + cps;
-            document.querySelector("#error").innerHTML = "You got " + kmbt + " multiplier in your Free Gift!";
+            document.querySelector("#error").innerHTML = "You got " + beautify(given) + " multiplier in your Free Gift!";
         }
         var kmbt = null;
 
@@ -505,7 +504,7 @@ giftTimer.addEventListener("click", function () {
         if (selectedGift == gifts[0]) {
             var given = Math.floor(Math.random() * (candyCount / 1.5)) + 20;
             candyCount = candyCount + given;
-            document.querySelector("#error").innerHTML = "You got " + kmbt + " Candies in your Free Gift!";
+            document.querySelector("#error").innerHTML = "You got " + beautify(given) + " Candies in your Free Gift!";
             setCookie("cc", candyCount, 30);
         } if (selectedGift == gifts[1]) {
             var given = Math.floor(Math.random() * (l / 1.5)) + 20;
@@ -514,7 +513,7 @@ giftTimer.addEventListener("click", function () {
             cps = multiplier * l;
             cpsText.innerHTML = "Candy Per Second: " + cps;
             setCookie("job", l, 30);
-            document.querySelector("#error").innerHTML = "You got " + kmbt + " jobs in your Free Gift!";
+            document.querySelector("#error").innerHTML = "You got " + beautify(given) + " jobs in your Free Gift!";
             setCookie("job", l, 30);
         } if (selectedGift == gifts[2]) {
             var given = Math.floor(Math.random() * (multiplier / 1.5)) + 20;
@@ -523,12 +522,12 @@ giftTimer.addEventListener("click", function () {
             cps = multiplier * l;
             multiplier_text.innerHTML = "Multiplier: " + multiplier;
             cpsText.innerHTML = "Candy Per Second: " + cps;
-            document.querySelector("#error").innerHTML = "You got " + kmbt + " multiplier in your Free Gift!";
+            document.querySelector("#error").innerHTML = "You got " + beautify(given) + " multiplier in your Free Gift!";
             setCookie("multiplier", multiplier, 30);
         }
         if (candyCaneYesNo === true) {
             var givenCandyCanes = Math.floor(Math.random() * 3) + 1;
-            document.querySelector("#error").innerHTML = "You got " + givenCandyCanes + " Pumpkins and " + kmbt + selectedGift + "in your Free Gift!";
+            document.querySelector("#error").innerHTML = "You got " + givenCandyCanes + " Pumpkins and " + beautify(given) + selectedGift + "in your Free Gift!";
             candyCanes = candyCanes + givenCandyCanes;
             hmcc.innerHTML = candyCanes;
             setCookie("candyCanes", candyCanes, 30);
