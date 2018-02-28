@@ -30,12 +30,12 @@ snackbar.show(dataObj);
 //regular stuff
 //my comment here, and another new comment
 var newGame = document.querySelector("#new-game");
-newGame.addEventListener("click", function(){
+newGame.addEventListener("click", function () {
     console.log("game cleared");
     areYouSure.show();
     document.querySelector("#yesido").addEventListener("click", clearGame())
     function clearGame() {
-        document.cookie.split(";").forEach(function(c) { document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); });
+        document.cookie.split(";").forEach(function (c) { document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); });
         candyCanes = 100;
         l = 0;
         frm = 0;
@@ -51,7 +51,7 @@ newGame.addEventListener("click", function(){
 });
 
 var candy = document.getElementById("candy");
-var candies = ["Snickers(stop that, will you?)", "Reese's", "Milky Way(the chocolate, not  the galaxy)", "Three Musketeers(the candy though)", "Kit Kat", "Kisses (the chocolate, duh)", "Smarties!", "M&M's", "Skittles", "Bubble Gum", "Gummy Bears(100% vegetarian)", ];
+var candies = ["Snickers(stop that, will you?)", "Reese's", "Milky Way(the chocolate, not  the galaxy)", "Three Musketeers(the candy though)", "Kit Kat", "Kisses (the chocolate, duh)", "Smarties!", "M&M's", "Skittles", "Bubble Gum", "Gummy Bears(100% vegetarian)",];
 var hmc = document.getElementById("hmc");
 var stages = document.getElementById("stages");
 var log = document.getElementById("log");
@@ -73,25 +73,25 @@ cpsText.innerHTML = "Candy Per Second: " + cps;
 String.prototype.r = function (index, replacement) {
     return this.substr(0, index) + replacement + this.substr(index + replacement.length);
 }
-var Button = function(id, position){
+var Button = function (id, position) {
     this.id = id;
     this.position = position;
 }
 
 var buttons = [
-  new Button("#computer_button",0),
-  new Button("#car_button",1),
-  new Button("#house_button",2),
-  new Button("#mansion_button",3),
-  new Button("#earth_button",4),
-  new Button("#galaxy_button",5),
-  new Button("#universe_button",6)
+    new Button("#computer_button", 0),
+    new Button("#car_button", 1),
+    new Button("#house_button", 2),
+    new Button("#mansion_button", 3),
+    new Button("#earth_button", 4),
+    new Button("#galaxy_button", 5),
+    new Button("#universe_button", 6)
 ];
 
 var bu = getCookie("buyUnlocked");
 if (bu != "") {
     ub = bu;
-    buttons.forEach(v=>{document.querySelector(v.id).style.display = bu.length > v.position ? "inline-block" : "none";});
+    buttons.forEach(v => { document.querySelector(v.id).style.display = bu.length > v.position ? "inline-block" : "none"; });
 }
 
 var ccd = getCookie("candyCanes");
@@ -101,29 +101,29 @@ if (ccd != "") {
     hmcc.innerHTML = candyCanes;
 }
 
-var beautify = function(number){
+var beautify = function (number) {
 
     var range = [
-        {start: 0, end: 3, suffix: ""},
-        {start: 3, end: 6, suffix: "K"},
-        {start: 6, end: 9, suffix: "M"},
-        {start: 9, end: 12, suffix: "B"},
-        {start: 12, end: 15, suffix: "T"},
-        {start: 15, end: 18, suffix: "q"},
-        {start: 18, end: 21, suffix: "Q"},
-        {start: 21, end: 24, suffix: "s"},
-        {start: 24, end: 27, suffix: "S"},
-        {start: 27, end: 30, suffix: "O"},
-        {start: 30, end: 33, suffix: "N"},
-        {start: 33, end: 36, suffix: "D"}
+        { start: 0, end: 3, suffix: "" },
+        { start: 3, end: 6, suffix: "K" },
+        { start: 6, end: 9, suffix: "M" },
+        { start: 9, end: 12, suffix: "B" },
+        { start: 12, end: 15, suffix: "T" },
+        { start: 15, end: 18, suffix: "q" },
+        { start: 18, end: 21, suffix: "Q" },
+        { start: 21, end: 24, suffix: "s" },
+        { start: 24, end: 27, suffix: "S" },
+        { start: 27, end: 30, suffix: "O" },
+        { start: 30, end: 33, suffix: "N" },
+        { start: 33, end: 36, suffix: "D" }
     ];
 
-    var r = range.filter(v=> {
+    var r = range.filter(v => {
         var a = Math.log10(number);
-        return a >= v.start && a<v.end;
+        return a >= v.start && a < v.end;
     });
 
-    if(r && r.length){
+    if (r && r.length) {
         var y = number / Math.pow(10, r[0].start);
         y = Math.floor(y * 100) / 100;
         y = y.toFixed(2);
@@ -135,7 +135,7 @@ var beautify = function(number){
 var cc = getCookie("cc");
 if (cc != "") {
     candyCount = Number(cc);
-        hmc.innerHTML = beautify(candyCount);
+    hmc.innerHTML = beautify(candyCount);
 }
 
 var mult_cookie = getCookie("multiplier");
@@ -190,75 +190,8 @@ function tot() {
             }
         };
     }
-        if (candyCount < 1000) {
-        hmc.innerHTML = candyCount;
-    }
-    if (candyCount >= 1000) {
-        var y = candyCount / 1000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "K";
-    }
-    if (candyCount >= 1000000) {
-        var y = candyCount / 1000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "M";
-    }
-    if (candyCount >= 1000000000) {
-        var y = candyCount / 1000000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "B";
-    }
-    if (candyCount >= 1000000000000) {
-        var y = candyCount / 1000000000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "T";
-    }
-    if (candyCount >= 1000000000000000) {
-        var y = candyCount / 1000000000000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "q";
-    }
-    if (candyCount >= 1000000000000000000) {
-        var y = candyCount / 1000000000000000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "Q";
-    }
-    if (candyCount >= 1000000000000000000000) {
-        var y = candyCount / 1000000000000000000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "s";
-    }
-    if (candyCount >= 1000000000000000000000000) {
-        var y = candyCount / 1000000000000000000000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "S";
-    }
-    if (candyCount >= 1000000000000000000000000000) {
-        var y = candyCount / 1000000000000000000000000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "O";
-    }
-    if (candyCount >= 1000000000000000000000000000000) {
-        var y = candyCount / 1000000000000000000000000000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "N";
-    }
-    if (candyCount >= 1000000000000000000000000000000000) {
-        var y = candyCount / 1000000000000000000000000000000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "D";
-    }
+
+    hmc.innerHTML = beautify(candyCount);
     setCookie("cc", candyCount, 30);
 };
 document.getElementById("ipod_button").addEventListener("click", candyBuyIpod);
@@ -304,75 +237,8 @@ function candyBuyUniverse() {
 function candyBuy(c, thing) {
     if (candyCount >= c) {
         candyCount = candyCount - c;
-        if (candyCount < 1000) {
-        hmc.innerHTML = candyCount;
-    }
-    if (candyCount >= 1000) {
-        var y = candyCount / 1000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "K";
-    }
-    if (candyCount >= 1000000) {
-        var y = candyCount / 1000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "M";
-    }
-    if (candyCount >= 1000000000) {
-        var y = candyCount / 1000000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "B";
-    }
-    if (candyCount >= 1000000000000) {
-        var y = candyCount / 1000000000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "T";
-    }
-    if (candyCount >= 1000000000000000) {
-        var y = candyCount / 1000000000000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "q";
-    }
-    if (candyCount >= 1000000000000000000) {
-        var y = candyCount / 1000000000000000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "Q";
-    }
-    if (candyCount >= 1000000000000000000000) {
-        var y = candyCount / 1000000000000000000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "s";
-    }
-    if (candyCount >= 1000000000000000000000000) {
-        var y = candyCount / 1000000000000000000000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "S";
-    }
-    if (candyCount >= 1000000000000000000000000000) {
-        var y = candyCount / 1000000000000000000000000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "O";
-    }
-    if (candyCount >= 1000000000000000000000000000000) {
-        var y = candyCount / 1000000000000000000000000000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "N";
-    }
-    if (candyCount >= 1000000000000000000000000000000000) {
-        var y = candyCount / 1000000000000000000000000000000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "D";
-    }
+        hmc.innerHTML = beautify(candyCount);
+
         document.getElementById('error').innerHTML = "You got a(n) " + thing + ".";
         setCookie("cc", candyCount, 30);
         if (thing === 'job') {
@@ -466,80 +332,12 @@ function candyCaneBuy(cost, item) {
         document.getElementById('error').innerHTML = "You got " + item + ".";
         hmcc.innerHTML = candyCanes;
         setCookie("candyCanes", candyCanes, 30);
-        candyCount = (item === "1K Candies" 
-                      ? candyCount + 1000 : (item === "1M Candies" 
-                      ? candyCount + 1000000 : (item === "1B Candies" 
-                      ? candyCount + 1000000000 : candyCount)));
+        candyCount = (item === "1K Candies"
+            ? candyCount + 1000 : (item === "1M Candies"
+                ? candyCount + 1000000 : (item === "1B Candies"
+                    ? candyCount + 1000000000 : candyCount)));
         var kmbt = null;
-        if (candyCount < 1000) {
-        hmc.innerHTML = candyCount;
-    }
-    if (candyCount >= 1000) {
-        var y = candyCount / 1000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "K";
-    }
-    if (candyCount >= 1000000) {
-        var y = candyCount / 1000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "M";
-    }
-    if (candyCount >= 1000000000) {
-        var y = candyCount / 1000000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "B";
-    }
-    if (candyCount >= 1000000000000) {
-        var y = candyCount / 1000000000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "T";
-    }
-    if (candyCount >= 1000000000000000) {
-        var y = candyCount / 1000000000000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "q";
-    }
-    if (candyCount >= 1000000000000000000) {
-        var y = candyCount / 1000000000000000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "Q";
-    }
-    if (candyCount >= 1000000000000000000000) {
-        var y = candyCount / 1000000000000000000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "s";
-    }
-    if (candyCount >= 1000000000000000000000000) {
-        var y = candyCount / 1000000000000000000000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "S";
-    }
-    if (candyCount >= 1000000000000000000000000000) {
-        var y = candyCount / 1000000000000000000000000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "O";
-    }
-    if (candyCount >= 1000000000000000000000000000000) {
-        var y = candyCount / 1000000000000000000000000000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "N";
-    }
-    if (candyCount >= 1000000000000000000000000000000000) {
-        var y = candyCount / 1000000000000000000000000000000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "D";
-    }
+        hmc.innerHTML = beautify(candyCount);
         if (item === "a farmer") {
             clickFarmer();
             frm_num = frm_num + 1;
@@ -574,75 +372,7 @@ document.querySelector("#prmt_button").addEventListener("click", function () { c
 document.querySelector("#uccb_button").addEventListener("click", function () { candyCaneBuy(5000, "an Ultimate Candy Corn Boost"); });
 function job() {
     candyCount += l * multiplier;
-        if (candyCount < 1000) {
-        hmc.innerHTML = candyCount;
-    }
-    if (candyCount >= 1000) {
-        var y = candyCount / 1000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "K";
-    }
-    if (candyCount >= 1000000) {
-        var y = candyCount / 1000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "M";
-    }
-    if (candyCount >= 1000000000) {
-        var y = candyCount / 1000000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "B";
-    }
-    if (candyCount >= 1000000000000) {
-        var y = candyCount / 1000000000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "T";
-    }
-    if (candyCount >= 1000000000000000) {
-        var y = candyCount / 1000000000000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "q";
-    }
-    if (candyCount >= 1000000000000000000) {
-        var y = candyCount / 1000000000000000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "Q";
-    }
-    if (candyCount >= 1000000000000000000000) {
-        var y = candyCount / 1000000000000000000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "s";
-    }
-    if (candyCount >= 1000000000000000000000000) {
-        var y = candyCount / 1000000000000000000000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "S";
-    }
-    if (candyCount >= 1000000000000000000000000000) {
-        var y = candyCount / 1000000000000000000000000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "O";
-    }
-    if (candyCount >= 1000000000000000000000000000000) {
-        var y = candyCount / 1000000000000000000000000000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "N";
-    }
-    if (candyCount >= 1000000000000000000000000000000000) {
-        var y = candyCount / 1000000000000000000000000000000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "D";
-    }
+    hmc.innerHTML = beautify( candyCount);
     setCookie("cc", candyCount, 30);
 }
 
@@ -763,80 +493,12 @@ giftTimer.addEventListener("click", function () {
             document.querySelector("#error").innerHTML = "You got " + kmbt + " multiplier in your Free Gift!";
         }
         var kmbt = null;
-        
-        
-        
+
+
+
         //Hi, if your redaing this good job! Now stop!
-        
-            if (candyCount < 1000) {
-        hmc.innerHTML = candyCount;
-    }
-    if (given >= 1000) {
-        var y = given / 1000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "K";
-    }
-    if (given >= 1000000) {
-        var y = given / 1000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "M";
-    }
-    if (given >= 1000000000) {
-        var y = given / 1000000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "B";
-    }
-    if (given >= 1000000000000) {
-        var y = given / 1000000000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "T";
-    }
-    if (given >= 1000000000000000) {
-        var y = given / 1000000000000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "q";
-    }
-    if (given >= 1000000000000000000) {
-        var y = given / 1000000000000000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "Q";
-    }
-    if (given >= 1000000000000000000000) {
-        var y = given / 1000000000000000000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "s";
-    }
-    if (given >= 1000000000000000000000000) {
-        var y = given / 1000000000000000000000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "S";
-    }
-    if (given >= 1000000000000000000000000000) {
-        var y = given / 1000000000000000000000000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "O";
-    }
-    if (given >= 1000000000000000000000000000000) {
-        var y = given / 1000000000000000000000000000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "N";
-    }
-    if (given >= 1000000000000000000000000000000000) {
-        var y = given / 1000000000000000000000000000000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "D";
-    }
+
+            hmc.innerHTML = beautify( candyCount);
         //wait a minute; 
         //if (your name is matthew or nathan) {
         //stop reading this code and mind your own business;
@@ -929,7 +591,7 @@ document.addEventListener("keydown", function (event) {
 //This so nobody will know!
 
 var cheat = {
-    multiplier:function() {
+    multiplier: function () {
         multiplier = multiplier * 10;
         multiplier_text.innerHTML = "Multiplier: " + multiplier;
         setCookie("multiplier", multiplier, 30);
