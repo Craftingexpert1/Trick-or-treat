@@ -160,9 +160,6 @@ if (frmcookie != "") {
     var elite = Number(frmcookie);
     frm.innerHTML = "Farmers: " + elite;
     frm_num = elite;
-    for (i = 0; i < frm_num; i++) {
-        clickFarmer();
-    }
 }
 var multiplier_text = document.getElementById("multiplier");
 multiplier_text.innerHTML = "Multiplier: " + multiplier;
