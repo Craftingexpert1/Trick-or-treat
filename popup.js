@@ -104,7 +104,6 @@ if (ccd != "") {
 var beautify = function (number) {
 
     var range = [
-        { start: 0, end: 3, suffix: "" },
         { start: 3, end: 6, suffix: "K" },
         { start: 6, end: 9, suffix: "M" },
         { start: 9, end: 12, suffix: "B" },
