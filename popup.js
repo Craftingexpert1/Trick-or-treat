@@ -366,9 +366,9 @@ function candyCaneBuy(cost, item) {
 document.querySelector("#onek_button").addEventListener("click", function () { candyCaneBuy(1, "1K Candies"); });
 document.querySelector("#onem_button").addEventListener("click", function () { candyCaneBuy(10, "1M Candies"); });
 document.querySelector("#oneb_button").addEventListener("click", function () { candyCaneBuy(100, "1B Candies"); });
-document.querySelector("#lp_button").addEventListener("click", function () { candyCaneBuy(1500, "a Lucky Penny Boost"); });
-document.querySelector("#prmt_button").addEventListener("click", function () { candyCaneBuy(2250, "a Promotion"); });
-document.querySelector("#uccb_button").addEventListener("click", function () { candyCaneBuy(4750, "an Ultimate Candy Corn Boost"); });
+document.querySelector("#lp_button").addEventListener("click", function () { candyCaneBuy(1250, "a Lucky Penny Boost"); });
+document.querySelector("#prmt_button").addEventListener("click", function () { candyCaneBuy(2500, "a Promotion"); });
+document.querySelector("#uccb_button").addEventListener("click", function () { candyCaneBuy(5000, "an Ultimate Candy Corn Boost"); });
 function job() {
     candyCount += l * multiplier;
     hmc.innerHTML = beautify( candyCount);
