@@ -378,13 +378,15 @@ function job() {
 setInterval(job, 1000);
 
 function farmer() {
-    candyCanes = candyCanes + 1;
+    candyCanes = candyCanes + frm_num;
     hmcc.innerHTML = candyCanes;
     setCookie("candyCanes", candyCanes, 30);
 }
 function clickFarmer() {
-    setInterval(farmer, 90000);
+    frm_num += 1;
 }
+
+setInterval(farmer, 100000);
 
 //free gift!
 var giftTimer = document.getElementById("gift-timer");
