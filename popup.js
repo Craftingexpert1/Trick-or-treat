@@ -73,97 +73,71 @@ cpsText.innerHTML = "Candy Per Second: " + cps;
 String.prototype.r = function (index, replacement) {
     return this.substr(0, index) + replacement + this.substr(index + replacement.length);
 }
+var Button = function(id, position){
+    this.id = id;
+    this.position = position;
+}
+
+var buttons = [
+  new Button("#computer_button",0),
+  new Button("#car_button",1),
+  new Button("#house_button",2),
+  new Button("#mansion_button",3),
+  new Button("#earth_button",4),
+  new Button("#galaxy_button",5),
+  new Button("#universe_button",6)
+];
+
 var bu = getCookie("buyUnlocked");
 if (bu != "") {
     ub = bu;
-    document.querySelector("#computer_button").style.display = bu.length > 0 ? "inline-block" : "none";
-    document.querySelector("#car_button").style.display = bu.length > 1 ? "inline-block" : "none";
-    document.querySelector("#house_button").style.display = bu.length > 2 ? "inline-block" : "none";
-    document.querySelector("#mansion_button").style.display = bu.length > 3 ? "inline-block" : "none";
-    document.querySelector("#earth_button").style.display = bu.length > 4 ? "inline-block" : "none";
-    document.querySelector("#galaxy_button").style.display = bu.length > 5 ? "inline-block" : "none";
-    document.querySelector("#universe_button").style.display = bu.length > 6 ? "inline-block" : "none";
+    buttons.forEach(v=>{document.querySelector(v.id).style.display = bu.length > v.position ? "inline-block" : "none";});
 }
+
 var ccd = getCookie("candyCanes");
 if (ccd != "") {
     var x = Number(ccd);
     candyCanes = x;
     hmcc.innerHTML = candyCanes;
 }
+
+var beautify = function(number){
+
+    var range = [
+        {start: 0, end: 3, suffix: ""},
+        {start: 3, end: 6, suffix: "K"},
+        {start: 6, end: 9, suffix: "M"},
+        {start: 9, end: 12, suffix: "B"},
+        {start: 12, end: 15, suffix: "T"},
+        {start: 15, end: 18, suffix: "q"},
+        {start: 18, end: 21, suffix: "Q"},
+        {start: 21, end: 24, suffix: "s"},
+        {start: 24, end: 27, suffix: "S"},
+        {start: 27, end: 30, suffix: "O"},
+        {start: 30, end: 33, suffix: "N"},
+        {start: 33, end: 36, suffix: "D"}
+    ];
+
+    var r = range.filter(v=> {
+        var a = Math.log10(number);
+        return a >= v.start && a<v.end;
+    });
+
+    if(r && r.length){
+        var y = number / Math.pow(10, r[0].start);
+        y = Math.floor(y * 100) / 100;
+        y = y.toFixed(2);
+        return y + r[0].suffix;
+    }
+    else return number;
+};
+
 var cc = getCookie("cc");
 if (cc != "") {
-    var x = Number(cc);
-    candyCount = x;
-    if (candyCount < 1000) {
-        hmc.innerHTML = candyCount;
-    }
-    if (candyCount >= 1000) {
-        var y = candyCount / 1000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "K";
-    }
-    if (candyCount >= 1000000) {
-        var y = candyCount / 1000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "M";
-    }
-    if (candyCount >= 1000000000) {
-        var y = candyCount / 1000000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "B";
-    }
-    if (candyCount >= 1000000000000) {
-        var y = candyCount / 1000000000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "T";
-    }
-    if (candyCount >= 1000000000000000) {
-        var y = candyCount / 1000000000000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "q";
-    }
-    if (candyCount >= 1000000000000000000) {
-        var y = candyCount / 1000000000000000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "Q";
-    }
-    if (candyCount >= 1000000000000000000000) {
-        var y = candyCount / 1000000000000000000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "s";
-    }
-    if (candyCount >= 1000000000000000000000000) {
-        var y = candyCount / 1000000000000000000000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "S";
-    }
-    if (candyCount >= 1000000000000000000000000000) {
-        var y = candyCount / 1000000000000000000000000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "O";
-    }
-    if (candyCount >= 1000000000000000000000000000000) {
-        var y = candyCount / 1000000000000000000000000000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "N";
-    }
-    if (candyCount >= 1000000000000000000000000000000000) {
-        var y = candyCount / 1000000000000000000000000000000000;
-        y = Math.floor(y * 100) / 100;
-        y = y.toFixed(2);
-        hmc.innerHTML = y + "D";
-    }
+    candyCount = Number(cc);
+        hmc.innerHTML = beautify(candyCount);
 }
+
 var mult_cookie = getCookie("multiplier");
 if (mult_cookie != "") {
     var clost = Number(mult_cookie);
