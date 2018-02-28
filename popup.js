@@ -328,7 +328,7 @@ document.querySelector("#farmer_button").addEventListener("click", function () {
 function candyCaneBuy(cost, item) {
     if (candyCanes >= cost) {
         candyCanes = candyCanes - cost;
-        document.getElementById('error').innerHTML = "You got " + item + ".";
+        document.getElementById('error').innerHTML = "You got " + item + "!";
         hmcc.innerHTML = candyCanes;
         setCookie("candyCanes", candyCanes, 30);
         candyCount = (item === "1K Candies"
@@ -366,9 +366,9 @@ function candyCaneBuy(cost, item) {
 document.querySelector("#onek_button").addEventListener("click", function () { candyCaneBuy(1, "1K Candies"); });
 document.querySelector("#onem_button").addEventListener("click", function () { candyCaneBuy(10, "1M Candies"); });
 document.querySelector("#oneb_button").addEventListener("click", function () { candyCaneBuy(100, "1B Candies"); });
-document.querySelector("#lp_button").addEventListener("click", function () { candyCaneBuy(1250, "a Lucky Penny Boost"); });
-document.querySelector("#prmt_button").addEventListener("click", function () { candyCaneBuy(2500, "a Promotion"); });
-document.querySelector("#uccb_button").addEventListener("click", function () { candyCaneBuy(5000, "an Ultimate Candy Corn Boost"); });
+document.querySelector("#lp_button").addEventListener("click", function () { candyCaneBuy(1500, "a Lucky Penny Boost"); });
+document.querySelector("#prmt_button").addEventListener("click", function () { candyCaneBuy(2250, "a Promotion"); });
+document.querySelector("#uccb_button").addEventListener("click", function () { candyCaneBuy(4750, "an Ultimate Candy Corn Boost"); });
 function job() {
     candyCount += l * multiplier;
     hmc.innerHTML = beautify( candyCount);
@@ -383,7 +383,7 @@ function farmer() {
     setCookie("candyCanes", candyCanes, 30);
 }
 function clickFarmer() {
-    setInterval(farmer, 100000);
+    setInterval(farmer, 90000);
 }
 
 //free gift!
@@ -633,7 +633,7 @@ function checkCookie() {
         dialog.show()
         document.querySelector(".mdc-dialog__footer__button--accept").addEventListener("click", function () {
             user = document.querySelector("#name").value;
-            guest = "Guest " + Math.floor((Math.random() * 1197381793814) + 1010);
+            guest = "Guest " + Math.floor((Math.random() * 9999) + 100);
             if (user != "" && user != null) {
                 setCookie("username", user, 30);
                 document.getElementById("welcome").innerHTML = "Welcome " + user;
@@ -647,7 +647,7 @@ function checkCookie() {
     }
     var update = getCookie("update");
     if (update != "") {
-        console.log("Yippee! Newest update!");
+        console.log("Newest update!");
     } else {
         updateDialog.show();
         document.querySelector(".acceptUpdate").addEventListener("click", function () {
