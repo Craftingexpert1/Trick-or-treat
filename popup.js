@@ -172,7 +172,7 @@ cpsText.innerHTML = "Candy Per Second: " + cps;
 document.getElementById("totbutton").addEventListener("click", tot);
 function tot() {
     var candy = document.getElementById("candy");
-    candy.innerHTML = "You get: " + candies[Math.floor(Math.random() * 6)];
+    candy.innerHTML = "You get: " + candies[Math.floor(Math.random() * 11)];
     candyCount = candyCount + 1 * multiplier;
     var candyCaneChance = Math.floor(Math.random() * 1000);
     if (candyCaneChance === 20) {
