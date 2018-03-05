@@ -198,7 +198,9 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
     }
     .stuff {
       width:100%;
-      height:50px;
+      height:150px;
+      text-align:center;
+      text-decoration:none;
     }
   </style>
 </head>
@@ -227,9 +229,9 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
   </aside>
   <aside id="moreStuffDialog" class="mdc-dialog">
     <div class="mdc-dialog__surface" style="background:white!important;color:black!important;overflow-y:scroll;">
-      <a href="https://chrome.google.com/webstore/detail/kalkulator/ilidgdcdnofmfpmkmbhoemmdmgkjgfcb" onclick="chrome.tabs.create({url:this.href})" class="stuff">Kalkulator</a>
-      <a href="https://chrome.google.com/webstore/detail/fidget-tab/ljmegekilcconhdhdokehkomdkhhjmhi" onclick="chrome.tabs.create({url:this.href})" class="stuff">fidgetTab</a>
-      <a class="stuff" style="opacity:0.5;">Coming Soon:Jumping Joe</a>
+      <a href="https://chrome.google.com/webstore/detail/kalkulator/ilidgdcdnofmfpmkmbhoemmdmgkjgfcb" class="stuff mdc-typography__display1">Kalkulator</a>
+      <a href="https://chrome.google.com/webstore/detail/fidget-tab/ljmegekilcconhdhdokehkomdkhhjmhi" class="stuff mdc-typography__display1">fidgetTab</a>
+      <a class="stuff mdc-typography__display1" style="opacity:0.5;">Coming Soon:Jumping Joe</a>
       <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept">OK</button>
     </div>
   </aside>
