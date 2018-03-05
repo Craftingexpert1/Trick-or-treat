@@ -3,6 +3,10 @@
 var dialog = new mdc.dialog.MDCDialog(document.querySelector('#nameDialog'));
 var updateDialog = new mdc.dialog.MDCDialog(document.querySelector('#updateDialog'));
 var shopDialog = new mdc.dialog.MDCDialog(document.querySelector('#shop'));
+var moreStuffDialog = new mdc.dialog.MDCDialog(document.querySelector('#moreStuffDialog'));
+document.querySelector("#more_stuff").addEventListener("click", function() {
+  moreStuffDialog.show();
+});
 var areYouSure = new mdc.dialog.MDCDialog(document.querySelector('#doureally'));
 //var shopTabBar = new mdc.tabs.MDCTabBar(document.querySelector('#shopTabBar'));
 //mdc.tabs.MDCTabBar.attachTo(document.querySelector('#shopTabs'));
