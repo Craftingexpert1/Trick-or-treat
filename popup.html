@@ -227,8 +227,8 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
   </aside>
   <aside id="moreStuffDialog" class="mdc-dialog">
     <div class="mdc-dialog__surface" style="background:white!important;color:black!important;overflow-y:scroll;">
-      <a href="https://chrome.google.com/webstore/detail/kalkulator/ilidgdcdnofmfpmkmbhoemmdmgkjgfcb" class="stuff">Kalkulator</a>
-      <a href="https://chrome.google.com/webstore/detail/fidget-tab/ljmegekilcconhdhdokehkomdkhhjmhi" class="stuff">fidgetTab</a>
+      <a href="https://chrome.google.com/webstore/detail/kalkulator/ilidgdcdnofmfpmkmbhoemmdmgkjgfcb" onclick="chrome.tabs.create({url:this.href})" class="stuff">Kalkulator</a>
+      <a href="https://chrome.google.com/webstore/detail/fidget-tab/ljmegekilcconhdhdokehkomdkhhjmhi" onclick="chrome.tabs.create({url:this.href})" class="stuff">fidgetTab</a>
       <a class="stuff" style="opacity:0.5;">Coming Soon:Jumping Joe</a>
       <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept">OK</button>
     </div>
