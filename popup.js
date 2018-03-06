@@ -338,7 +338,7 @@ function candyCaneBuy(cost, item) {
                     ? candyCount + 1000000000 : candyCount)));
         var kmbt = null;
         hmc.innerHTML = beautify(candyCount);
-        if (item === "a farmer") {
+        if (item === "farmer") {
             clickFarmer();
             frm_num = frm_num + 1;
             frm.innerHTML = "Farmers: " + frm_num;
