@@ -186,7 +186,7 @@ function tot() {
             actionText: 'Yay',
             timeout: 5000,
             actionHandler: function () {
-                console.log('Yay!');
+                console.log('YAY!');
             }
         };
     }
