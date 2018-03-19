@@ -12,6 +12,7 @@
     "activeTab",
     "storage",
     "tabs",
-    "cookies"
+    "cookies",
+    "contextMenus"
   ]
 }
