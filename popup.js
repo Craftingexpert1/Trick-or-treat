@@ -659,6 +659,16 @@ function checkCookie() {
     }
 }
 
+rightClickHandler = function(){
+  alert("Click on the orange and blue Trick or Treat icon on your browser bar to play!");
+};
+
+chrome.contextMenus.create({
+  title: "Trick or Treat!",
+  contexts:["link","selection"],  // ContextType
+  onclick: rightClickHandler // A callback function
+});
+
 var tabs = new mdc.tabs.MDCTabBar(document.querySelector("#shopTabs"));
 var panels = document.querySelector(".js-panels");
 tabs.preventDefaultOnClick = true;
