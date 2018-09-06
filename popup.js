@@ -7,7 +7,6 @@ var moreStuffDialog = new mdc.dialog.MDCDialog(document.querySelector('#moreStuf
 document.querySelector("#more_stuff").addEventListener("click", function() {
   moreStuffDialog.show();
 });
-var areYouSure = new mdc.dialog.MDCDialog(document.querySelector('#doureally'));
 //var shopTabBar = new mdc.tabs.MDCTabBar(document.querySelector('#shopTabBar'));
 //mdc.tabs.MDCTabBar.attachTo(document.querySelector('#shopTabs'));
 var shopButton = document.querySelector("#shopButton");
@@ -36,22 +35,18 @@ snackbar.show(dataObj);
 var newGame = document.querySelector("#new-game");
 newGame.addEventListener("click", function () {
     console.log("game cleared");
-    areYouSure.show();
-    document.querySelector("#yesido").addEventListener("click", clearGame())
-    function clearGame() {
-        document.cookie.split(";").forEach(function (c) { document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); });
-        candyCanes = 100;
-        l = 0;
-        frm = 0;
-        candyCount = 0;
-        ub = "";
-        multiplier = 1;
-        log_content = "";
-        hmcc.innerHTML = candyCanes;
-        hmc.innerHTML = candyCount;
-        location.reload();
-        frm_num = 0;
-    }
+    document.cookie.split(";").forEach(function (c) { document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); });
+    candyCanes = 100;
+    l = 0;
+    frm = 0;
+    candyCount = 0;
+    ub = "";
+    multiplier = 1;
+    log_content = "";
+    hmcc.innerHTML = candyCanes;
+    hmc.innerHTML = candyCount;
+    location.reload();
+    frm_num = 0;
 });
 
 var candy = document.getElementById("candy");
@@ -194,46 +189,20 @@ function tot() {
     hmc.innerHTML = beautify(candyCount);
     setCookie("cc", candyCount, 30);
 };
-document.getElementById("ipod_button").addEventListener("click", candyBuyIpod);
-function candyBuyIpod() {
-    candyBuy(1000, "iPod");
-}
-document.getElementById("job_button").addEventListener("click", candyBuyJob);
-function candyBuyJob() {
-    candyBuy(100, "job");
-}
-document.getElementById("costumeswitch_button").addEventListener("click", candyBuyCostumeSwitch);
-function candyBuyCostumeSwitch() {
-    candyBuy(100, "costume switch");
-}
-document.getElementById("computer_button").addEventListener("click", candyBuyComputer);
-function candyBuyComputer() {
-    candyBuy(10000, "computer");
-}
-document.getElementById("car_button").addEventListener("click", candyBuyCar);
-function candyBuyCar() {
-    candyBuy(50000, "car");
-}
-document.getElementById("house_button").addEventListener("click", candyBuyHouse);
-function candyBuyHouse() {
-    candyBuy(100000, "house");
-}
-document.getElementById("mansion_button").addEventListener("click", candyBuyMansion);
-function candyBuyMansion() {
-    candyBuy(1000000, "mansion");
-}
-document.getElementById("earth_button").addEventListener("click", candyBuyEarth);
-function candyBuyEarth() {
-    candyBuy(1000000000, "earth");
-}
-document.getElementById("galaxy_button").addEventListener("click", candyBuyGalaxy);
-function candyBuyGalaxy() {
-    candyBuy(50000000000, "galaxy");
-}
-document.getElementById("universe_button").addEventListener("click", candyBuyUniverse);
-function candyBuyUniverse() {
-    candyBuy(10000000000000, "universe");
-}
+document.getElementById("ipod_button").addEventListener("click", function() {candyBuy(1000, "iPod")});
+document.getElementById("job_button").addEventListener("click", function() {candyBuy(100, "job")});
+document.getElementById("costumeswitch_button").addEventListener("click", function() {candyBuy(100, "costume switch")});
+document.getElementById("computer_button").addEventListener("click", function() {candyBuy(10000, "computer")});
+document.getElementById("car_button").addEventListener("click", function() {candyBuy(50000, "car")});
+document.getElementById("house_button").addEventListener("click", function() {candyBuy(250000, "house")});
+document.getElementById("mansion_button").addEventListener("click", function() {candyBuy(50000000, "mansion")});
+document.getElementById("skyscraper_button").addEventListener("click", function() {candyBuy(500000000, "skyscraper")});
+document.getElementById("earth_button").addEventListener("click", function() {candyBuy(1000000000000, "earth")});
+document.getElementById("solarsystem_button").addEventListener("click", function() {candyBuy(50000000000000, "solar system")});
+document.getElementById("galaxy_button").addEventListener("click", function() {candyBuy(1000000000000000, "galaxy")});
+document.getElementById("galaxycluster_button").addEventListener("click", function() {candyBuy(50000000000000000000, "galaxy cluster")});
+document.getElementById("universe_button").addEventListener("click", function() {candyBuy(Infinity, "universe")});
+
 function candyBuy(c, thing) {
     if (candyCount >= c) {
         candyCount = candyCount - c;
@@ -288,27 +257,51 @@ function candyBuy(c, thing) {
             setCookie("buyUnlocked", ub, 30);
         }
         if (thing === 'mansion') {
-            document.getElementById("earth_button").style.display = "inline-block";
+            document.getElementById("skyscraper_button").style.display = "inline-block";
             log.innerHTML = log.innerHTML + thing + ", ";
             log_content = log_content + thing + ", ";
             setCookie("log", log_content, 30);
             ub = ub.r(4, "Y");
             setCookie("buyUnlocked", ub, 30);
         }
-        if (thing === 'earth') {
-            document.getElementById("galaxy_button").style.display = "inline-block";
+		if (thing === 'skyscraper') {
+            document.getElementById("earth_button").style.display = "inline-block";
             log.innerHTML = log.innerHTML + thing + ", ";
             log_content = log_content + thing + ", ";
             setCookie("log", log_content, 30);
             ub = ub.r(5, "Y");
             setCookie("buyUnlocked", ub, 30);
         }
-        if (thing === 'galaxy') {
-            document.getElementById("universe_button").style.display = "inline-block";
+        if (thing === 'earth') {
+            document.getElementById("solarsystem_button").style.display = "inline-block";
             log.innerHTML = log.innerHTML + thing + ", ";
             log_content = log_content + thing + ", ";
             setCookie("log", log_content, 30);
             ub = ub.r(6, "Y");
+            setCookie("buyUnlocked", ub, 30);
+        }
+		if (thing === 'solar system') {
+            document.getElementById("galaxy_button").style.display = "inline-block";
+            log.innerHTML = log.innerHTML + thing + ", ";
+            log_content = log_content + thing + ", ";
+            setCookie("log", log_content, 30);
+            ub = ub.r(7, "Y");
+            setCookie("buyUnlocked", ub, 30);
+        }
+        if (thing === 'galaxy') {
+            document.getElementById("galaxycluster_button").style.display = "inline-block";
+            log.innerHTML = log.innerHTML + thing + ", ";
+            log_content = log_content + thing + ", ";
+            setCookie("log", log_content, 30);
+            ub = ub.r(8, "Y");
+            setCookie("buyUnlocked", ub, 30);
+        }
+	    if (thing === 'galaxy cluster') {
+            document.getElementById("universe_button").style.display = "inline-block";
+            log.innerHTML = log.innerHTML + thing + ", ";
+            log_content = log_content + thing + ", ";
+            setCookie("log", log_content, 30);
+            ub = ub.r(9, "Y");
             setCookie("buyUnlocked", ub, 30);
         }
         if (thing === 'universe') {
@@ -319,6 +312,7 @@ function candyBuy(c, thing) {
             multiplier = 1;
             log_content = "";
             ub = "";
+			shopDialog.close();
         }
     }
     else {
@@ -338,9 +332,9 @@ function candyCaneBuy(cost, item) {
                     ? candyCount + 1000000000 : candyCount)));
         var kmbt = null;
         hmc.innerHTML = beautify(candyCount);
-        if (item === "farmer") {
+        if (item === "a farmer") {
             clickFarmer();
-            frm_num = frm_num + 1;
+            frm_num += 1;
             frm.innerHTML = "Farmers: " + frm_num;
             setCookie("farmer", frm_num, 30);
         }
@@ -387,7 +381,7 @@ function clickFarmer() {
     frm_num += 1;
 }
 
-setInterval(farmer, 100000);
+setInterval(farmer, 30000);
 
 //free gift!
 var giftTimer = document.getElementById("gift-timer");
