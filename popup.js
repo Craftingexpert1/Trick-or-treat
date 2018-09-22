@@ -355,7 +355,7 @@ function candyCaneBuy(cost, item) {
         setCookie("cc", candyCount, 30);
     }
     else {
-        document.getElementById('error').innerHTML = "You do not have enough Clovers for " + item + ". Get some more!";
+        document.getElementById('error').innerHTML = "You do not have enough Pumpkins for " + item + ". Get some more!";
     }
 };
 document.querySelector("#onek_button").addEventListener("click", function () { candyCaneBuy(1, "1K Candies"); });
@@ -514,7 +514,7 @@ giftTimer.addEventListener("click", function () {
             setCookie("job", l, 30);
         } if (selectedGift == gifts[2]) {
             var given = Math.floor(Math.random() * (multiplier / 1.5)) + 20;
-            multiplier = multiplier + given;
+            multiplier = multiplier + given;	
             setCookie("multiplier", multiplier, 30);
             cps = multiplier * l;
             multiplier_text.innerHTML = "Multiplier: " + multiplier;
@@ -524,7 +524,7 @@ giftTimer.addEventListener("click", function () {
         }
         if (candyCaneYesNo === true) {
             var givenCandyCanes = Math.floor(Math.random() * 3) + 1;
-            document.querySelector("#error").innerHTML = "You got " + givenCandyCanes + " Clovers and " + beautify(given) + selectedGift + "in your Free Gift!";
+            document.querySelector("#error").innerHTML = "You got " + givenCandyCanes + " Pumpkins and " + beautify(given) + selectedGift + "in your Free Gift!";
             candyCanes = candyCanes + givenCandyCanes;
             hmcc.innerHTML = candyCanes;
             setCookie("candyCanes", candyCanes, 30);

@@ -5,7 +5,7 @@
   "description": "Go trick or treating!",
   "version": "1.8.2",
   "browser_action": {
-    "default_icon": "pumpkin128.png",
+    "default_icon": "images/pumpkin128.png",
     "default_popup": "popup.html"
   },
   "permissions": [
