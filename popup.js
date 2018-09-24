@@ -4,8 +4,14 @@ var dialog = new mdc.dialog.MDCDialog(document.querySelector('#nameDialog'));
 var updateDialog = new mdc.dialog.MDCDialog(document.querySelector('#updateDialog'));
 var shopDialog = new mdc.dialog.MDCDialog(document.querySelector('#shop'));
 var moreStuffDialog = new mdc.dialog.MDCDialog(document.querySelector('#moreStuffDialog'));
+var giftDialog = new mdc.dialog.MDCDialog(document.querySelector("#giftDialog"));
+document.querySelector("#giftButton").addEventListener("click", function() {
+	giftDialog.show();
+	drawer.open = false;
+});
 document.querySelector("#more_stuff").addEventListener("click", function() {
   moreStuffDialog.show();
+  drawer.open = false;
 });
 //var shopTabBar = new mdc.tabs.MDCTabBar(document.querySelector('#shopTabBar'));
 //mdc.tabs.MDCTabBar.attachTo(document.querySelector('#shopTabs'));
@@ -151,7 +157,7 @@ if (log_cookie != "") {
 var jobcookie = getCookie("job");
 if (jobcookie != "") {
     var jl = Number(jobcookie);
-    document.querySelector("#jobs").innerHTML = "Jobs: " + jl;
+    document.querySelector("#jobs").innerHTML = "TOT-ers: " + jl;
     l = jl;
 }
 var frmcookie = getCookie("farmer");
@@ -212,7 +218,7 @@ function candyBuy(c, thing) {
         setCookie("cc", candyCount, 30);
         if (thing === 'job') {
             l = l + 1;
-            document.getElementById('jobs').innerHTML = "Jobs: " + l;
+            document.getElementById('jobs').innerHTML = "TOT-ers: " + l;
             setCookie("job", l, 30);
             cps = multiplier * l;
             cpsText.innerHTML = "Candy Per Second: " + cps;
@@ -345,7 +351,7 @@ function candyCaneBuy(cost, item) {
         }
         if (item === "a Promotion") {
             l = l * 2;
-            document.getElementById("jobs").innerHTML = "Jobs: " + l;
+            document.getElementById("jobs").innerHTML = "TOT-ers: " + l;
             setCookie("job", l, 30)
         }
         if (item === "an Ultimate Candy Corn Boost") {
@@ -473,11 +479,11 @@ giftTimer.addEventListener("click", function () {
         } if (selectedGift == gifts[1]) {
             var given = Math.floor(Math.random() * (l / 1.5)) + 20;
             l = l + given;
-            document.getElementById('jobs').innerHTML = "Jobs: " + l;
+            document.getElementById('jobs').innerHTML = "TOT-ers: " + l;
             cps = multiplier * l;
             cpsText.innerHTML = "Candy Per Second: " + cps;
             setCookie("job", l, 30);
-            document.querySelector("#error").innerHTML = "You got " + beautify(given) + " jobs in your Free Gift!";
+            document.querySelector("#error").innerHTML = "You got " + beautify(given) + " TOT-ers in your Free Gift!";
         } if (selectedGift == gifts[2]) {
             var given = Math.floor(Math.random() * (multiplier / 1.5)) + 20;
             multiplier = multiplier + given;
@@ -506,11 +512,11 @@ giftTimer.addEventListener("click", function () {
         } if (selectedGift == gifts[1]) {
             var given = Math.floor(Math.random() * (l / 1.5)) + 20;
             l = l + given;
-            document.getElementById('jobs').innerHTML = "Jobs: " + l;
+            document.getElementById('jobs').innerHTML = "TOT-ers: " + l;
             cps = multiplier * l;
             cpsText.innerHTML = "Candy Per Second: " + cps;
             setCookie("job", l, 30);
-            document.querySelector("#error").innerHTML = "You got " + beautify(given) + " jobs in your Free Gift!";
+            document.querySelector("#error").innerHTML = "You got " + beautify(given) + " TOT-ers in your Free Gift!";
             setCookie("job", l, 30);
         } if (selectedGift == gifts[2]) {
             var given = Math.floor(Math.random() * (multiplier / 1.5)) + 20;
