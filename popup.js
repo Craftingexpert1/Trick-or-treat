@@ -88,9 +88,12 @@ var buttons = [
     new Button("#car_button", 1),
     new Button("#house_button", 2),
     new Button("#mansion_button", 3),
-    new Button("#earth_button", 4),
-    new Button("#galaxy_button", 5),
-    new Button("#universe_button", 6)
+	new Button("#skyscraper_button", 4),
+    new Button("#earth_button", 5),
+	new Button("#solarsystem_button", 6),
+    new Button("#galaxy_button", 7),
+	new Button("#galaxycluster_button", 8),
+    new Button("#universe_button", 9)
 ];
 
 var bu = getCookie("buyUnlocked");
@@ -119,7 +122,17 @@ var beautify = function (number) {
         { start: 24, end: 27, suffix: "S" },
         { start: 27, end: 30, suffix: "O" },
         { start: 30, end: 33, suffix: "N" },
-        { start: 33, end: 36, suffix: "D" }
+        { start: 33, end: 36, suffix: "D" },
+		{ start: 36, end: 39, suffix: "uD" },
+		{ start: 39, end: 42, suffix: "D" },
+		{ start: 42, end: 45, suffix: "tD" },
+		{ start: 45, end: 48, suffix: "qD" },
+		{ start: 48, end: 51, suffix: "QD" },
+		{ start: 51, end: 54, suffix: "sD" },
+		{ start: 54, end: 57, suffix: "SD" },
+		{ start: 57, end: 60, suffix: "oD" },
+		{ start: 60, end: 63, suffix: "nD" },
+		{ start: 63, end: 66, suffix: "V" }
     ];
 
     var r = range.filter(v => {
@@ -174,8 +187,8 @@ cpsText.innerHTML = "Candy Per Second: " + cps;
 document.getElementById("totbutton").addEventListener("click", tot);
 function tot() {
     var candy = document.getElementById("candy");
-    candy.innerHTML = "You get: " + candies[Math.floor(Math.random() * 11)];
-    candyCount = candyCount + 1 * multiplier;
+    candy.innerHTML = "You get: " + candies[Math.floor(Math.random() * (candies.length + 1))];
+    candyCount = candyCount + +(Math.floor((Math.random() * 3) + 1)) * multiplier;
     var candyCaneChance = Math.floor(Math.random() * 1000);
     if (candyCaneChance === 20) {
         candyCanes = candyCanes + frm_num;
@@ -207,7 +220,7 @@ document.getElementById("earth_button").addEventListener("click", function() {ca
 document.getElementById("solarsystem_button").addEventListener("click", function() {candyBuy(50000000000000, "solar system")});
 document.getElementById("galaxy_button").addEventListener("click", function() {candyBuy(1000000000000000, "galaxy")});
 document.getElementById("galaxycluster_button").addEventListener("click", function() {candyBuy(50000000000000000000, "galaxy cluster")});
-document.getElementById("universe_button").addEventListener("click", function() {candyBuy(Infinity, "universe")});
+document.getElementById("universe_button").addEventListener("click", function() {candyBuy(Math.pow(10, 30), "universe")});
 
 function candyBuy(c, thing) {
     if (candyCount >= c) {
