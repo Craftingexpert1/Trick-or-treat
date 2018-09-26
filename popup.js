@@ -102,12 +102,6 @@ if (bu != "") {
     buttons.forEach(v => { document.querySelector(v.id).style.display = bu.length > v.position ? "inline-block" : "none"; });
 }
 
-var ccd = getCookie("candyCanes");
-if (ccd != "") {
-    var x = Number(ccd);
-    candyCanes = x;
-    hmcc.innerHTML = candyCanes;
-}
 
 var beautify = function (number) {
 
@@ -148,6 +142,12 @@ var beautify = function (number) {
     }
     else return number;
 };
+var ccd = getCookie("candyCanes");
+if (ccd != "") {
+    var x = Number(ccd);
+    candyCanes = x;
+    hmcc.innerHTML = beautify(candyCanes);
+}
 
 var cc = getCookie("cc");
 if (cc != "") {
@@ -187,24 +187,8 @@ cpsText.innerHTML = "Candy Per Second: " + cps;
 document.getElementById("totbutton").addEventListener("click", tot);
 function tot() {
     var candy = document.getElementById("candy");
-    candy.innerHTML = "You get: " + candies[Math.floor(Math.random() * (candies.length + 1))];
-    candyCount = candyCount + +(Math.floor((Math.random() * 3) + 1)) * multiplier;
-    var candyCaneChance = Math.floor(Math.random() * 1000);
-    if (candyCaneChance === 20) {
-        candyCanes = candyCanes + frm_num;
-        hmcc.innerHTML = candyCanes;
-        setCookie("candyCanes", candyCanes, 30);
-        candy.innerHTML = candy.innerHTML + "AND a LEGENDARY Heart Treat!!";
-        const dataObj = {
-            message: "candy.innerHTML + 'AND a LEGENDARY Heart Treat!!'",
-            actionText: 'Yay',
-            timeout: 5000,
-            actionHandler: function () {
-                console.log('YAY!');
-            }
-        };
-    }
-
+	candyCount = candyCount + +(Math.floor((Math.random() * 3) + 1)) * multiplier;
+    candy.innerHTML = "You get: " + candies[Math.floor(Math.random() * candies.length)];
     hmc.innerHTML = beautify(candyCount);
     setCookie("cc", candyCount, 30);
 };
@@ -343,7 +327,7 @@ function candyCaneBuy(cost, item) {
     if (candyCanes >= cost) {
         candyCanes = candyCanes - cost;
         document.getElementById('error').innerHTML = "You got " + item + "!";
-        hmcc.innerHTML = candyCanes;
+        hmcc.innerHTML = beautify(candyCanes);
         setCookie("candyCanes", candyCanes, 30);
         candyCount = (item === "1K Candies"
             ? candyCount + 1000 : (item === "1M Candies"
@@ -369,7 +353,7 @@ function candyCaneBuy(cost, item) {
         }
         if (item === "an Ultimate Candy Corn Boost") {
             candyCount = candyCount * 2;
-            hmc.innerHTML = candyCount;
+            hmc.innerHTML = beautify(candyCount);
         }
         setCookie("cc", candyCount, 30);
     }
@@ -393,7 +377,7 @@ setInterval(job, 1000);
 
 function farmer() {
     candyCanes = candyCanes + frm_num;
-    hmcc.innerHTML = candyCanes;
+    hmcc.innerHTML = beautify(candyCanes);
     setCookie("candyCanes", candyCanes, 30);
 }
 function clickFarmer() {
@@ -543,9 +527,9 @@ giftTimer.addEventListener("click", function () {
         }
         if (candyCaneYesNo === true) {
             var givenCandyCanes = Math.floor(Math.random() * 3) + 1;
-            document.querySelector("#error").innerHTML = "You got " + givenCandyCanes + " Pumpkins and " + beautify(given) + selectedGift + "in your Free Gift!";
+            document.querySelector("#error").innerHTML = "You got " + beautify(givenCandyCanes) + " Pumpkins and " + beautify(given) + selectedGift + "in your Free Gift!";
             candyCanes = candyCanes + givenCandyCanes;
-            hmcc.innerHTML = candyCanes;
+            hmcc.innerHTML = beautify(candyCanes);
             setCookie("candyCanes", candyCanes, 30);
         }
         setCookie("giftAvailable", giftAvailable, 30);
