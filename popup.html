@@ -71,8 +71,8 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
     body {
       font-family: "Roboto", sans-serif;
       color: white!important;
-      width: 500px!important;
-      height: 485px!important;
+      width: 504px!important;
+      height: 487px!important;
       --mdc-theme-primary: #ff5722;
       --mdc-theme-secondary: #3f51b5;
       --mdc-theme-background: #ff5722;
@@ -200,6 +200,8 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
       text-align: center;
       text-decoration: none;
     }
+    .mdc-tab-bar__indicator {background:#ff5722;}
+    .mdc-tab--active, .mdc-tab--active:hover {color:#ff5722;}
   </style>
 </head>
 
@@ -377,8 +379,7 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
             <span class="mdc-toolbar__title" id="welcome">Welcome</span>
           </section>
           <section class="mdc-toolbar__section mdc-toolbar__section--align-end">
-			<button class="mdc-button" id="costumeswitch_button" style="color:white!important;" title="Switch your costume"><img src="https://image.flaticon.com/icons/svg/761/761229.svg" style="vertical-align:inherit;" height="28px" width="28px"></button>
-            <button class="mdc-button" data-mdc-auto-init="MDCRipple" id="shopButton">
+	   <button class="mdc-button" data-mdc-auto-init="MDCRipple" id="shopButton">
               <i class="material-icons mdc-button__icon">store</i>Shop
             </button>
           </section>
@@ -395,11 +396,14 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
           </section>
         </div>
       </header>
+  <button class="mdc-fab" id="costumeswitch_button" aria-label="Favorite" style="position:fixed;right:25px;bottom:25px;">
+    <img src="https://image.flaticon.com/icons/png/512/761/761229.png" style="vertical-align:inherit;" height="28px">
+  </button>
       <h2 id="candy" class="mdc-typography--body1" style="font-size:150%;color:white!important;"></h2>
       <h2 id="error" class="mdc-typography--body1" style="font-size:150%;color:white!important;"></h2>
       <br>
-	  <div style="text-align:center;"><button class="mdc-button mdc-button--unelevated mdc-ripple-surface--secondary" style="text-align:center;color:white!important;width:275px;height:275px;border-radius:100%;" id="totbutton" data-mdc-auto-init="MDCRipple">
-        <img src="images/pumpkin-smirk.png" width="250px" height="250px">
+	  <div style="text-align:center;"><button class="mdc-button mdc-button--unelevated mdc-ripple-surface--secondary" style="text-align:center;color:white!important;width:225px;height:225px;border-radius:100%;" id="totbutton" data-mdc-auto-init="MDCRipple">
+        <img src="images/pumpkin-smirk.png" width="200px" height="200px">
       </button></div>
     </div>
   </div>
@@ -451,6 +455,7 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
       </nav>
     </nav>
   </aside>
+         
   <div style="display:none;width:1000%;height:1000%;right:50;top:50;background:black;" id="beat_game">
     <h1 class="mdc-typography--display3" style="color:white;">Your life purpose is done.</h1>
   </div>
