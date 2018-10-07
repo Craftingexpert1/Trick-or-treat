@@ -1,5 +1,6 @@
 //Stop reading this code! Now! Go away! Shoo! Or else!
 //mdc stuff
+//definatley no cheat code hidden somewhere in this text
 var dialog = new mdc.dialog.MDCDialog(document.querySelector('#nameDialog'));
 var updateDialog = new mdc.dialog.MDCDialog(document.querySelector('#updateDialog'));
 var shopDialog = new mdc.dialog.MDCDialog(document.querySelector('#shop'));
@@ -207,18 +208,18 @@ function tot() {
     hmc.innerHTML = beautify(candyCount);
     setCookie("cc", candyCount, 30);
 };
-document.getElementById("ipod_button").addEventListener("click", function() {candyBuy(1000, "iPod")});
-document.getElementById("job_button").addEventListener("click", function() {candyBuy(100, "job")});
-document.getElementById("costumeswitch_button").addEventListener("click", function() {candyBuy(100, "costume switch")});
-document.getElementById("computer_button").addEventListener("click", function() {candyBuy(10000, "computer")});
-document.getElementById("car_button").addEventListener("click", function() {candyBuy(50000, "car")});
-document.getElementById("house_button").addEventListener("click", function() {candyBuy(250000, "house")});
-document.getElementById("mansion_button").addEventListener("click", function() {candyBuy(50000000, "mansion")});
-document.getElementById("skyscraper_button").addEventListener("click", function() {candyBuy(500000000, "skyscraper")});
+   document.getElementById("ipod_button").addEventListener("click", function() {candyBuy(1000, "iPod")});
+    document.getElementById("job_button").addEventListener("click", function() {candyBuy(100, "job")});
+     document.getElementById("costumeswitch_button").addEventListener("click", function() {candyBuy(100, "costume switch")});
+     document.getElementById("computer_button").addEventListener("click", function() {candyBuy(10000, "computer")});
+    document.getElementById("car_button").addEventListener("click", function() {candyBuy(50000, "car")});
+   document.getElementById("house_button").addEventListener("click", function() {candyBuy(250000, "house")});
+  document.getElementById("mansion_button").addEventListener("click", function() {candyBuy(50000000, "mansion")});
+ document.getElementById("skyscraper_button").addEventListener("click", function() {candyBuy(500000000, "skyscraper")});
 document.getElementById("earth_button").addEventListener("click", function() {candyBuy(1000000000000, "earth")});
-document.getElementById("solarsystem_button").addEventListener("click", function() {candyBuy(50000000000000, "solar system")});
-document.getElementById("galaxy_button").addEventListener("click", function() {candyBuy(1000000000000000, "galaxy")});
-document.getElementById("galaxycluster_button").addEventListener("click", function() {candyBuy(50000000000000000000, "galaxy cluster")});
+ document.getElementById("solarsystem_button").addEventListener("click", function() {candyBuy(50000000000000, "solar system")});
+  document.getElementById("galaxy_button").addEventListener("click", function() {candyBuy(1000000000000000, "galaxy")});
+ document.getElementById("galaxycluster_button").addEventListener("click", function() {candyBuy(50000000000000000000, "galaxy cluster")});
 document.getElementById("universe_button").addEventListener("click", function() {candyBuy(Math.pow(10, 30), "universe")});
 
 function candyBuy(c, thing) {
@@ -334,7 +335,7 @@ function candyBuy(c, thing) {
         }
     }
     else {
-        document.getElementById('error').innerHTML = "You do not have enough candy for a(n) " + thing + ". Get some more!";
+        document.getElementById('error').innerHTML = "You do not have enough candy for a(n) " + thing + ". Get some more! Or else!";
     }
 };
 document.querySelector("#farm_button").addEventListener("click", function() {
@@ -742,3 +743,8 @@ var cls = function () {
 };
 
 window.onclose = cls;
+var duck = "quack"
+
+duck
+
+
