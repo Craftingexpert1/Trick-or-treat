@@ -208,6 +208,7 @@ function tot() {
     hmc.innerHTML = beautify(candyCount);
     setCookie("cc", candyCount, 30);
 };
+//cool wave!
    document.getElementById("ipod_button").addEventListener("click", function() {candyBuy(1000, "iPod")});
     document.getElementById("job_button").addEventListener("click", function() {candyBuy(100, "job")});
      document.getElementById("costumeswitch_button").addEventListener("click", function() {candyBuy(100, "costume switch")});
@@ -628,6 +629,7 @@ document.addEventListener("keydown", function (event) {
     }
 })*/
 //This so nobody will know!
+//(Currently disabled)
 
 var cheat = {
     multiplier: function () {
@@ -745,6 +747,5 @@ var cls = function () {
 window.onclose = cls;
 var duck = "quack"
 
-duck
 
 
