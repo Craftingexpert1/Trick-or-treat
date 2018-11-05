@@ -335,6 +335,8 @@ function candyBuy(c, thing) {
 	    shopDialog.close();
         }
     }
+//should we add a multiverse??
+
     else {
         document.getElementById('error').innerHTML = "You do not have enough candy for a(n) " + thing + ". Get some more! Or else!";
     }
