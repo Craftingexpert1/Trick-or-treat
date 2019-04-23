@@ -1,12 +1,13 @@
 {
   "manifest_version": 2,
 
-  "name": "Trick or treat! ^_^",
-  "description": "Go trick or treating!",
-  "version": "1.8.5",
+  "name": "Trick or Treat! ^_^",
+  "description": "Have you ever wanted to be able to go trick or treating whenever you wanted? Well you're in luck! Go trick or treating in your browser, for free!",
+  "version": "1.9",
+  "icons": {"16":"images/pumpkin128.png","48":"images/pumpkin128.png","128":"images/pumpkin128.png"},
   "browser_action": {
     "default_icon": "images/pumpkin128.png",
-    "default_popup": "index.html"
+    "default_popup": "popup.html"
   },
   "permissions": [
     "activeTab",
@@ -14,5 +15,6 @@
     "tabs",
     "cookies",
     "contextMenus"
-  ]
+  ],
+"content_security_policy": "script-src 'self' https://www.gstatic.com/ https://*.firebaseio.com https://*.googleapis.com https://apis.google.com; object-src 'self'; connect-src 'self' https://k-inc-232222.firebaseio.com https://*.googleapis.com wss://*.firebaseio.com/;"
 }
