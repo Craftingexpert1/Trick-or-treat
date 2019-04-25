@@ -172,14 +172,9 @@ var auth = app.auth();
 var storage = app.storage();
 var sign;
 $('#sign-in-btn').addEventListener('click', ()=>{
-    sign = auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
-    database.child(sign.i.user.uid).once('value').then((snapshot)=>{
-        tot = snapshot.val()
-    }
-    );
+    auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
     tot.name = auth.currentUser.displayName;
-}
-);
+});
 //mdc stuff
 new mdc.ripple.MDCRipple($('#shopButton'));
 new mdc.tabBar.MDCTabBar($('.mdc-tab-bar'));
@@ -465,7 +460,7 @@ var cint = setInterval(()=>{
     if (increment == 'newincre') {
       idialog.open();
       sdialog.close();
-      $('#increment_value').options.selectedIndex=0;
+      $('#increment_value').options.selectedIndex=1;
     }
     add = Math.floor(Math.random() * tot.costumes + 1) * tot.tot_ers;
     if (tot.candy + add <= tot.max_candy) {
