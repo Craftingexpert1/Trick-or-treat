@@ -363,6 +363,11 @@ function ninc(v) {
 		$('#status').innerHTML = 'Not enough candy!';
 	}
 };
+$('#ninctext').onchange = e => {
+  $('#cost').innerHTML = 'Cost: ' + beautify(Number($('#ninctext').value)**2);
+  if (e.key.toLowerCase() == 'enter') ninc(Number($('#ninctext').value));
+};
+$('#confninc').addEventListener('click',()=>ninc(Number($('#ninctext').value)));
 var candies = ["Snickers(stop that, will you?)", "A rubber duck", "Milky Way(the chocolate, not  the galaxy)", "Three Musketeers(the candy though)", "Kit Kat", "Kisses (the chocolate, duh)", "Smarties!", "M&M's", "Skittles", "Bubble Gum", "Gummy Bears(99.99% vegetarian)", ];
 $('#jobs').innerHTML = 'TOT-ers: ' + tot.tot_ers;
 $('#max-jobs').innerHTML = 'Max TOT-ers:' + tot.max_tot_ers;
@@ -460,6 +465,7 @@ var cint = setInterval(()=>{
     if (increment == 'newincre') {
       idialog.open();
       sdialog.close();
+      $('#increment_value').options.selectedIndex=0;
     }
     add = Math.floor(Math.random() * tot.costumes + 1) * tot.tot_ers;
     if (tot.candy + add <= tot.max_candy) {
