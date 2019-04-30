@@ -1,4 +1,4 @@
-//(function () {
+(function () {
 var beautify = function(t) {
     var f = [{
         start: 3,
@@ -876,4 +876,4 @@ window.onunload = ()=>{
     tot.max_candy = (tot.max_candy != Infinity) ? (tot.max_candy) : 'Infinity';
     save();
 }
-//})();
+})();
