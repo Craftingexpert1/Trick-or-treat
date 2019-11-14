@@ -229,9 +229,9 @@ function Adventure(name) {
   }
 } //book bat bhat bonster!
 var someAdventure = new Adventure('Duckland.');
-var somedialogue = new someAdventure.Dialogue('WHAT IS LOVE BABY DON"T HURT ME BECAUSE IM A DUCK yeAAAAh', 'love baby', 'd', ['d', 'non']);
+var somedialogue = new someAdventure.Dialogue('Stuff here', 'love baby', 'd', ['d', 'non']);
 var d = new someAdventure.Dialogue('d.', 'd', 'd'); //kavin can you please go into the call i want to see
-var no = new someAdventure.Dialogue('NO!!!!!!', 'NO!', 'd');
+var no = new someAdventure.Dialogue('NO!!!!!!', 'NO!', 'Nah fam');
 /*function adventure(what) {
     adialog.open();
     if (what == 'graveyard') {
@@ -239,10 +239,10 @@ var no = new someAdventure.Dialogue('NO!!!!!!', 'NO!', 'd');
         ['The graveyard glows softly in the night', 'Go in.', 'THATS CRAZY'],
         ["The gate slowly creaked open, as if inviting you to your doom. Inside, the graves stood old and broken, all containing unreadable descriptions of their owner's deaths. Suddenly, out of one of the many graves, came a beast like human, with rotting flesh and some terribly worn pants.", "Kill it!", "Run away from this terribly clothed beast."],
       ];
-      this.adven = 'graveyard';//KEN!! HOW ARE WE GOING TO DO THE IFS AND ELSES with pro skillz
+      this.adven = 'graveyard';//So many ifs & elses lol
       $('#adven-title').innerHTML = 'Graveyard';
       adv('The graveyard glows softly in the night', 'Go in.', 'THATS CRAZY',
-      ()=>{//typical horror movies
+      ()=>{//typical horror movies //Why is this down here the same as that up there?
         adv("The gate slowly creaked open, as if inviting you to your doom. Inside, the graves stood old and broken, all containing unreadable descriptions of their owner's deaths. Suddenly, out of one of the many graves, came a beast like human, with rotting flesh and some terribly worn pants.", "Kill it!", "Run away from this terribly clothed beast.",
         ()=>{ //now is the only good time my dad can help me so sorry if i cant be on for 100% of the setTimeout(function () {ds
 
@@ -375,7 +375,7 @@ $('#incre-lnd').addEventListener('click',() => {
   }
 })
 $('#confninc').addEventListener('click',()=>ninc(Number($('#ninctext').value)));
-var candies = ["Snickers(stop that, will you?)", "A rubber duck", "Milky Way(the chocolate, not  the galaxy)", "Three Musketeers(the candy though)", "Kit Kat", "Kisses (the chocolate, duh)", "Smarties!", "M&M's", "Skittles", "Bubble Gum", "Gummy Bears(99.99% vegetarian)", ];
+var candies = ["Snickers(stop that, will you?)", "A rubber duck (don't eat this)", "Milky Way(the chocolate, not  the galaxy)", "Three Musketeers(the candy though)", "Kit Kat", "Kisses (the chocolate, duh)", "Smarties!", "M&M's", "Skittles", "Bubble Gum", "Gummy Bears(99.99% vegetarian)", ];
 $('#jobs').innerHTML = 'TOT-ers: ' + beautify(tot.tot_ers);
 $('#max-jobs').innerHTML = 'Max TOT-ers:' + beautify(tot.max_tot_ers);
 $('#farmers').innerHTML = 'Farmers: ' + beautify(tot.farmers);
